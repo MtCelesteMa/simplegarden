@@ -1,0 +1,16 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-TW">
+  <file id="ngi18n" original="ng.template">
+    <unit id="app-root.title">
+      <segment state="initial">
+        <source>SimpleGarden</source>
+        <target>簡易花園</target>
+      </segment>
+    </unit>
+    <unit id="app-root.description">
+      <segment state="initial">
+        <source>A recreation of Cookie Clicker&apos;s &quot;Garden&quot; minigame.</source>
+        <target>餅乾計數器裡的&quot;花園&quot;小遊戲重新製作版</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
