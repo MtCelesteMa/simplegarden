@@ -17,25 +17,26 @@ export class Game {
     }
 
     private static emptyField(dims: [number, number]): d.s.v1.FieldTile[][] {
-        let field = Array<d.s.v1.FieldTile[]>(dims[0]).fill(Array<d.s.v1.FieldTile>(dims[1]).fill({crop: null, age: 0}));
+        let field = Array<d.s.v1.FieldTile[]>(dims[0]).fill(
+            Array<d.s.v1.FieldTile>(dims[1]).fill({ crop: null, age: 0 }),
+        );
         return JSON.parse(JSON.stringify(field));
     }
 
-    static newGame(raw: unknown, options: {tickRate?: number, unlockAllCrops?: boolean} = {}): Game {
-        let unlockAllCrops: boolean = false;
+    static newGame(raw: unknown, cheatMode: boolean = false): Game {
         let tickRate: number = 60000;
-        let gameData = raw == null ? d.g.simpleClassic : d.g.loader.load(raw);
+        let gameData = raw == null ? d.g.loader.load(d.g.simpleClassic) : d.g.loader.load(raw);
         let saveData: d.s.v1.SaveData = {
             identifier: "sg_savedata",
             version: 1,
             gameData: raw == null ? null : gameData,
-            cheat: unlockAllCrops,
+            cheat: cheatMode,
             playTime: 0,
             tickRate: tickRate,
             lastTick: new Date().getTime(),
             field: this.emptyField(gameData.fieldSize),
-            unlockedCrops: unlockAllCrops ? Object.entries(gameData.crops).map((value: [string, d.g.v1.CropInfo]): string => value[0]) : JSON.parse(JSON.stringify(gameData.initialCrops))
-        }
+            unlockedCrops: JSON.parse(JSON.stringify(gameData.initialCrops)),
+        };
         return new Game(gameData, saveData);
     }
 }

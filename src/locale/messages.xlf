@@ -11,5 +11,210 @@
         <source>SimpleGarden</source>
       </segment>
     </unit>
+    <unit id="app-welcome-page.corrupted-save-msg">
+      <segment>
+        <source> Your save file was corrupted. Please start a new game. </source>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.export-game">
+      <segment>
+        <source>Export Game</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.description">
+      <segment>
+        <source>A common plant seen as a symbol of good fortune.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.displayname">
+      <segment>
+        <source>Clover</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.shortname">
+      <segment>
+        <source>Cl</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.description">
+      <segment>
+        <source>Another versatile crop used in the making of many staple foods.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.displayname">
+      <segment>
+        <source>Corn</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.shortname">
+      <segment>
+        <source>C</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.description">
+      <segment>
+        <source>A clover made out of gold.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.displayname">
+      <segment>
+        <source>Golden Clover</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.shortname">
+      <segment>
+        <source>GC</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.description">
+      <segment>
+        <source>A flower that grows in water.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.displayname">
+      <segment>
+        <source>Lily</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.shortname">
+      <segment>
+        <source>L</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.description">
+      <segment>
+        <source>A hardy crop that is resistant to many environmental factors.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.displayname">
+      <segment>
+        <source>Millet</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.shortname">
+      <segment>
+        <source>M</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.description">
+      <segment>
+        <source>A versatile crop used in many dishes across the world.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.displayname">
+      <segment>
+        <source>Rice</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.shortname">
+      <segment>
+        <source>R</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.description">
+      <segment>
+        <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.displayname">
+      <segment>
+        <source>Weed</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.shortname">
+      <segment>
+        <source>X</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.description">
+      <segment>
+        <source>A versatile crop used in the making of many staple foods.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.displayname">
+      <segment>
+        <source>Wheat</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.shortname">
+      <segment>
+        <source>W</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.description">
+      <segment>
+        <source>An immortal plant.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.displayname">
+      <segment>
+        <source>Wort</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.shortname">
+      <segment>
+        <source>Wo</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.welcome">
+      <segment>
+        <source>Welcome!</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-game-data-import-failed">
+      <segment>
+        <source> Import failed. </source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-gd">
+      <segment>
+        <source>Use custom game data</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.new-game">
+      <segment>
+        <source>New Game</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode">
+      <segment>
+        <source>Enable cheat mode</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode-conf">
+      <segment>
+        <source>Save files created with cheat mode active will be marked. Continue?</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.game-import-failed">
+      <segment>
+        <source> Import failed. </source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.import-game">
+      <segment>
+        <source>Import Game</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf">
+      <segment>
+        <source>Are you sure you want to erase your save? This action is irreversible!</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf-2">
+      <segment>
+        <source>ARE YOU SURE?</source>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.continue-game">
+      <segment>
+        <source>Continue Game</source>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.erase-game">
+      <segment>
+        <source>Erase Game</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

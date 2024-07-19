@@ -12,5 +12,251 @@
         <target>餅乾計數器裡的&quot;花園&quot;小遊戲重新製作版</target>
       </segment>
     </unit>
+    <unit id="app-welcome-page.corrupted-save-msg">
+      <segment state="initial">
+        <source> Your save file was corrupted. Please start a new game. </source>
+        <target> 遊戲保存文件被損壞了。請開始新的遊戲。 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.export-game">
+      <segment state="initial">
+        <source>Export Game</source>
+        <target>導出遊戲</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.displayname">
+      <segment state="initial">
+        <source>Wheat</source>
+        <target>Wheat</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.shortname">
+      <segment state="initial">
+        <source>W</source>
+        <target>W</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.description">
+      <segment state="initial">
+        <source>A versatile crop used in the making of many staple foods.</source>
+        <target>A versatile crop used in the making of many staple foods.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.displayname">
+      <segment state="initial">
+        <source>Corn</source>
+        <target>Corn</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.shortname">
+      <segment state="initial">
+        <source>C</source>
+        <target>C</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.description">
+      <segment state="initial">
+        <source>Another versatile crop used in the making of many staple foods.</source>
+        <target>Another versatile crop used in the making of many staple foods.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.displayname">
+      <segment state="initial">
+        <source>Rice</source>
+        <target>Rice</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.shortname">
+      <segment state="initial">
+        <source>R</source>
+        <target>R</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.description">
+      <segment state="initial">
+        <source>A versatile crop used in many dishes across the world.</source>
+        <target>A versatile crop used in many dishes across the world.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.displayname">
+      <segment state="initial">
+        <source>Millet</source>
+        <target>Millet</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.shortname">
+      <segment state="initial">
+        <source>M</source>
+        <target>M</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.description">
+      <segment state="initial">
+        <source>A hardy crop that is resistant to many environmental factors.</source>
+        <target>A hardy crop that is resistant to many environmental factors.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.displayname">
+      <segment state="initial">
+        <source>Clover</source>
+        <target>Clover</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.shortname">
+      <segment state="initial">
+        <source>Cl</source>
+        <target>Cl</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.description">
+      <segment state="initial">
+        <source>A common plant seen as a symbol of good fortune.</source>
+        <target>A common plant seen as a symbol of good fortune.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.displayname">
+      <segment state="initial">
+        <source>Golden Clover</source>
+        <target>Golden Clover</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.shortname">
+      <segment state="initial">
+        <source>GC</source>
+        <target>GC</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.description">
+      <segment state="initial">
+        <source>A clover made out of gold.</source>
+        <target>A clover made out of gold.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.displayname">
+      <segment state="initial">
+        <source>Lily</source>
+        <target>Lily</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.shortname">
+      <segment state="initial">
+        <source>L</source>
+        <target>L</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.description">
+      <segment state="initial">
+        <source>A flower that grows in water.</source>
+        <target>A flower that grows in water.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.displayname">
+      <segment state="initial">
+        <source>Wort</source>
+        <target>Wort</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.shortname">
+      <segment state="initial">
+        <source>Wo</source>
+        <target>Wo</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.description">
+      <segment state="initial">
+        <source>An immortal plant.</source>
+        <target>An immortal plant.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.displayname">
+      <segment state="initial">
+        <source>Weed</source>
+        <target>Weed</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.shortname">
+      <segment state="initial">
+        <source>X</source>
+        <target>X</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.description">
+      <segment state="initial">
+        <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
+        <target>An unwanted plant that kill nearby crops. Cannot be smoked.</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.welcome">
+      <segment state="initial">
+        <source>Welcome!</source>
+        <target>歡迎!</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.new-game">
+      <segment state="initial">
+        <source>New Game</source>
+        <target>開始新遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-gd">
+      <segment state="initial">
+        <source>Use custom game data</source>
+        <target>使用自定義遊戲設置</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-game-data-import-failed">
+      <segment state="initial">
+        <source> Import failed. </source>
+        <target> 設置導入失敗 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode">
+      <segment state="initial">
+        <source>Enable cheat mode</source>
+        <target>啟動作弊模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode-conf">
+      <segment state="initial">
+        <source>Save files created with cheat mode active will be marked. Continue?</source>
+        <target>用作弊模式創建的保存文件會被標記。確認開始？</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.import-game">
+      <segment state="initial">
+        <source>Import Game</source>
+        <target>導入遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.game-import-failed">
+      <segment state="initial">
+        <source> Import failed. </source>
+        <target> 遊戲導入失敗 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.continue-game">
+      <segment state="initial">
+        <source>Continue Game</source>
+        <target>繼續遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.erase-game">
+      <segment state="initial">
+        <source>Erase Game</source>
+        <target>刪除遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf">
+      <segment state="initial">
+        <source>Are you sure you want to erase your save? This action is irreversible!</source>
+        <target>你確認你要刪除保存文件？這個行動是不可逆轉的！</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf-2">
+      <segment state="initial">
+        <source>ARE YOU SURE?</source>
+        <target>你真的確定嗎？</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

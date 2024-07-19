@@ -1,0 +1,40 @@
+@if (this.manager.saveIsValid()) {
+    <div class="box centering">
+        <button (click)="loadGame()" i18n="@@app-welcompe-page.continue-game">Continue Game</button>
+        <br />
+        <br />
+        <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
+        <br />
+        <br />
+        <button style="color: red" (click)="eraseGame()" i18n="@@app-welcompe-page.erase-game">Erase Game</button>
+    </div>
+} @else {
+    <div class="box centering">
+        @if (this.manager.saveExists()) {
+            <span style="color: red" i18n="@@app-welcome-page.corrupted-save-msg">
+                Your save file was corrupted. Please start a new game.
+            </span>
+            <br />
+            <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
+        }
+        <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
+        <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
+        <br />
+        <input type="checkbox" [formControl]="customGameDataOption" (change)="importGameData()" />
+        <ng-container i18n="@@app-welcome-page.custom-gd">Use custom game data</ng-container>
+        @if (customGameDataImportFailed) {
+            <br />
+            <span style="color: red" i18n="@@app-welcome-page.custom-game-data-import-failed"> Import failed. </span>
+        }
+        <br />
+        <input type="checkbox" [formControl]="cheatModeOption" />
+        <span style="color: red" i18n="@@app-welcome-page.cheat-mode">Enable cheat mode</span>
+        <br />
+        <br />
+        <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>
+        @if (gameImportFailed) {
+            <br />
+            <span style="color: red" i18n="@@app-welcome-page.game-import-failed"> Import failed. </span>
+        }
+    </div>
+}
