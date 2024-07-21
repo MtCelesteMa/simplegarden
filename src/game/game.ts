@@ -1,12 +1,16 @@
 import * as d from "./data";
+import * as l from "./logic";
 
 export class Game {
-    gameData: d.g.v1.GameData;
-    saveData: d.s.v1.SaveData;
+    readonly gameData: d.g.v1.GameData;
+    readonly saveData: d.s.v1.SaveData;
+    readonly field: l.Field;
 
     constructor(gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData) {
         this.gameData = gameData;
         this.saveData = saveData;
+
+        this.field = new l.Field(gameData, saveData);
     }
 
     static fromRaw(raw: unknown): Game {
