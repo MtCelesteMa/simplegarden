@@ -7,6 +7,9 @@ export class Game {
     readonly field: l.Field;
     readonly sessStartTime: number;
     lastSaveTime: number;
+    selectedTile: [number, number] | null = null;
+    paintMode: boolean = false;
+    selectedCrop: string | null = null;
 
     constructor(gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData) {
         this.gameData = gameData;

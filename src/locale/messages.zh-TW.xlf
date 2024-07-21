@@ -27,13 +27,13 @@
     <unit id="game.crop.wheat.displayname">
       <segment state="initial">
         <source>Wheat</source>
-        <target>Wheat</target>
+        <target>小麥</target>
       </segment>
     </unit>
     <unit id="game.crop.wheat.shortname">
       <segment state="initial">
         <source>W</source>
-        <target>W</target>
+        <target>小麥</target>
       </segment>
     </unit>
     <unit id="game.crop.wheat.description">
@@ -45,13 +45,13 @@
     <unit id="game.crop.corn.displayname">
       <segment state="initial">
         <source>Corn</source>
-        <target>Corn</target>
+        <target>玉米</target>
       </segment>
     </unit>
     <unit id="game.crop.corn.shortname">
       <segment state="initial">
         <source>C</source>
-        <target>C</target>
+        <target>玉米</target>
       </segment>
     </unit>
     <unit id="game.crop.corn.description">
@@ -63,13 +63,13 @@
     <unit id="game.crop.rice.displayname">
       <segment state="initial">
         <source>Rice</source>
-        <target>Rice</target>
+        <target>米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.shortname">
       <segment state="initial">
         <source>R</source>
-        <target>R</target>
+        <target>米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.description">
@@ -81,13 +81,13 @@
     <unit id="game.crop.millet.displayname">
       <segment state="initial">
         <source>Millet</source>
-        <target>Millet</target>
+        <target>小米</target>
       </segment>
     </unit>
     <unit id="game.crop.millet.shortname">
       <segment state="initial">
         <source>M</source>
-        <target>M</target>
+        <target>小米</target>
       </segment>
     </unit>
     <unit id="game.crop.millet.description">
@@ -99,13 +99,13 @@
     <unit id="game.crop.clover.displayname">
       <segment state="initial">
         <source>Clover</source>
-        <target>Clover</target>
+        <target>三葉草</target>
       </segment>
     </unit>
     <unit id="game.crop.clover.shortname">
       <segment state="initial">
         <source>Cl</source>
-        <target>Cl</target>
+        <target>三葉</target>
       </segment>
     </unit>
     <unit id="game.crop.clover.description">
@@ -117,13 +117,13 @@
     <unit id="game.crop.gclover.displayname">
       <segment state="initial">
         <source>Golden Clover</source>
-        <target>Golden Clover</target>
+        <target>金色三葉草</target>
       </segment>
     </unit>
     <unit id="game.crop.gclover.shortname">
       <segment state="initial">
         <source>GC</source>
-        <target>GC</target>
+        <target>金三</target>
       </segment>
     </unit>
     <unit id="game.crop.gclover.description">
@@ -135,13 +135,13 @@
     <unit id="game.crop.lily.displayname">
       <segment state="initial">
         <source>Lily</source>
-        <target>Lily</target>
+        <target>百合</target>
       </segment>
     </unit>
     <unit id="game.crop.lily.shortname">
       <segment state="initial">
         <source>L</source>
-        <target>L</target>
+        <target>百合</target>
       </segment>
     </unit>
     <unit id="game.crop.lily.description">
@@ -153,13 +153,13 @@
     <unit id="game.crop.wort.displayname">
       <segment state="initial">
         <source>Wort</source>
-        <target>Wort</target>
+        <target>麥芽汁</target>
       </segment>
     </unit>
     <unit id="game.crop.wort.shortname">
       <segment state="initial">
         <source>Wo</source>
-        <target>Wo</target>
+        <target>麥芽</target>
       </segment>
     </unit>
     <unit id="game.crop.wort.description">
@@ -171,7 +171,7 @@
     <unit id="game.crop.weed.displayname">
       <segment state="initial">
         <source>Weed</source>
-        <target>Weed</target>
+        <target>雜草</target>
       </segment>
     </unit>
     <unit id="game.crop.weed.shortname">
@@ -296,8 +296,86 @@
     </unit>
     <unit id="app-game-page.save-game-desc">
       <segment state="initial">
-        <source>Game is automatically save every minute.</source>
+        <source>Game is automatically save every 1 minute.</source>
         <target>遊戲會每一分鐘自動保存</target>
+      </segment>
+    </unit>
+    <unit id="app-field.unearth-harvest">
+      <segment state="initial">
+        <source>(Unearth/Harvest)</source>
+        <target>(收割)</target>
+      </segment>
+    </unit>
+    <unit id="app-field.paint-mode">
+      <segment state="initial">
+        <source>Paint Mode:</source>
+        <target>刷子模式：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.no-tile-selected">
+      <segment state="initial">
+        <source>No tile selected. Click on a tile to begin.</source>
+        <target>請選擇圖塊即可開始</target>
+      </segment>
+    </unit>
+    <unit id="app-field.tile-selected">
+      <segment state="initial">
+        <source>Selected tile (<ph id="0" equiv="INTERPOLATION" disp="{{ this.selectedTile.rowN }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.selectedTile.colN }}"/>)</source>
+        <target>選擇了圖塊 (<ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.selectedTile[0] }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.manager.game!.selectedTile[1] }}"/>)</target>
+      </segment>
+    </unit>
+    <unit id="app-field.next-tick-in">
+      <segment state="initial">
+        <source>Next tick in </source>
+        <target>離下次更新剩餘 </target>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field">
+      <segment state="initial">
+        <source>Clear Field</source>
+        <target>清除田地</target>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field-conf">
+      <segment state="initial">
+        <source>Are you sure you want to clear the field? This will not harvest any mature crops!</source>
+        <target>你確定你要清除田地？此操作不會收割任何莊稼！</target>
+      </segment>
+    </unit>
+    <unit id="app-field.no-crop-in-tile">
+      <segment state="initial">
+        <source>No crop planted. Use paint mode to plant or harvest crops.</source>
+        <target>圖塊未種植莊稼。請用刷子模式來種植或收割莊稼。</target>
+      </segment>
+    </unit>
+    <unit id="app-field.is-immortal">
+      <segment state="initial">
+        <source>This crop is immortal.</source>
+        <target>這個莊稼是永生的</target>
+      </segment>
+    </unit>
+    <unit id="app-field.age">
+      <segment state="initial">
+        <source>Age: </source>
+        <target>年齡：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.expires-in">
+      <segment state="initial">
+        <source>Expires in </source>
+        <target>壽命剩餘時間：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.matures-in">
+      <segment state="initial">
+        <source>Matures in </source>
+        <target>成長剩餘時間：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.unknown-crop">
+      <segment state="initial">
+        <source>Unknown crop</source>
+        <target>未知莊稼</target>
       </segment>
     </unit>
   </file>

@@ -2,7 +2,7 @@ import * as d from "../data";
 import { FieldTile, Mutation } from "./fieldtile";
 
 export class Field {
-    private tiles: FieldTile[][];
+    tiles: FieldTile[][];
     private gameData: d.g.v1.GameData;
     private saveData: d.s.v1.SaveData;
 
@@ -26,6 +26,14 @@ export class Field {
 
     tileAt(coords: [number, number]): FieldTile {
         return this.tiles[coords[0]][coords[1]];
+    }
+
+    clearField(): void {
+        this.tiles.forEach((row: FieldTile[]): void => {
+            row.forEach((tile: FieldTile): void => {
+                tile.killCrop();
+            });
+        });
     }
 
     updateField(): void {

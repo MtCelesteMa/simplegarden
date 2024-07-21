@@ -10,7 +10,7 @@ export class ManagerService {
 
     get timeElapsed(): number {
         if (this.game == null) return 0;
-        return (this.curTime - this.game.sessStartTime) + this.game.saveData.playTime;
+        return this.curTime - this.game.sessStartTime + this.game.saveData.playTime;
     }
 
     saveExists(): boolean {

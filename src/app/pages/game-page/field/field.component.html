@@ -1,0 +1,69 @@
+<div class="box">
+    <div class="centering">
+        <ng-container i18n="@@app-field.paint-mode">Paint Mode:</ng-container>
+        <input type="checkbox" (change)="togglePaintMode($event)" />
+        &nbsp;
+        <select (change)="selectCrop($event)">
+            <option value="" i18n="@@app-field.unearth-harvest">(Unearth/Harvest)</option>
+            @for (crop of manager.game!.saveData.unlockedCrops; track crop) {
+                <option value="{{ crop }}">{{ manager.game!.gameData.crops[crop].displayName }}</option>
+            }
+        </select>
+        &nbsp;
+        <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
+    </div>
+    <table style="margin-left: auto; margin-right: auto">
+        <tbody>
+            @for (row of manager.game!.field.tiles; track row[0].rowN) {
+                <tr>
+                    @for (tile of row; track tile.colN) {
+                        <td>
+                            <app-field-tile [rowN]="tile.rowN" [colN]="tile.colN"></app-field-tile>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="centering">
+        @if (this.selectedTile == null) {
+            <ng-container i18n="@@app-field.no-tile-selected">No tile selected. Click on a tile to begin.</ng-container>
+        } @else {
+            <ng-container i18n="@@app-field.tile-selected"
+                >Selected tile ({{ this.selectedTile.rowN }}, {{ this.selectedTile.colN }})</ng-container
+            >
+            <br />
+            <br />
+            @if (this.selectedTile.crop == null) {
+                <ng-container i18n="@@app-field.no-crop-in-tile"
+                    >No crop planted. Use paint mode to plant or harvest crops.</ng-container
+                >
+            } @else {
+                @if (this.selectedTile.isUnlocked) {
+                    <ng-container>{{ this.selectedTile.cropInfo!.displayName }}</ng-container>
+                } @else {
+                    <ng-container i18n="@@app-field.unknown-crop">Unknown crop</ng-container>
+                }
+                <br />
+                @if (this.selectedTile.isImmortal && this.selectedTile.isMature) {
+                    <ng-container i18n="@@app-field.is-immortal">This crop is immortal.</ng-container>
+                } @else {
+                    <ng-container i18n="@@app-field.age">Age: </ng-container>
+                    <app-time-display [ms]="this.manager.game!.saveData.tickRate * this.selectedTile.age"></app-time-display>
+                    <br />
+                    @if (this.selectedTile.isMature) {
+                        <ng-container i18n="@@app-field.expires-in">Expires in </ng-container>
+                        <app-time-display [ms]="this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age)"></app-time-display>
+                    } @else {
+                        <ng-container i18n="@@app-field.matures-in">Matures in </ng-container>
+                        <app-time-display [ms]="this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity - this.selectedTile.age)"></app-time-display>
+                    }
+                }
+            }
+        }
+        <br />
+        <br />
+        <ng-container i18n="@@app-field.next-tick-in">Next tick in </ng-container>
+        <app-time-display [ms]="timeToNextTick"></app-time-display>
+    </div>
+</div>

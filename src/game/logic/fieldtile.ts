@@ -54,7 +54,7 @@ export class FieldTile {
 
     get isMature(): boolean | null {
         if (this.crop == null) return null;
-        return this.cropInfo!.maturity >= this.age;
+        return this.cropInfo!.maturity <= this.age;
     }
 
     get isImmortal(): boolean | null {
@@ -65,7 +65,7 @@ export class FieldTile {
     get isDead(): boolean | null {
         if (this.crop == null) return null;
         if (this.isImmortal!) return false;
-        return this.cropInfo!.lifespan! >= this.age;
+        return this.cropInfo!.lifespan! <= this.age;
     }
 
     plantCrop(crop: string): void {

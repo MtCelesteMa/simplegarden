@@ -248,7 +248,72 @@
     </unit>
     <unit id="app-game-page.save-game-desc">
       <segment>
-        <source>Game is automatically save every minute.</source>
+        <source>Game is automatically save every 1 minute.</source>
+      </segment>
+    </unit>
+    <unit id="app-field.unearth-harvest">
+      <segment>
+        <source>(Unearth/Harvest)</source>
+      </segment>
+    </unit>
+    <unit id="app-field.next-tick-in">
+      <segment>
+        <source>Next tick in </source>
+      </segment>
+    </unit>
+    <unit id="app-field.no-tile-selected">
+      <segment>
+        <source>No tile selected. Click on a tile to begin.</source>
+      </segment>
+    </unit>
+    <unit id="app-field.paint-mode">
+      <segment>
+        <source>Paint Mode:</source>
+      </segment>
+    </unit>
+    <unit id="app-field.tile-selected">
+      <segment>
+        <source>Selected tile (<ph id="0" equiv="INTERPOLATION" disp="{{ this.selectedTile.rowN }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.selectedTile.colN }}"/>)</source>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field">
+      <segment>
+        <source>Clear Field</source>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field-conf">
+      <segment>
+        <source>Are you sure you want to clear the field? This will not harvest any mature crops!</source>
+      </segment>
+    </unit>
+    <unit id="app-field.no-crop-in-tile">
+      <segment>
+        <source>No crop planted. Use paint mode to plant or harvest crops.</source>
+      </segment>
+    </unit>
+    <unit id="app-field.age">
+      <segment>
+        <source>Age: </source>
+      </segment>
+    </unit>
+    <unit id="app-field.is-immortal">
+      <segment>
+        <source>This crop is immortal.</source>
+      </segment>
+    </unit>
+    <unit id="app-field.expires-in">
+      <segment>
+        <source>Expires in </source>
+      </segment>
+    </unit>
+    <unit id="app-field.matures-in">
+      <segment>
+        <source>Matures in </source>
+      </segment>
+    </unit>
+    <unit id="app-field.unknown-crop">
+      <segment>
+        <source>Unknown crop</source>
       </segment>
     </unit>
   </file>
