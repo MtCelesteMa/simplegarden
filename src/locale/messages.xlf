@@ -216,5 +216,40 @@
         <source>Erase Game</source>
       </segment>
     </unit>
+    <unit id="app-time-display.dstr">
+      <segment>
+        <source>{VAR_PLURAL, plural, =1 {1 day} other {<ph id="0" equiv="INTERPOLATION"/> days}}</source>
+      </segment>
+    </unit>
+    <unit id="app-time-display.hstr">
+      <segment>
+        <source>{VAR_PLURAL, plural, =1 {1 hour} other {<ph id="0" equiv="INTERPOLATION"/> hours}}</source>
+      </segment>
+    </unit>
+    <unit id="app-time-display.mstr">
+      <segment>
+        <source>{VAR_PLURAL, plural, =1 {1 minute} other {<ph id="0" equiv="INTERPOLATION"/> minutes}}</source>
+      </segment>
+    </unit>
+    <unit id="app-time-display.sstr">
+      <segment>
+        <source>{VAR_PLURAL, plural, =1 {1 second} other {<ph id="0" equiv="INTERPOLATION"/> seconds}}</source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hide-timer">
+      <segment>
+        <source>Hide Timer</source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game">
+      <segment>
+        <source>Save Game</source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game-desc">
+      <segment>
+        <source>Game is automatically save every minute.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

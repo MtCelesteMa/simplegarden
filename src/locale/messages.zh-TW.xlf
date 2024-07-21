@@ -258,5 +258,47 @@
         <target>你真的確定嗎？</target>
       </segment>
     </unit>
+    <unit id="app-time-display.dstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 day} other {<ph id="0" equiv="INTERPOLATION"/> days}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>天}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.hstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 hour} other {<ph id="0" equiv="INTERPOLATION"/> hours}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>時}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.mstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 minute} other {<ph id="0" equiv="INTERPOLATION"/> minutes}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>分}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.sstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 second} other {<ph id="0" equiv="INTERPOLATION"/> seconds}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>秒}}</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hide-timer">
+      <segment state="initial">
+        <source>Hide Timer</source>
+        <target>隱藏秒錶</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game">
+      <segment state="initial">
+        <source>Save Game</source>
+        <target>保存遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game-desc">
+      <segment state="initial">
+        <source>Game is automatically save every minute.</source>
+        <target>遊戲會每一分鐘自動保存</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

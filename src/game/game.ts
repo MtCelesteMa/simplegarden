@@ -5,12 +5,16 @@ export class Game {
     readonly gameData: d.g.v1.GameData;
     readonly saveData: d.s.v1.SaveData;
     readonly field: l.Field;
+    readonly sessStartTime: number;
+    lastSaveTime: number;
 
     constructor(gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData) {
         this.gameData = gameData;
         this.saveData = saveData;
 
         this.field = new l.Field(gameData, saveData);
+        this.sessStartTime = new Date().getTime();
+        this.lastSaveTime = this.sessStartTime;
     }
 
     static fromRaw(raw: unknown): Game {

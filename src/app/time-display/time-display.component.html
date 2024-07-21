@@ -1,0 +1,12 @@
+@if (d != 0) {
+    <ng-container i18n="@@app-time-display.dstr">{d, plural, =1 {1 day} other {{{d}} days}}</ng-container>&nbsp;
+}
+@if (h != 0) {
+    <ng-container i18n="@@app-time-display.hstr">{h, plural, =1 {1 hour} other {{{h}} hours}}</ng-container>&nbsp;
+}
+@if (m != 0) {
+    <ng-container i18n="@@app-time-display.mstr">{m, plural, =1 {1 minute} other {{{m}} minutes}}</ng-container>&nbsp;
+}
+@if (s != 0 || (d == 0 && h == 0 && m == 0)) {
+    <ng-container i18n="@@app-time-display.sstr">{d, plural, =1 {1 second} other {{{s}} seconds}}</ng-container>
+}

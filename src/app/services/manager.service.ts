@@ -6,6 +6,12 @@ import * as g from "../../game";
 })
 export class ManagerService {
     game: g.Game | null = null;
+    curTime: number = new Date().getTime();
+
+    get timeElapsed(): number {
+        if (this.game == null) return 0;
+        return (this.curTime - this.game.sessStartTime) + this.game.saveData.playTime;
+    }
 
     saveExists(): boolean {
         return localStorage.getItem("simplegarden_save") != null;
@@ -25,6 +31,8 @@ export class ManagerService {
     }
 
     saveGame(): void {
-        localStorage.setItem("simplegarden_save", JSON.stringify(this.game!.saveData));
+        let saveData = JSON.parse(JSON.stringify(this.game!.saveData));
+        saveData.playTime = this.timeElapsed;
+        localStorage.setItem("simplegarden_save", JSON.stringify(saveData));
     }
 }
