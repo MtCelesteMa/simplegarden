@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, LOCALE_ID } from "@angular/core";
 import { Router } from "@angular/router";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
@@ -13,6 +13,7 @@ import * as g from "../../../game";
 export class WelcomePageComponent {
     manager = inject(ManagerService);
     router = inject(Router);
+    locale = inject(LOCALE_ID);
 
     customGameData: g.d.g.v1.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
