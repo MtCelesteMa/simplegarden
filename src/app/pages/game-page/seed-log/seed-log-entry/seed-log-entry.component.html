@@ -19,8 +19,8 @@
     <h3 i18n="@@app-seed-log-entry.mutations">Mutations</h3>
     <div class="mutations-infobox">
         <ul>
-            @for (mutation of listMutations; track mutation) {
-                <li>{{ mutation }}</li>
+            @for (mutation of listMutations; track mutation[0]) {
+                <li>{{ mutation[1] }}</li>
             }
         </ul>
     </div>

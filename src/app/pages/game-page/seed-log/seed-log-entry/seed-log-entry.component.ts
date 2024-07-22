@@ -18,7 +18,7 @@ export class SeedLogEntryComponent {
         return this.manager.game!.gameData.crops[this.crop];
     }
 
-    get listMutations(): string[] {
+    get listMutations(): [string, string][] {
         return this.manager
             .game!.gameData.mutations.filter((mutation: g.d.g.v1.MutationInfo): boolean => {
                 for (let req of Object.entries(mutation.requires)) {
@@ -26,10 +26,11 @@ export class SeedLogEntryComponent {
                 }
                 return false;
             })
-            .map((mutation: g.d.g.v1.MutationInfo): string => {
+            .map((mutation: g.d.g.v1.MutationInfo): [string, string] => {
+                let name = this.manager.game!.gameData.crops[mutation.target].displayName;
                 if (this.manager.game!.saveData.unlockedCrops.includes(mutation.target))
-                    return this.manager.game!.gameData.crops[mutation.target].displayName;
-                return "???";
+                    return [name, name]
+                return [name, "???"];
             });
     }
 }

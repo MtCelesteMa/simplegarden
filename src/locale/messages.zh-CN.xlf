@@ -182,7 +182,7 @@
     </unit>
     <unit id="game.crop.weed.description">
       <segment state="initial">
-        <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
+        <source>An unwanted plant that kills nearby crops. Cannot be smoked.</source>
         <target>一种不需要的植物，会杀死附近的庄稼。</target>
       </segment>
     </unit>
@@ -208,12 +208,6 @@
       <segment state="initial">
         <source> Import failed. </source>
         <target> 设置导入失败 </target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.cheat-mode">
-      <segment state="initial">
-        <source>Enable cheat mode</source>
-        <target>启动作弊模式</target>
       </segment>
     </unit>
     <unit id="app-welcome-page.cheat-mode-conf">
@@ -412,6 +406,456 @@
       <segment state="initial">
         <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
         <target>种子纪录 (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.displayname">
+      <segment state="initial">
+        <source>Berry</source>
+        <target>浆果</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.shortname">
+      <segment state="initial">
+        <source>B</source>
+        <target>浆果</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.description">
+      <segment state="initial">
+        <source>A small fruit often eaten as a snack.</source>
+        <target>一种小水果，常作为零食食用。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.displayname">
+      <segment state="initial">
+        <source>Root</source>
+        <target>根</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.shortname">
+      <segment state="initial">
+        <source>Ro</source>
+        <target>根</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.description">
+      <segment state="initial">
+        <source>A plant seemingly only consisting of underground components.</source>
+        <target>看起来只由地下部分组成的工厂。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.displayname">
+      <segment state="initial">
+        <source>Bloom</source>
+        <target>盛开</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.shortname">
+      <segment state="initial">
+        <source>Bl</source>
+        <target>盛开</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.description">
+      <segment state="initial">
+        <source>A flowering plant producing large and beautiful flowers.</source>
+        <target>一种开花植物，能开出大而美丽的花朵。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.displayname">
+      <segment state="initial">
+        <source>Rose</source>
+        <target>玫瑰</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.shortname">
+      <segment state="initial">
+        <source>Rs</source>
+        <target>玫瑰</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.description">
+      <segment state="initial">
+        <source>A beautiful flower with a thorny stem.</source>
+        <target>一朵美丽的花，茎上有刺。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.displayname">
+      <segment state="initial">
+        <source>Tulip</source>
+        <target>郁金香</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.shortname">
+      <segment state="initial">
+        <source>Tu</source>
+        <target>郁金</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.description">
+      <segment state="initial">
+        <source>A bulbous herb that grows in temperate regions.</source>
+        <target>一种生长在温带地区的球根草本植物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.displayname">
+      <segment state="initial">
+        <source>Fern</source>
+        <target>蕨类</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.shortname">
+      <segment state="initial">
+        <source>Fe</source>
+        <target>蕨类</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.description">
+      <segment state="initial">
+        <source>A non-flowering plant that reproduces by spores rather than seeds.</source>
+        <target>一种不开花的植物，透过孢子而不是种子繁殖。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.displayname">
+      <segment state="initial">
+        <source>Lichen</source>
+        <target>地衣</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.shortname">
+      <segment state="initial">
+        <source>Li</source>
+        <target>地衣</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.description">
+      <segment state="initial">
+        <source>A fungus and a plant living under mutual symbiosis.</source>
+        <target>真菌和植物相互共生。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.displayname">
+      <segment state="initial">
+        <source>Moss</source>
+        <target>青苔</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.shortname">
+      <segment state="initial">
+        <source>Mo</source>
+        <target>青苔</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.description">
+      <segment state="initial">
+        <source>A flowerless plant that&apos;s able to grow in the toughest conditions.</source>
+        <target>一种能够在最恶劣的条件下生长的无花果植物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.displayname">
+      <segment state="initial">
+        <source>Beet</source>
+        <target>甜菜</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.shortname">
+      <segment state="initial">
+        <source>BT</source>
+        <target>甜菜</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.description">
+      <segment state="initial">
+        <source>A plant often used to make sugar.</source>
+        <target>一种常用于制糖的植物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.displayname">
+      <segment state="initial">
+        <source>Juicy Beet</source>
+        <target>多汁甜菜</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.shortname">
+      <segment state="initial">
+        <source>JB</source>
+        <target>汁甜</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.description">
+      <segment state="initial">
+        <source>An extremely sugary variant of the beet.</source>
+        <target>甜菜的含糖量极高的变种。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.displayname">
+      <segment state="initial">
+        <source>Tater</source>
+        <target>塔特</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.shortname">
+      <segment state="initial">
+        <source>Ta</source>
+        <target>塔特</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.description">
+      <segment state="initial">
+        <source>A potato.</source>
+        <target>也称为土豆。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.displayname">
+      <segment state="initial">
+        <source>Bulb</source>
+        <target>球茎</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.shortname">
+      <segment state="initial">
+        <source>Bu</source>
+        <target>球茎</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.description">
+      <segment state="initial">
+        <source>A toxic bulbous plant that is extremely dangerous to harvest.</source>
+        <target>一种有毒的球根植物，收获极度危险。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.displayname">
+      <segment state="initial">
+        <source>Grass</source>
+        <target>草</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.shortname">
+      <segment state="initial">
+        <source>G</source>
+        <target>草</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.description">
+      <segment state="initial">
+        <source>A common plant found everywhere.</source>
+        <target>一种随处可见的常见植物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.displayname">
+      <segment state="initial">
+        <source>Daisy</source>
+        <target>Daisy</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.shortname">
+      <segment state="initial">
+        <source>D</source>
+        <target>雏菊</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.description">
+      <segment state="initial">
+        <source>A symbol of purity and rebirth.</source>
+        <target>纯洁和重生的象征。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.displayname">
+      <segment state="initial">
+        <source>Mildew</source>
+        <target>白霉菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.shortname">
+      <segment state="initial">
+        <source>WM</source>
+        <target>白霉</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.description">
+      <segment state="initial">
+        <source>A fungus commonly found in damp areas.</source>
+        <target>一种常见于潮湿地区的真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.displayname">
+      <segment state="initial">
+        <source>Mold</source>
+        <target>黑霉菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.shortname">
+      <segment state="initial">
+        <source>BM</source>
+        <target>黑霉</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.description">
+      <segment state="initial">
+        <source>A fungus commonly found in damp areas.</source>
+        <target>一种常见于潮湿地区的真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.displayname">
+      <segment state="initial">
+        <source>Spore</source>
+        <target>孢子</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.shortname">
+      <segment state="initial">
+        <source>Sp</source>
+        <target>孢子</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.description">
+      <segment state="initial">
+        <source>A simple fungus consisting of a single pod.</source>
+        <target>一种由单一豆荚组成的简单真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.displayname">
+      <segment state="initial">
+        <source>Shroom</source>
+        <target>蘑菇</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.shortname">
+      <segment state="initial">
+        <source>Sh</source>
+        <target>蘑菇</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.description">
+      <segment state="initial">
+        <source>A more complex fungus sometimes eaten as food. Sometimes poisonous.</source>
+        <target>一种更复杂的真菌，有时作为食物食用。有时有毒。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.displayname">
+      <segment state="initial">
+        <source>Morel</source>
+        <target>羊肚菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.shortname">
+      <segment state="initial">
+        <source>Mr</source>
+        <target>羊肚</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.description">
+      <segment state="initial">
+        <source>An edible sac fungus.</source>
+        <target>一种可食用的囊真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.displayname">
+      <segment state="initial">
+        <source>Cap</source>
+        <target>帽</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.shortname">
+      <segment state="initial">
+        <source>Ca</source>
+        <target>帽</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.description">
+      <segment state="initial">
+        <source>A small toadstool consisting of a hard cap.</source>
+        <target>一种由硬盖组成的小伞菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.displayname">
+      <segment state="initial">
+        <source>Bolete</source>
+        <target>牛肝菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.shortname">
+      <segment state="initial">
+        <source>Bo</source>
+        <target>牛肝</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.description">
+      <segment state="initial">
+        <source>A toadstool with a unique cap.</source>
+        <target>带有独特帽子的伞菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.displayname">
+      <segment state="initial">
+        <source>Gill</source>
+        <target>鳃</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.shortname">
+      <segment state="initial">
+        <source>Gi</source>
+        <target>鳃</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.description">
+      <segment state="initial">
+        <source>A wrinkly fungus that repels pests.</source>
+        <target>一种会驱除害虫的皱纹真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.displayname">
+      <segment state="initial">
+        <source>Dry Rot</source>
+        <target>干腐</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.shortname">
+      <segment state="initial">
+        <source>DR</source>
+        <target>干腐</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.description">
+      <segment state="initial">
+        <source>A dangerous fungus that poses a serious threat to wooden infrastructure.</source>
+        <target>一种危险的真菌，对木质基础设施构成严重威胁。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.displayname">
+      <segment state="initial">
+        <source>Ichor</source>
+        <target>灵液菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.shortname">
+      <segment state="initial">
+        <source>Ic</source>
+        <target>灵液菌</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.description">
+      <segment state="initial">
+        <source>A fungus that oozes a poisonous sap.</source>
+        <target>一种会渗出有毒汁液的真菌。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.displayname">
+      <segment state="initial">
+        <source>White Root</source>
+        <target>白根</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.shortname">
+      <segment state="initial">
+        <source>WR</source>
+        <target>白根</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.description">
+      <segment state="initial">
+        <source>A pure-white root.</source>
+        <target>纯白色的根。</target>
       </segment>
     </unit>
   </file>

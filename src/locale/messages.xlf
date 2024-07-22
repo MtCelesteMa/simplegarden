@@ -113,7 +113,7 @@
     </unit>
     <unit id="game.crop.weed.description">
       <segment>
-        <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
+        <source>An unwanted plant that kills nearby crops. Cannot be smoked.</source>
       </segment>
     </unit>
     <unit id="game.crop.weed.displayname">
@@ -174,11 +174,6 @@
     <unit id="app-welcome-page.new-game">
       <segment>
         <source>New Game</source>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.cheat-mode">
-      <segment>
-        <source>Enable cheat mode</source>
       </segment>
     </unit>
     <unit id="app-welcome-page.cheat-mode-conf">
@@ -344,6 +339,381 @@
     <unit id="app-seed-log.title">
       <segment>
         <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.description">
+      <segment>
+        <source>A plant often used to make sugar.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.displayname">
+      <segment>
+        <source>Beet</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.beet.shortname">
+      <segment>
+        <source>BT</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.description">
+      <segment>
+        <source>A small fruit often eaten as a snack.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.displayname">
+      <segment>
+        <source>Berry</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.berry.shortname">
+      <segment>
+        <source>B</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.description">
+      <segment>
+        <source>A flowering plant producing large and beautiful flowers.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.displayname">
+      <segment>
+        <source>Bloom</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bloom.shortname">
+      <segment>
+        <source>Bl</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.description">
+      <segment>
+        <source>A toadstool with a unique cap.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.displayname">
+      <segment>
+        <source>Bolete</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bolete.shortname">
+      <segment>
+        <source>Bo</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.description">
+      <segment>
+        <source>A toxic bulbous plant that is extremely dangerous to harvest.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.displayname">
+      <segment>
+        <source>Bulb</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.bulb.shortname">
+      <segment>
+        <source>Bu</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.description">
+      <segment>
+        <source>A small toadstool consisting of a hard cap.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.displayname">
+      <segment>
+        <source>Cap</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.cap.shortname">
+      <segment>
+        <source>Ca</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.description">
+      <segment>
+        <source>A symbol of purity and rebirth.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.displayname">
+      <segment>
+        <source>Daisy</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.daisy.shortname">
+      <segment>
+        <source>D</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.description">
+      <segment>
+        <source>A non-flowering plant that reproduces by spores rather than seeds.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.displayname">
+      <segment>
+        <source>Fern</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.fern.shortname">
+      <segment>
+        <source>Fe</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.description">
+      <segment>
+        <source>A wrinkly fungus that repels pests.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.displayname">
+      <segment>
+        <source>Gill</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.gill.shortname">
+      <segment>
+        <source>Gi</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.description">
+      <segment>
+        <source>A common plant found everywhere.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.displayname">
+      <segment>
+        <source>Grass</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.grass.shortname">
+      <segment>
+        <source>G</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.description">
+      <segment>
+        <source>A fungus that oozes a poisonous sap.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.displayname">
+      <segment>
+        <source>Ichor</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.ichor.shortname">
+      <segment>
+        <source>Ic</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.description">
+      <segment>
+        <source>An extremely sugary variant of the beet.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.displayname">
+      <segment>
+        <source>Juicy Beet</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.jbeet.shortname">
+      <segment>
+        <source>JB</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.description">
+      <segment>
+        <source>A fungus and a plant living under mutual symbiosis.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.displayname">
+      <segment>
+        <source>Lichen</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.lichen.shortname">
+      <segment>
+        <source>Li</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.description">
+      <segment>
+        <source>A fungus commonly found in damp areas.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.displayname">
+      <segment>
+        <source>Mildew</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mildew.shortname">
+      <segment>
+        <source>WM</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.description">
+      <segment>
+        <source>A fungus commonly found in damp areas.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.displayname">
+      <segment>
+        <source>Mold</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.mold.shortname">
+      <segment>
+        <source>BM</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.description">
+      <segment>
+        <source>An edible sac fungus.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.displayname">
+      <segment>
+        <source>Morel</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.morel.shortname">
+      <segment>
+        <source>Mr</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.description">
+      <segment>
+        <source>A flowerless plant that&apos;s able to grow in the toughest conditions.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.displayname">
+      <segment>
+        <source>Moss</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.moss.shortname">
+      <segment>
+        <source>Mo</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.description">
+      <segment>
+        <source>A plant seemingly only consisting of underground components.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.displayname">
+      <segment>
+        <source>Root</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.root.shortname">
+      <segment>
+        <source>Ro</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.description">
+      <segment>
+        <source>A beautiful flower with a thorny stem.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.displayname">
+      <segment>
+        <source>Rose</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rose.shortname">
+      <segment>
+        <source>Rs</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.description">
+      <segment>
+        <source>A dangerous fungus that poses a serious threat to wooden infrastructure.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.displayname">
+      <segment>
+        <source>Dry Rot</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.rot.shortname">
+      <segment>
+        <source>DR</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.description">
+      <segment>
+        <source>A more complex fungus sometimes eaten as food. Sometimes poisonous.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.displayname">
+      <segment>
+        <source>Shroom</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.shroom.shortname">
+      <segment>
+        <source>Sh</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.description">
+      <segment>
+        <source>A simple fungus consisting of a single pod.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.displayname">
+      <segment>
+        <source>Spore</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.spore.shortname">
+      <segment>
+        <source>Sp</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.description">
+      <segment>
+        <source>A potato.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.displayname">
+      <segment>
+        <source>Tater</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tater.shortname">
+      <segment>
+        <source>Ta</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.description">
+      <segment>
+        <source>A bulbous herb that grows in temperate regions.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.displayname">
+      <segment>
+        <source>Tulip</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.tulip.shortname">
+      <segment>
+        <source>Tu</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.description">
+      <segment>
+        <source>A pure-white root.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.displayname">
+      <segment>
+        <source>White Root</source>
+      </segment>
+    </unit>
+    <unit id="game.crop.wroot.shortname">
+      <segment>
+        <source>WR</source>
       </segment>
     </unit>
   </file>
