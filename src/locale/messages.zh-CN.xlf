@@ -1,0 +1,418 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-TW">
+  <file id="ngi18n" original="ng.template">
+    <unit id="app-root.title">
+      <segment state="initial">
+        <source>SimpleGarden</source>
+        <target>简易花园</target>
+      </segment>
+    </unit>
+    <unit id="app-root.description">
+      <segment state="initial">
+        <source>A recreation of Cookie Clicker&apos;s &quot;Garden&quot; minigame.</source>
+        <target>饼干计数器里的&quot;花园&quot;小游戏重新制作版</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.corrupted-save-msg">
+      <segment state="initial">
+        <source> Your save file was corrupted. Please start a new game. </source>
+        <target> 游戏保存文件被损坏了。请开始新的游戏。 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.export-game">
+      <segment state="initial">
+        <source>Export Game</source>
+        <target>导出游戏</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.displayname">
+      <segment state="initial">
+        <source>Wheat</source>
+        <target>小麦</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.shortname">
+      <segment state="initial">
+        <source>W</source>
+        <target>小麦</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wheat.description">
+      <segment state="initial">
+        <source>A versatile crop used in the making of many staple foods.</source>
+        <target>一种用途广泛的作物，用于制作许多主食。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.displayname">
+      <segment state="initial">
+        <source>Corn</source>
+        <target>玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.shortname">
+      <segment state="initial">
+        <source>C</source>
+        <target>玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.corn.description">
+      <segment state="initial">
+        <source>Another versatile crop used in the making of many staple foods.</source>
+        <target>另一种用途广泛的作物，用于制作许多主食。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.displayname">
+      <segment state="initial">
+        <source>Rice</source>
+        <target>米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.shortname">
+      <segment state="initial">
+        <source>R</source>
+        <target>米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.rice.description">
+      <segment state="initial">
+        <source>A versatile crop used in many dishes across the world.</source>
+        <target>一种用途广泛的作物，用于世界各地的许多菜肴中。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.displayname">
+      <segment state="initial">
+        <source>Millet</source>
+        <target>小米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.shortname">
+      <segment state="initial">
+        <source>M</source>
+        <target>小米</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.millet.description">
+      <segment state="initial">
+        <source>A hardy crop that is resistant to many environmental factors.</source>
+        <target>一种耐多种环境因素的耐寒作物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.displayname">
+      <segment state="initial">
+        <source>Clover</source>
+        <target>三叶草</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.shortname">
+      <segment state="initial">
+        <source>Cl</source>
+        <target>三叶</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.clover.description">
+      <segment state="initial">
+        <source>A common plant seen as a symbol of good fortune.</source>
+        <target>一种常见的植物，被视为吉祥的象征。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.displayname">
+      <segment state="initial">
+        <source>Golden Clover</source>
+        <target>金色三叶草</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.shortname">
+      <segment state="initial">
+        <source>GC</source>
+        <target>金三</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.gclover.description">
+      <segment state="initial">
+        <source>A clover made out of gold.</source>
+        <target>黄金制成的三叶草。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.displayname">
+      <segment state="initial">
+        <source>Lily</source>
+        <target>百合</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.shortname">
+      <segment state="initial">
+        <source>L</source>
+        <target>百合</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.lily.description">
+      <segment state="initial">
+        <source>A flower that grows in water.</source>
+        <target>A flower that grows in water.</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.displayname">
+      <segment state="initial">
+        <source>Wort</source>
+        <target>麦芽汁</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.shortname">
+      <segment state="initial">
+        <source>Wo</source>
+        <target>麦芽</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.wort.description">
+      <segment state="initial">
+        <source>An immortal plant.</source>
+        <target>一个永生的植物。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.displayname">
+      <segment state="initial">
+        <source>Weed</source>
+        <target>杂草</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.shortname">
+      <segment state="initial">
+        <source>X</source>
+        <target>X</target>
+      </segment>
+    </unit>
+    <unit id="game.crop.weed.description">
+      <segment state="initial">
+        <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
+        <target>一种不需要的植物，会杀死附近的庄稼。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.welcome">
+      <segment state="initial">
+        <source>Welcome!</source>
+        <target>欢迎!</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.new-game">
+      <segment state="initial">
+        <source>New Game</source>
+        <target>开始新游戏</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-gd">
+      <segment state="initial">
+        <source>Use custom game data</source>
+        <target>使用自定义游戏设置</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.custom-game-data-import-failed">
+      <segment state="initial">
+        <source> Import failed. </source>
+        <target> 设置导入失败 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode">
+      <segment state="initial">
+        <source>Enable cheat mode</source>
+        <target>启动作弊模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.cheat-mode-conf">
+      <segment state="initial">
+        <source>Save files created with cheat mode active will be marked. Continue?</source>
+        <target>用作弊模式创建的保存文件会被标记。确认开始？</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.import-game">
+      <segment state="initial">
+        <source>Import Game</source>
+        <target>导入游戏</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.game-import-failed">
+      <segment state="initial">
+        <source> Import failed. </source>
+        <target> 游戏导入失败 </target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.continue-game">
+      <segment state="initial">
+        <source>Continue Game</source>
+        <target>继续游戏</target>
+      </segment>
+    </unit>
+    <unit id="app-welcompe-page.erase-game">
+      <segment state="initial">
+        <source>Erase Game</source>
+        <target>删除游戏</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf">
+      <segment state="initial">
+        <source>Are you sure you want to erase your save? This action is irreversible!</source>
+        <target>你确认你要删除保存文件？这个行动是不可逆转的！</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.erase-game-conf-2">
+      <segment state="initial">
+        <source>ARE YOU SURE?</source>
+        <target>你真的确定吗？</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.dstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 day} other {<ph id="0" equiv="INTERPOLATION"/> days}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>天}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.hstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 hour} other {<ph id="0" equiv="INTERPOLATION"/> hours}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>时}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.mstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 minute} other {<ph id="0" equiv="INTERPOLATION"/> minutes}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>分}}</target>
+      </segment>
+    </unit>
+    <unit id="app-time-display.sstr">
+      <segment state="initial">
+        <source>{VAR_PLURAL, plural, =1 {1 second} other {<ph id="0" equiv="INTERPOLATION"/> seconds}}</source>
+        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>秒}}</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hide-timer">
+      <segment state="initial">
+        <source>Hide Timer</source>
+        <target>隐藏秒表</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game">
+      <segment state="initial">
+        <source>Save Game</source>
+        <target>保存游戏</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.save-game-desc">
+      <segment state="initial">
+        <source>Game is automatically save every 1 minute.</source>
+        <target>游戏会每一分钟自动保存</target>
+      </segment>
+    </unit>
+    <unit id="app-field.unearth-harvest">
+      <segment state="initial">
+        <source>(Unearth/Harvest)</source>
+        <target>(收割)</target>
+      </segment>
+    </unit>
+    <unit id="app-field.paint-mode">
+      <segment state="initial">
+        <source>Paint Mode:</source>
+        <target>刷子模式：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.no-tile-selected">
+      <segment state="initial">
+        <source>No tile selected. Click on a tile to begin.</source>
+        <target>请选择图块即可开始</target>
+      </segment>
+    </unit>
+    <unit id="app-field.tile-selected">
+      <segment state="initial">
+        <source>Selected tile (<ph id="0" equiv="INTERPOLATION" disp="{{ this.selectedTile.rowN }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.selectedTile.colN }}"/>)</source>
+        <target>选择了图块 (<ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.selectedTile[0] }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.manager.game!.selectedTile[1] }}"/>)</target>
+      </segment>
+    </unit>
+    <unit id="app-field.next-tick-in">
+      <segment state="initial">
+        <source>Next tick in </source>
+        <target>离下次更新剩余 </target>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field">
+      <segment state="initial">
+        <source>Clear Field</source>
+        <target>清除田地</target>
+      </segment>
+    </unit>
+    <unit id="app-field.clear-field-conf">
+      <segment state="initial">
+        <source>Are you sure you want to clear the field? This will not harvest any mature crops!</source>
+        <target>你确定你要清除田地？此操作不会收割任何庄稼！</target>
+      </segment>
+    </unit>
+    <unit id="app-field.no-crop-in-tile">
+      <segment state="initial">
+        <source>No crop planted. Use paint mode to plant or harvest crops.</source>
+        <target>图块未种植庄稼。请用刷子模式来种植或收割庄稼。</target>
+      </segment>
+    </unit>
+    <unit id="app-field.is-immortal">
+      <segment state="initial">
+        <source>This crop is immortal.</source>
+        <target>这个庄稼是永生的</target>
+      </segment>
+    </unit>
+    <unit id="app-field.age">
+      <segment state="initial">
+        <source>Age: </source>
+        <target>年龄：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.expires-in">
+      <segment state="initial">
+        <source>Expires in </source>
+        <target>寿命剩余时间：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.matures-in">
+      <segment state="initial">
+        <source>Matures in </source>
+        <target>成长剩余时间：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.unknown-crop">
+      <segment state="initial">
+        <source>Unknown crop</source>
+        <target>未知庄稼</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.maturity">
+      <segment state="initial">
+        <source>Maturity: </source>
+        <target>成长时间：</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.immortal">
+      <segment state="initial">
+        <source>Immortal</source>
+        <target>永生</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.lifespan">
+      <segment state="initial">
+        <source>Lifespan: </source>
+        <target>寿命：</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.infection">
+      <segment state="initial">
+        <source>May infect nearby crops!</source>
+        <target>可能感染附近的庄稼！</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.mutations">
+      <segment state="initial">
+        <source>Mutations</source>
+        <target>变异</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.title">
+      <segment state="initial">
+        <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
+        <target>种子纪录 (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

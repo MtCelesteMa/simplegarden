@@ -1,3 +1,10 @@
+<div class="centering">
+    <a href="/simplegarden/en-US/">🇬🇧 English</a>
+    |
+    <a href="/simplegarden/zh-TW/">🇹🇼 中文</a>
+    |
+    <a href="/simplegarden/zh-CN/">🇨🇳 中文（简体）</a>
+</div>
 @if (this.manager.saveIsValid()) {
     <div class="box centering">
         <button (click)="loadGame()" i18n="@@app-welcompe-page.continue-game">Continue Game</button>
@@ -26,9 +33,11 @@
             <br />
             <span style="color: red" i18n="@@app-welcome-page.custom-game-data-import-failed"> Import failed. </span>
         }
-        <br />
-        <input type="checkbox" [formControl]="cheatModeOption" />
-        <span style="color: red" i18n="@@app-welcome-page.cheat-mode">Enable cheat mode</span>
+        <!--
+            <br />
+            <input type="checkbox" [formControl]="cheatModeOption" />
+            <span style="color: red" i18n="@@app-welcome-page.cheat-mode">Enable cheat mode</span>
+        -->
         <br />
         <br />
         <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>

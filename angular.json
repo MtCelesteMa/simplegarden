@@ -40,6 +40,9 @@
                 "locales": {
                     "zh-TW": {
                         "translation": "src/locale/messages.zh-TW.xlf"
+                    },
+                    "zh-CN": {
+                        "translation": "src/locale/messages.zh-CN.xlf"
                     }
                 }
             },
@@ -85,6 +88,9 @@
                         },
                         "zh-TW": {
                             "localize": ["zh-TW"]
+                        },
+                        "zh-CN": {
+                            "localize": ["zh-CN"]
                         }
                     },
                     "defaultConfiguration": "production"
@@ -100,6 +106,9 @@
                         },
                         "zh-TW": {
                             "buildTarget": "simplegarden:build:development,zh-TW"
+                        },
+                        "zh-CN": {
+                            "buildTarget": "simplegarden:build:development,zh-CN"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -110,7 +119,7 @@
                         "buildTarget": "simplegarden:build",
                         "format": "xlf2",
                         "outputPath": "src/locale",
-                        "targetFiles": ["messages.zh-TW.xlf"]
+                        "targetFiles": ["messages.zh-TW.xlf", "messages.zh-CN.xlf"]
                     }
                 },
                 "test": {
