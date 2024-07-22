@@ -1,4 +1,4 @@
-<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-CN">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-TW">
   <file id="ngi18n" original="ng.template">
     <unit id="app-root.title">
       <segment state="initial">
@@ -363,7 +363,7 @@
     <unit id="app-field.matures-in">
       <segment state="initial">
         <source>Matures in </source>
-        <target>成长剩余时间：</target>
+        <target>成熟剩余时间：</target>
       </segment>
     </unit>
     <unit id="app-field.unknown-crop">
@@ -375,7 +375,7 @@
     <unit id="app-seed-log-entry.maturity">
       <segment state="initial">
         <source>Maturity: </source>
-        <target>成长时间：</target>
+        <target>成熟：</target>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.immortal">
@@ -856,6 +856,18 @@
       <segment state="initial">
         <source>A pure-white root.</source>
         <target>纯白色的根。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode">
+      <segment state="initial">
+        <source>Hard Mode</source>
+        <target>困难模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode-info">
+      <segment state="initial">
+        <source>You have a limited number of crops in hard mode. Harvest mature crops to get more.</source>
+        <target>在困难模式里庄稼数量是有限的。收割成熟的庄稼可以让你获取更多的庄稼。</target>
       </segment>
     </unit>
   </file>

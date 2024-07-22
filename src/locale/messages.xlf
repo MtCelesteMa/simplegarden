@@ -716,5 +716,15 @@
         <source>WR</source>
       </segment>
     </unit>
+    <unit id="app-welcome-page.hard-mode">
+      <segment>
+        <source>Hard Mode</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode-info">
+      <segment>
+        <source>You have a limited number of crops in hard mode. Harvest mature crops to get more.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

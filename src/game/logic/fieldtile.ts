@@ -6,9 +6,9 @@ export type Mutation = { target: string; chance: number };
 export class FieldTile {
     private coords: [number, number];
     private gameData: d.g.v1.GameData;
-    private saveData: d.s.v1.SaveData;
+    private saveData: d.s.v2.SaveData;
 
-    constructor(coords: [number, number], gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData) {
+    constructor(coords: [number, number], gameData: d.g.v1.GameData, saveData: d.s.v2.SaveData) {
         this.coords = coords;
         this.gameData = gameData;
         this.saveData = saveData;
@@ -22,7 +22,7 @@ export class FieldTile {
         return this.coords[1];
     }
 
-    get tile(): d.s.v1.FieldTile {
+    get tile(): d.s.v2.FieldTile {
         return this.saveData.field[this.rowN][this.colN];
     }
 
@@ -49,7 +49,7 @@ export class FieldTile {
 
     get isUnlocked(): boolean | null {
         if (this.crop == null) return null;
-        return this.saveData.unlockedCrops.includes(this.crop);
+        return Object.keys(this.saveData.inventory).includes(this.crop);
     }
 
     get isMature(): boolean | null {
@@ -78,9 +78,25 @@ export class FieldTile {
         this.age = 0;
     }
 
+    sowCrop(crop: string): void {
+        if (!Object.hasOwn(this.saveData.inventory, crop)) return;
+        if (this.saveData.hardMode && this.saveData.inventory[crop] != null) {
+            if (this.saveData.inventory[crop] < 1) return;
+            this.saveData.inventory[crop]--;
+        }
+        this.plantCrop(crop);
+    }
+
     harvestCrop(): void {
         if (this.crop == null) return;
-        if (this.isMature! && !this.isUnlocked!) this.saveData.unlockedCrops.push(this.crop);
+        if (this.isMature!) {
+            if (this.saveData.hardMode) {
+                if (this.isUnlocked! && this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
+                else this.saveData.inventory[this.crop] = 1;
+            } else {
+                if (!this.isUnlocked!) this.saveData.inventory[this.crop] = null;
+            }
+        }
         if (this.isMature! && this.cropInfo!.spreadOnHarvest.length > 0 && Math.random() < 0.1)
             this.plantCrop(
                 this.cropInfo!.spreadOnHarvest[Math.floor(Math.random() * this.cropInfo!.spreadOnHarvest.length)],

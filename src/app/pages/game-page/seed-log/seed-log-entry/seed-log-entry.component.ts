@@ -14,6 +14,11 @@ export class SeedLogEntryComponent {
     manager = inject(ManagerService);
     @Input({ required: true }) crop: string = "";
 
+    get quantity(): string {
+        if (this.manager.game!.saveData.inventory[this.crop] == null) return "∞";
+        return String(this.manager.game!.saveData.inventory[this.crop]);
+    }
+
     get cropInfo(): g.d.g.v1.CropInfo {
         return this.manager.game!.gameData.crops[this.crop];
     }
@@ -32,7 +37,7 @@ export class SeedLogEntryComponent {
             })
             .map((name: string): [string, string] => {
                 let dname = this.manager.game!.gameData.crops[name].displayName;
-                if (this.manager.game!.saveData.unlockedCrops.includes(name)) return [dname, dname];
+                if (Object.hasOwn(this.manager.game!.saveData.inventory, name)) return [dname, dname];
                 return [dname, "???"];
             });
     }

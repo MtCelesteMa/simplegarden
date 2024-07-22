@@ -17,6 +17,7 @@ export class WelcomePageComponent {
     customGameData: g.d.g.v1.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
+    hardModeOption = new FormControl<boolean>(false);
     cheatModeOption = new FormControl<boolean>(false);
 
     gameImportFailed: boolean = false;
@@ -55,7 +56,9 @@ export class WelcomePageComponent {
             )
         )
             return;
-        this.manager.game = g.Game.newGame(this.customGameData, this.cheatModeOption.value!);
+        if (this.hardModeOption.value!)
+            alert($localize`:@@app-welcome-page.hard-mode-info:You have a limited number of crops in hard mode. Harvest mature crops to get more.`)
+        this.manager.game = g.Game.newGame(this.customGameData, this.cheatModeOption.value!, this.hardModeOption.value!);
         this.router.navigate(["game"]);
     }
 

@@ -23,6 +23,10 @@ export class FieldComponent {
         return this.manager.game!.field.tiles[this.manager.game!.selectedTile[0]][this.manager.game!.selectedTile[1]];
     }
 
+    get unlockedCrops(): string[] {
+        return Object.keys(this.manager.game!.saveData.inventory);
+    }
+
     togglePaintMode(ev: Event) {
         this.manager.game!.paintMode = (ev.target as HTMLInputElement).checked;
     }

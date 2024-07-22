@@ -5,7 +5,7 @@
         &nbsp;
         <select (change)="selectCrop($event)">
             <option value="" i18n="@@app-field.unearth-harvest">(Unearth/Harvest)</option>
-            @for (crop of manager.game!.saveData.unlockedCrops; track crop) {
+            @for (crop of unlockedCrops; track crop) {
                 <option value="{{ crop }}">{{ manager.game!.gameData.crops[crop].displayName }}</option>
             }
         </select>
