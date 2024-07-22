@@ -50,7 +50,7 @@ export class Game {
             inventory: Object.fromEntries(
                 gameData.initialCrops.map((name: string): [string, number | null] => [name, null]),
             ),
-            trophies: [],
+            trophies: {},
         };
         return new Game(gameData, saveData);
     }

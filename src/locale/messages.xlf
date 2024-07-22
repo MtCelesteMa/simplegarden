@@ -726,5 +726,33 @@
         <source>You have a limited number of crops in hard mode. Harvest mature crops to get more.</source>
       </segment>
     </unit>
+    <unit id="4522588066054962495">
+      <notes>
+        <note category="description">app-trophy-case.title</note>
+      </notes>
+      <segment>
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+      </segment>
+    </unit>
+    <unit id="app-trophy-case-entry.obtained-on">
+      <segment>
+        <source>Obtained On: <ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/></source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.description">
+      <segment>
+        <source>Amass 100 Juicy Beets</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.displayname">
+      <segment>
+        <source>You&apos;re Insane!</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.flavortext">
+      <segment>
+        <source>Sure I am, what&apos;s your point?</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

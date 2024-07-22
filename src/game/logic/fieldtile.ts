@@ -95,8 +95,8 @@ export class FieldTile {
                     if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
                 } else this.saveData.inventory[this.crop] = 1;
                 for (let trophy of Object.entries(this.gameData.trophies)) {
-                    if (trophy[1].target == this.crop && this.saveData.inventory[this.crop]! >= trophy[1].quantity)
-                        this.saveData.trophies.push(trophy[0]);
+                    if (!Object.hasOwn(this.saveData.trophies, trophy[0]) && trophy[1].target == this.crop && this.saveData.inventory[this.crop]! >= trophy[1].quantity)
+                        this.saveData.trophies[trophy[0]] = new Date().getTime();
                 }
             } else {
                 if (!this.isUnlocked!) this.saveData.inventory[this.crop] = null;

@@ -870,5 +870,38 @@
         <target>在困难模式里庄稼数量是有限的。收割成熟的庄稼可以让你获取更多的庄稼。</target>
       </segment>
     </unit>
+    <unit id="app-trophy-case-entry.obtained-on">
+      <segment state="initial">
+        <source>Obtained On: <ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/></source>
+        <target>在<ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/>得到的</target>
+      </segment>
+    </unit>
+    <unit id="4522588066054962495">
+      <notes>
+        <note category="description">app-trophy-case.title</note>
+      </notes>
+      <segment state="initial">
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+        <target>奖杯盒 (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.displayname">
+      <segment state="initial">
+        <source>You&apos;re Insane!</source>
+        <target>你疯了！</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.flavortext">
+      <segment state="initial">
+        <source>Sure I am, what&apos;s your point?</source>
+        <target>的确是，你是什么意思？</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.description">
+      <segment state="initial">
+        <source>Amass 100 Juicy Beets</source>
+        <target>得到100个多汁甜菜</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

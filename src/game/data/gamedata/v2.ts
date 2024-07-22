@@ -33,6 +33,7 @@ export type MutationInfo = z.infer<typeof mutationInfo>;
 
 export const trophyInfo = z.object({
     displayName: z.string(),
+    flavorText: z.string(),
     description: z.string(),
     target: z.string(),
     quantity: z.number().gte(1),

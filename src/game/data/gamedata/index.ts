@@ -753,6 +753,7 @@ export const simpleClassic: v2.GameData = {
     trophies: {
         jbeet100: {
             displayName: $localize`:@@game.trophy.jbeet100.displayname:You're Insane!`,
+            flavorText: $localize`:@@game.trophy.jbeet100.flavortext:Sure I am, what's your point?`,
             description: $localize`:@@game.trophy.jbeet100.description:Amass 100 Juicy Beets`,
             target: "jbeet",
             quantity: 100,

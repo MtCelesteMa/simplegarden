@@ -1,9 +1,8 @@
 <div class="box centering">
     <h1 i18n="app-trophy-case.title">Trophy Case ({{ nTrophiesObtained}} / {{ nTrophies }})</h1>
     <div class="trophy-case">
-        @for (trophy of manager.game!.saveData.trophies; track trophy) {
+        @for (trophy of listTrophies; track trophy) {
             <app-trophy-case-entry [trophy]="trophy"></app-trophy-case-entry>
         }
-        <app-trophy-case-entry trophy="jbeet100"></app-trophy-case-entry>
     </div>
 </div>
