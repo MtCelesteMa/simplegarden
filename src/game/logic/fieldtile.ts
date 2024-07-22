@@ -91,8 +91,9 @@ export class FieldTile {
         if (this.crop == null) return;
         if (this.isMature!) {
             if (this.saveData.hardMode) {
-                if (this.isUnlocked! && this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
-                else this.saveData.inventory[this.crop] = 1;
+                if (this.isUnlocked!) {
+                    if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
+                } else this.saveData.inventory[this.crop] = 1;
             } else {
                 if (!this.isUnlocked!) this.saveData.inventory[this.crop] = null;
             }

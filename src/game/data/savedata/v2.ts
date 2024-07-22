@@ -19,7 +19,7 @@ export const saveData = z
         tickRate: z.number().int().gte(0),
         lastTick: z.number().int().gte(0),
         field: fieldTile.array().array(),
-        inventory: z.object({}).catchall(z.number().int().gte(0).nullable())
+        inventory: z.object({}).catchall(z.number().int().gte(0).nullable()),
     })
     .merge(versionedData);
 
@@ -37,9 +37,7 @@ export function upgrade(raw: unknown): SaveData {
         tickRate: obj.tickRate,
         lastTick: obj.lastTick,
         field: obj.field,
-        inventory: Object.fromEntries(obj.unlockedCrops.map(
-            (name: string): [string, number | null] => [name, null]
-        ))
-    }
+        inventory: Object.fromEntries(obj.unlockedCrops.map((name: string): [string, number | null] => [name, null])),
+    };
     return saveData.parse(newObj);
 }

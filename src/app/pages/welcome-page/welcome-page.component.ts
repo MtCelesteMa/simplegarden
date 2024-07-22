@@ -57,8 +57,14 @@ export class WelcomePageComponent {
         )
             return;
         if (this.hardModeOption.value!)
-            alert($localize`:@@app-welcome-page.hard-mode-info:You have a limited number of crops in hard mode. Harvest mature crops to get more.`)
-        this.manager.game = g.Game.newGame(this.customGameData, this.cheatModeOption.value!, this.hardModeOption.value!);
+            alert(
+                $localize`:@@app-welcome-page.hard-mode-info:You have a limited number of crops in hard mode. Harvest mature crops to get more.`,
+            );
+        this.manager.game = g.Game.newGame(
+            this.customGameData,
+            this.cheatModeOption.value!,
+            this.hardModeOption.value!,
+        );
         this.router.navigate(["game"]);
     }
 
