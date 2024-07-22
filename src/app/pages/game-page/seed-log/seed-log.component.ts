@@ -16,18 +16,16 @@ export class SeedLogComponent {
     get nCrops(): number {
         return Object.entries(this.manager.game!.gameData.crops).length;
     }
-    
+
     get nCropsUnlocked(): number {
         return this.manager.game!.saveData.unlockedCrops.length;
     }
 
     get listUnlockedCrops(): string[] {
-        return Object.entries(this.manager.game!.gameData.crops).filter(
-            (value: [string, g.d.g.v1.CropInfo]): boolean => {
+        return Object.entries(this.manager.game!.gameData.crops)
+            .filter((value: [string, g.d.g.v1.CropInfo]): boolean => {
                 return this.manager.game!.saveData.unlockedCrops.includes(value[0]);
-            }
-        ).map(
-            (value: [string, g.d.g.v1.CropInfo]): string => value[0]
-        )
+            })
+            .map((value: [string, g.d.g.v1.CropInfo]): string => value[0]);
     }
 }

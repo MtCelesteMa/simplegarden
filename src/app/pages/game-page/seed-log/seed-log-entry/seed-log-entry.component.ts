@@ -12,26 +12,24 @@ import * as g from "../../../../../game";
 })
 export class SeedLogEntryComponent {
     manager = inject(ManagerService);
-    @Input({required: true}) crop: string = "";
+    @Input({ required: true }) crop: string = "";
 
     get cropInfo(): g.d.g.v1.CropInfo {
         return this.manager.game!.gameData.crops[this.crop];
     }
 
     get listMutations(): string[] {
-        return this.manager.game!.gameData.mutations.filter(
-            (mutation: g.d.g.v1.MutationInfo): boolean => {
+        return this.manager
+            .game!.gameData.mutations.filter((mutation: g.d.g.v1.MutationInfo): boolean => {
                 for (let req of Object.entries(mutation.requires)) {
                     if (req[0] == this.crop) return true;
                 }
                 return false;
-            }
-        ).map(
-            (mutation: g.d.g.v1.MutationInfo): string => {
+            })
+            .map((mutation: g.d.g.v1.MutationInfo): string => {
                 if (this.manager.game!.saveData.unlockedCrops.includes(mutation.target))
                     return this.manager.game!.gameData.crops[mutation.target].displayName;
                 return "???";
-            }
-        )
+            });
     }
 }

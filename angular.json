@@ -79,7 +79,8 @@
                                     "maximumError": "4kB"
                                 }
                             ],
-                            "outputHashing": "all"
+                            "outputHashing": "all",
+                            "localize": true
                         },
                         "development": {
                             "optimization": false,
@@ -136,6 +137,13 @@
                         ],
                         "styles": ["src/styles.scss"],
                         "scripts": []
+                    }
+                },
+                "deploy": {
+                    "builder": "angular-cli-ghpages:deploy",
+                    "options": {
+                        "baseHref": "/simplegarden/",
+                        "repo": "https://github.com/MtCelesteMa/simplegarden.git"
                     }
                 }
             }
