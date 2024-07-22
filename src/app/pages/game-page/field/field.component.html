@@ -12,19 +12,21 @@
         &nbsp;
         <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
     </div>
-    <table style="margin-left: auto; margin-right: auto">
-        <tbody>
-            @for (row of manager.game!.field.tiles; track row[0].rowN) {
-                <tr>
-                    @for (tile of row; track tile.colN) {
-                        <td>
-                            <app-field-tile [rowN]="tile.rowN" [colN]="tile.colN"></app-field-tile>
-                        </td>
-                    }
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div style="overflow-x: scroll;">
+        <table style="margin-left: auto; margin-right: auto;">
+            <tbody>
+                @for (row of manager.game!.field.tiles; track row[0].rowN) {
+                    <tr>
+                        @for (tile of row; track tile.colN) {
+                            <td>
+                                <app-field-tile [rowN]="tile.rowN" [colN]="tile.colN"></app-field-tile>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
     <div class="centering">
         @if (this.selectedTile == null) {
             <ng-container i18n="@@app-field.no-tile-selected">No tile selected. Click on a tile to begin.</ng-container>
