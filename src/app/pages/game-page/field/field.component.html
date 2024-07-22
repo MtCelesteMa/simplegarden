@@ -12,8 +12,8 @@
         &nbsp;
         <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
     </div>
-    <div style="overflow-x: scroll;">
-        <table style="margin-left: auto; margin-right: auto;">
+    <div style="overflow-x: scroll">
+        <table style="margin-left: auto; margin-right: auto">
             <tbody>
                 @for (row of manager.game!.field.tiles; track row[0].rowN) {
                     <tr>

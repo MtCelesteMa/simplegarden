@@ -2,7 +2,7 @@ import { Loader } from "../loader";
 import * as v1 from "./v1";
 export * as v1 from "./v1";
 
-export const loader = new Loader("sg_gamedata", 1, v1.gameData, []);
+export const loader = new Loader("sg_gamedata", 1, v1.gameData as any, []);
 
 export const simpleClassic: v1.GameData = {
     identifier: "sg_gamedata",
@@ -96,7 +96,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 67,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         root: {
             displayName: $localize`:@@game.crop.root.displayname:Root`,
@@ -106,7 +106,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 25,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         wroot: {
             displayName: $localize`:@@game.crop.wroot.displayname:White Root`,
@@ -116,7 +116,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 25,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         weed: {
             displayName: $localize`:@@game.crop.weed.displayname:Weed`,
@@ -136,7 +136,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 34,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         rose: {
             displayName: $localize`:@@game.crop.rose.displayname:Rose`,
@@ -146,7 +146,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 58,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         tulip: {
             displayName: $localize`:@@game.crop.tulip.displayname:Tulip`,
@@ -156,7 +156,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 67,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         fern: {
             displayName: $localize`:@@game.crop.fern.displayname:Fern`,
@@ -166,7 +166,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 1000,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         lichen: {
             displayName: $localize`:@@game.crop.lichen.displayname:Lichen`,
@@ -176,7 +176,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 15,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         moss: {
             displayName: $localize`:@@game.crop.moss.displayname:Moss`,
@@ -186,7 +186,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 16,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         beet: {
             displayName: $localize`:@@game.crop.beet.displayname:Beet`,
@@ -196,7 +196,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 84,
             infectionValue: null,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         jbeet: {
             displayName: $localize`:@@game.crop.jbeet.displayname:Juicy Beet`,
@@ -206,7 +206,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 1250,
             infectionValue: null,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         tater: {
             displayName: $localize`:@@game.crop.tater.displayname:Tater`,
@@ -216,7 +216,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 223,
             infectionValue: null,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         bulb: {
             displayName: $localize`:@@game.crop.bulb.displayname:Bulb`,
@@ -226,7 +226,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 29,
             infectionValue: null,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         grass: {
             displayName: $localize`:@@game.crop.grass.displayname:Grass`,
@@ -236,7 +236,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 200,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         daisy: {
             displayName: $localize`:@@game.crop.daisy.displayname:Daisy`,
@@ -246,7 +246,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: null,
             infectionValue: null,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         mildew: {
             displayName: $localize`:@@game.crop.mildew.displayname:Mildew`,
@@ -256,7 +256,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 8,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         mold: {
             displayName: $localize`:@@game.crop.mold.displayname:Mold`,
@@ -266,7 +266,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 8,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         spore: {
             displayName: $localize`:@@game.crop.spore.displayname:Spore`,
@@ -276,7 +276,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 23,
             infectionValue: 0.03,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         shroom: {
             displayName: $localize`:@@game.crop.shroom.displayname:Shroom`,
@@ -286,7 +286,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 50,
             infectionValue: 0.03,
             infectable: false,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         morel: {
             displayName: $localize`:@@game.crop.morel.displayname:Morel`,
@@ -296,7 +296,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 9,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         cap: {
             displayName: $localize`:@@game.crop.cap.displayname:Cap`,
@@ -306,7 +306,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 8,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         bolete: {
             displayName: $localize`:@@game.crop.bolete.displayname:Bolete`,
@@ -316,7 +316,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 6,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         gill: {
             displayName: $localize`:@@game.crop.gill.displayname:Gill`,
@@ -326,7 +326,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 40,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         rot: {
             displayName: $localize`:@@game.crop.rot.displayname:Dry Rot`,
@@ -336,7 +336,7 @@ export const simpleClassic: v1.GameData = {
             lifespan: 6,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
+            spreadOnHarvest: [],
         },
         ichor: {
             displayName: $localize`:@@game.crop.ichor.displayname:Ichor`,
@@ -346,8 +346,8 @@ export const simpleClassic: v1.GameData = {
             lifespan: 58,
             infectionValue: null,
             infectable: true,
-            spreadOnHarvest: []
-        }
+            spreadOnHarvest: [],
+        },
     },
     mutations: [
         {
@@ -636,116 +636,116 @@ export const simpleClassic: v1.GameData = {
         {
             target: "grass",
             requires: {
-                wheat: {min: 1, max: 8, mature: true},
-                wroot: {min: 1, max: 8, mature: true}
+                wheat: { min: 1, max: 8, mature: true },
+                wroot: { min: 1, max: 8, mature: true },
             },
             chance: 0.002,
         },
         {
             target: "daisy",
             requires: {
-                grass: {min: 3, max: 8, mature: true},
-                wort: {min: 3, max: 8, mature: true}
+                grass: { min: 3, max: 8, mature: true },
+                wort: { min: 3, max: 8, mature: true },
             },
             chance: 0.002,
         },
         {
             target: "mildew",
             requires: {
-                mold: {min: 1, max: 8, mature: true},
-                mildew: {min: 0, max: 1, mature: true}
+                mold: { min: 1, max: 8, mature: true },
+                mildew: { min: 0, max: 1, mature: true },
             },
             chance: 0.5,
         },
         {
             target: "mildew",
             requires: {
-                mold: {min: 1, max: 8, mature: true},
-                mildew: {min: 0, max: 1, mature: true}
+                mold: { min: 1, max: 8, mature: true },
+                mildew: { min: 0, max: 1, mature: true },
             },
             chance: 0.5,
         },
         {
             target: "mold",
             requires: {
-                mildew: {min: 1, max: 8, mature: true},
-                mold: {min: 0, max: 1, mature: true}
+                mildew: { min: 1, max: 8, mature: true },
+                mold: { min: 0, max: 1, mature: true },
             },
             chance: 0.5,
         },
         {
             target: "spore",
             requires: {
-                spore: {min: 1, max: 1, mature: true},
+                spore: { min: 1, max: 1, mature: true },
             },
             chance: 0.07,
         },
         {
             target: "spore",
             requires: {
-                shroom: {min: 2, max: 8, mature: true},
+                shroom: { min: 2, max: 8, mature: true },
             },
             chance: 0.005,
         },
         {
             target: "shroom",
             requires: {
-                spore: {min: 2, max: 8, mature: true},
+                spore: { min: 2, max: 8, mature: true },
             },
             chance: 0.005,
         },
         {
             target: "shroom",
             requires: {
-                shroom: {min: 1, max: 1, mature: true},
+                shroom: { min: 1, max: 1, mature: true },
             },
             chance: 0.07,
         },
         {
             target: "morel",
             requires: {
-                spore: {min: 1, max: 8, mature: true},
-                corn: {min: 1, max: 8, mature: true},
+                spore: { min: 1, max: 8, mature: true },
+                corn: { min: 1, max: 8, mature: true },
             },
             chance: 0.02,
         },
         {
             target: "cap",
             requires: {
-                spore: {min: 1, max: 8, mature: true},
-                lily: {min: 1, max: 8, mature: true},
+                spore: { min: 1, max: 8, mature: true },
+                lily: { min: 1, max: 8, mature: true },
             },
             chance: 0.04,
         },
         {
             target: "bolete",
             requires: {
-                shroom: {min: 1, max: 8, mature: true},
-                rot: {min: 1, max: 8, mature: true},
+                shroom: { min: 1, max: 8, mature: true },
+                rot: { min: 1, max: 8, mature: true },
             },
             chance: 0.04,
         },
         {
             target: "gill",
             requires: {
-                spore: {min: 1, max: 8, mature: true},
-                mold: {min: 1, max: 8, mature: true},
+                spore: { min: 1, max: 8, mature: true },
+                mold: { min: 1, max: 8, mature: true },
             },
             chance: 0.06,
         },
         {
             target: "rot",
             requires: {
-                mildew: {min: 1, max: 8, mature: true},
-                clover: {min: 1, max: 8, mature: true},
+                mildew: { min: 1, max: 8, mature: true },
+                clover: { min: 1, max: 8, mature: true },
             },
             chance: 0.05,
         },
         {
             target: "ichor",
             requires: {
-                spore: {min: 1, max: 8, mature: true},
-                wort: {min: 1, max: 8, mature: true},
+                spore: { min: 1, max: 8, mature: true },
+                wort: { min: 1, max: 8, mature: true },
             },
             chance: 0.002,
         },

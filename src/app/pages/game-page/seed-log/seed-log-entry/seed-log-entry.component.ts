@@ -26,11 +26,14 @@ export class SeedLogEntryComponent {
                 }
                 return false;
             })
-            .map((mutation: g.d.g.v1.MutationInfo): [string, string] => {
-                let name = this.manager.game!.gameData.crops[mutation.target].displayName;
-                if (this.manager.game!.saveData.unlockedCrops.includes(mutation.target))
-                    return [name, name]
-                return [name, "???"];
+            .map((mutation: g.d.g.v1.MutationInfo): string => mutation.target)
+            .filter((name: string, index: number, arr: string[]): boolean => {
+                return index == arr.length - 1 ? true : !arr.includes(name, index + 1);
+            })
+            .map((name: string): [string, string] => {
+                let dname = this.manager.game!.gameData.crops[name].displayName;
+                if (this.manager.game!.saveData.unlockedCrops.includes(name)) return [dname, dname];
+                return [dname, "???"];
             });
     }
 }

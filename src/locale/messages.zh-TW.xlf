@@ -645,7 +645,7 @@
     <unit id="game.crop.daisy.displayname">
       <segment state="initial">
         <source>Daisy</source>
-        <target>Daisy</target>
+        <target>雛菊</target>
       </segment>
     </unit>
     <unit id="game.crop.daisy.shortname">

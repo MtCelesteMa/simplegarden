@@ -37,6 +37,25 @@ export const gameData = z
         initialCrops: z.string().array(),
         fieldSize: z.tuple([z.number().int().gte(0), z.number().int().gte(0)]),
     })
-    .merge(versionedData);
+    .merge(versionedData)
+    .refine(validateGameData);
 
 export type GameData = z.infer<typeof gameData>;
+
+function validateGameData(gd: any): boolean {
+    let crops = Object.keys(gd.crops);
+    crops.push("");
+    for (let mutation of gd.mutations) {
+        if (!crops.includes(mutation.target)) {
+            console.warn(`Crop ${mutation.target} not found.`);
+            return false;
+        }
+        for (let req of Object.keys(mutation.requires)) {
+            if (!crops.includes(req)) {
+                console.warn(`Crop ${req} not found.`);
+                return false;
+            }
+        }
+    }
+    return true;
+}
