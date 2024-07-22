@@ -39,7 +39,7 @@
     <unit id="game.crop.wheat.description">
       <segment state="initial">
         <source>A versatile crop used in the making of many staple foods.</source>
-        <target>A versatile crop used in the making of many staple foods.</target>
+        <target>一種用途廣泛的作物，用於製作許多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.corn.displayname">
@@ -57,7 +57,7 @@
     <unit id="game.crop.corn.description">
       <segment state="initial">
         <source>Another versatile crop used in the making of many staple foods.</source>
-        <target>Another versatile crop used in the making of many staple foods.</target>
+        <target>另一種用途廣泛的作物，用於製作許多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.displayname">
@@ -75,7 +75,7 @@
     <unit id="game.crop.rice.description">
       <segment state="initial">
         <source>A versatile crop used in many dishes across the world.</source>
-        <target>A versatile crop used in many dishes across the world.</target>
+        <target>一種用途廣泛的作物，用於世界各地的許多菜餚中。</target>
       </segment>
     </unit>
     <unit id="game.crop.millet.displayname">
@@ -93,7 +93,7 @@
     <unit id="game.crop.millet.description">
       <segment state="initial">
         <source>A hardy crop that is resistant to many environmental factors.</source>
-        <target>A hardy crop that is resistant to many environmental factors.</target>
+        <target>一種耐多種環境因素的耐寒作物。</target>
       </segment>
     </unit>
     <unit id="game.crop.clover.displayname">
@@ -111,7 +111,7 @@
     <unit id="game.crop.clover.description">
       <segment state="initial">
         <source>A common plant seen as a symbol of good fortune.</source>
-        <target>A common plant seen as a symbol of good fortune.</target>
+        <target>一種常見的植物，被視為吉祥的象徵。</target>
       </segment>
     </unit>
     <unit id="game.crop.gclover.displayname">
@@ -129,7 +129,7 @@
     <unit id="game.crop.gclover.description">
       <segment state="initial">
         <source>A clover made out of gold.</source>
-        <target>A clover made out of gold.</target>
+        <target>黃金製成的三葉草。</target>
       </segment>
     </unit>
     <unit id="game.crop.lily.displayname">
@@ -165,7 +165,7 @@
     <unit id="game.crop.wort.description">
       <segment state="initial">
         <source>An immortal plant.</source>
-        <target>An immortal plant.</target>
+        <target>一個永生的植物。</target>
       </segment>
     </unit>
     <unit id="game.crop.weed.displayname">
@@ -183,7 +183,7 @@
     <unit id="game.crop.weed.description">
       <segment state="initial">
         <source>An unwanted plant that kill nearby crops. Cannot be smoked.</source>
-        <target>An unwanted plant that kill nearby crops. Cannot be smoked.</target>
+        <target>一種不需要的植物，會殺死附近的莊稼。</target>
       </segment>
     </unit>
     <unit id="app-welcome-page.welcome">
@@ -376,6 +376,42 @@
       <segment state="initial">
         <source>Unknown crop</source>
         <target>未知莊稼</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.maturity">
+      <segment state="initial">
+        <source>Maturity: </source>
+        <target>成長時間：</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.immortal">
+      <segment state="initial">
+        <source>Immortal</source>
+        <target>永生</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.lifespan">
+      <segment state="initial">
+        <source>Lifespan: </source>
+        <target>壽命：</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.infection">
+      <segment state="initial">
+        <source>May infect nearby crops!</source>
+        <target>可能感染附近的莊稼！</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.mutations">
+      <segment state="initial">
+        <source>Mutations</source>
+        <target>變異</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.title">
+      <segment state="initial">
+        <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
+        <target>種子紀錄 (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</target>
       </segment>
     </unit>
   </file>

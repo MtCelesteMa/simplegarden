@@ -1,0 +1,27 @@
+<div class="box seed-log-entry">
+    <h2>{{cropInfo.displayName}}</h2>
+    {{cropInfo.description}}
+    <br />
+    <br />
+    <ng-container i18n="@@app-seed-log-entry.maturity">Maturity: </ng-container>
+    <app-time-display [ms]="cropInfo.maturity * manager.game!.saveData.tickRate"></app-time-display>
+    <br />
+    @if (cropInfo.lifespan == null) {
+        <ng-container i18n="@@app-seed-log-entry.immortal">Immortal</ng-container>
+    } @else {
+        <ng-container i18n="@@app-seed-log-entry.lifespan">Lifespan: </ng-container>
+        <app-time-display [ms]="cropInfo.lifespan * manager.game!.saveData.tickRate"></app-time-display>
+    }
+    @if (cropInfo.infectionValue != null) {
+        <br />
+        <span style="color: red" i18n="@@app-seed-log-entry.infection">May infect nearby crops!</span>
+    }
+    <h3 i18n="@@app-seed-log-entry.mutations">Mutations</h3>
+    <div class="mutations-infobox">
+        <ul>
+            @for (mutation of listMutations; track mutation) {
+                <li>{{ mutation }}</li>
+            }
+        </ul>
+    </div>
+</div>

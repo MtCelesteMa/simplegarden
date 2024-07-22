@@ -3,11 +3,12 @@ import { Router } from "@angular/router";
 import { ManagerService } from "../../services/manager.service";
 import { TimeDisplayComponent } from "../../time-display/time-display.component";
 import { FieldComponent } from "./field/field.component";
+import { SeedLogComponent } from "./seed-log/seed-log.component";
 
 @Component({
     selector: "app-game-page",
     standalone: true,
-    imports: [TimeDisplayComponent, FieldComponent],
+    imports: [TimeDisplayComponent, FieldComponent, SeedLogComponent],
     templateUrl: "./game-page.component.html",
 })
 export class GamePageComponent implements OnInit {

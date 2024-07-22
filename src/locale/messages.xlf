@@ -316,5 +316,35 @@
         <source>Unknown crop</source>
       </segment>
     </unit>
+    <unit id="app-seed-log-entry.immortal">
+      <segment>
+        <source>Immortal</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.infection">
+      <segment>
+        <source>May infect nearby crops!</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.lifespan">
+      <segment>
+        <source>Lifespan: </source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.maturity">
+      <segment>
+        <source>Maturity: </source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.mutations">
+      <segment>
+        <source>Mutations</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.title">
+      <segment>
+        <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

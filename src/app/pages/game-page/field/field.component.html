@@ -49,14 +49,26 @@
                     <ng-container i18n="@@app-field.is-immortal">This crop is immortal.</ng-container>
                 } @else {
                     <ng-container i18n="@@app-field.age">Age: </ng-container>
-                    <app-time-display [ms]="this.manager.game!.saveData.tickRate * this.selectedTile.age"></app-time-display>
+                    <app-time-display
+                        [ms]="this.manager.game!.saveData.tickRate * this.selectedTile.age"
+                    ></app-time-display>
                     <br />
                     @if (this.selectedTile.isMature) {
                         <ng-container i18n="@@app-field.expires-in">Expires in </ng-container>
-                        <app-time-display [ms]="this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age)"></app-time-display>
+                        <app-time-display
+                            [ms]="
+                                this.manager.game!.saveData.tickRate *
+                                (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age)
+                            "
+                        ></app-time-display>
                     } @else {
                         <ng-container i18n="@@app-field.matures-in">Matures in </ng-container>
-                        <app-time-display [ms]="this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity - this.selectedTile.age)"></app-time-display>
+                        <app-time-display
+                            [ms]="
+                                this.manager.game!.saveData.tickRate *
+                                (this.selectedTile.cropInfo!.maturity - this.selectedTile.age)
+                            "
+                        ></app-time-display>
                     }
                 }
             }

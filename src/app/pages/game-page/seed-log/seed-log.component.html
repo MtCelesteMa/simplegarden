@@ -1,0 +1,8 @@
+<div class="box centering">
+    <h1 i18n="@@app-seed-log.title">Seed Log ({{ nCropsUnlocked }}/{{ nCrops }})</h1>
+    <div class="seed-log">
+        @for (crop of listUnlockedCrops; track crop) {
+            <app-seed-log-entry [crop]="crop"></app-seed-log-entry>
+        }
+    </div>
+</div>

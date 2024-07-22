@@ -1,0 +1,6 @@
+div.seed-log {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 500px;
+    overflow-y: scroll;
+}
