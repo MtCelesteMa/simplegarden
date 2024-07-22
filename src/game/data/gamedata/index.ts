@@ -751,11 +751,32 @@ export const simpleClassic: v2.GameData = {
         },
     ],
     trophies: {
+        corn100: {
+            displayName: $localize`:@@game.trophy.corn100.displayname:Acres of Corn`,
+            flavorText: $localize`:@@game.trophy.corn100.flavortext:The corn will die soon.`,
+            description: $localize`:@@game.trophy.corn100.description:Amass 100 Corn`,
+            target: "corn",
+            quantity: 100,
+        },
+        weed100: {
+            displayName: $localize`:@@game.trophy.weed100.displayname:Drug Lord`,
+            flavorText: $localize`:@@game.trophy.weed100.flavortext:No, you still can't smoke them.`,
+            description: $localize`:@@game.trophy.weed100.description:Amass 100 Weed`,
+            target: "weed",
+            quantity: 100,
+        },
         jbeet100: {
             displayName: $localize`:@@game.trophy.jbeet100.displayname:You're Insane!`,
             flavorText: $localize`:@@game.trophy.jbeet100.flavortext:Sure I am, what's your point?`,
             description: $localize`:@@game.trophy.jbeet100.description:Amass 100 Juicy Beets`,
             target: "jbeet",
+            quantity: 100,
+        },
+        tater100: {
+            displayName: $localize`:@@game.trophy.tater100.displayname:Dedication`,
+            flavorText: $localize`:@@game.trophy.tater100.flavortext:Don't you have anything better to do?`,
+            description: $localize`:@@game.trophy.tater100.description:Amass 100 Taters`,
+            target: "tater",
             quantity: 100,
         },
     },

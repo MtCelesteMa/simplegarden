@@ -731,7 +731,7 @@
         <note category="description">app-trophy-case.title</note>
       </notes>
       <segment>
-        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained }}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
       </segment>
     </unit>
     <unit id="app-trophy-case-entry.obtained-on">
@@ -752,6 +752,51 @@
     <unit id="game.trophy.jbeet100.flavortext">
       <segment>
         <source>Sure I am, what&apos;s your point?</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.description">
+      <segment>
+        <source>Amass 100 Corn</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.displayname">
+      <segment>
+        <source>Acres of Corn</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.flavortext">
+      <segment>
+        <source>The corn will die soon.</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.description">
+      <segment>
+        <source>Amass 100 Taters</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.displayname">
+      <segment>
+        <source>Dedication</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.flavortext">
+      <segment>
+        <source>Don&apos;t you have anything better to do?</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.description">
+      <segment>
+        <source>Amass 100 Weed</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.displayname">
+      <segment>
+        <source>Drug Lord</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.flavortext">
+      <segment>
+        <source>No, you still can&apos;t smoke them.</source>
       </segment>
     </unit>
   </file>

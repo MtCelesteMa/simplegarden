@@ -881,7 +881,7 @@
         <note category="description">app-trophy-case.title</note>
       </notes>
       <segment state="initial">
-        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained }}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
         <target>奖杯盒 (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</target>
       </segment>
     </unit>
@@ -901,6 +901,60 @@
       <segment state="initial">
         <source>Amass 100 Juicy Beets</source>
         <target>得到100个多汁甜菜</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.displayname">
+      <segment state="initial">
+        <source>Acres of Corn</source>
+        <target>无数的玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.flavortext">
+      <segment state="initial">
+        <source>The corn will die soon.</source>
+        <target>玉米很快也会灭亡</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.description">
+      <segment state="initial">
+        <source>Amass 100 Corn</source>
+        <target>得到100个玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.displayname">
+      <segment state="initial">
+        <source>Drug Lord</source>
+        <target>毒枭</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.flavortext">
+      <segment state="initial">
+        <source>No, you still can&apos;t smoke them.</source>
+        <target>你仍然吸不了杂草</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.description">
+      <segment state="initial">
+        <source>Amass 100 Weed</source>
+        <target>得到100个杂草</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.displayname">
+      <segment state="initial">
+        <source>Dedication</source>
+        <target>奉献精神</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.flavortext">
+      <segment state="initial">
+        <source>Don&apos;t you have anything better to do?</source>
+        <target>你就没有更好的事可做吗？</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.description">
+      <segment state="initial">
+        <source>Amass 100 Taters</source>
+        <target>得到100个塔特</target>
       </segment>
     </unit>
   </file>

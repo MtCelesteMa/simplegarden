@@ -6,9 +6,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You can play the latest release of SimpleGarden in your browser [here](https://mtcelestema.github.io/simplegarden/en-US/).
 
-If you wish to play older versions or developmental versions, follow the following instructions:
+## How To Play
+
+The mechanics are mostly the same as the Garden minigame in Cookie Clicker, with the same crops and mutation rules. As such, the [Garden](https://cookieclicker.fandom.com/wiki/Garden) page on the Cookie Clicker wiki can serve as a great guide. However, there are some key differences, not limited to:
+
+-   Plant growth is deterministic. For example, wheat will always live for 13 ticks.
+-   Planted crops provide no side effects, as there is no cookie production to boost.
+-   Similarly, there are no "garden drops" obtained by harvesting certain crops.
+-   Only one soil type. The game ticks at a fixed rate, and mutations/weed growth cannot be boosted.
+-   All crops are free to plant (in Normal Mode).
+-   Play with custom crops and mutations by uploading custom data files.
+
+### Hard Mode
+
+_Coming soon..._
 
 ## Installation
+
+If you wish to play older versions or developmental versions, follow the following instructions:
 
 1. Make sure you have [Node.js](https://nodejs.org/) installed.
 
@@ -39,19 +54,4 @@ ng serve --configuration=LOCALE_ID
 
 Where `LOCALE_ID` is the ID of the locale to launch under. Currently supported alternative locales are: `zh-TW`, `zh-CN`.
 
-5. Open the provided link in your browser (by default it is `ttp://localhost:4200/`).
-
-## How To Play
-
-The mechanics are mostly the same as the Garden minigame in Cookie Clicker, with the same crops and mutation rules. As such, the [Garden](https://cookieclicker.fandom.com/wiki/Garden) page on the Cookie Clicker wiki can serve as a great guide. However, there are some key differences, not limited to:
-
--   Plant growth is deterministic. For example, wheat will always live for 13 ticks.
--   Planted crops provide no side effects, as there is no cookie production to boost.
--   Similarly, there are no "garden drops" obtained by harvesting certain crops.
--   Only one soil type. The game ticks at a fixed rate, and mutations/weed growth cannot be boosted.
--   All crops are free to plant (in Normal Mode).
--   Play with custom crops and mutations by uploading custom data files.
-
-### Hard Mode
-
-_Coming soon..._
+5. Open the provided link in your browser (by default it is `http://localhost:4200/`).
