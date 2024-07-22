@@ -22,11 +22,10 @@ export class TrophyCaseComponent {
     }
 
     get listTrophies(): string[] {
-        return Object.entries(this.manager.game!.gameData.trophies).filter(
-            (value: [string, g.d.g.v2.TrophyInfo]): boolean => {
+        return Object.entries(this.manager.game!.gameData.trophies)
+            .filter((value: [string, g.d.g.v2.TrophyInfo]): boolean => {
                 return Object.hasOwn(this.manager.game!.saveData.trophies, value[0]);
-            }
-        )
-        .map((value: [string, g.d.g.v2.TrophyInfo]): string => value[0]);
+            })
+            .map((value: [string, g.d.g.v2.TrophyInfo]): string => value[0]);
     }
 }

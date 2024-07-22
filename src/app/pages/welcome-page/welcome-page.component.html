@@ -1,22 +1,4 @@
-<div class="centering">
-    @if (locale == "en-US") {
-        <strong>🇬🇧 English</strong>
-    } @else {
-        <a href="/simplegarden/en-US/">🇬🇧 English</a>
-    }
-    |
-    @if (locale == "zh-TW") {
-        <strong>🇹🇼 中文</strong>
-    } @else {
-        <a href="/simplegarden/zh-TW/">🇹🇼 中文</a>
-    }
-    |
-    @if (locale == "zh-CN") {
-        <strong>🇨🇳 中文（简体）</strong>
-    } @else {
-        <a href="/simplegarden/zh-CN/">🇨🇳 中文（简体）</a>
-    }
-</div>
+<app-locale-selector></app-locale-selector>
 @if (this.manager.saveIsValid()) {
     <div class="box centering">
         <button (click)="loadGame()" i18n="@@app-welcompe-page.continue-game">Continue Game</button>

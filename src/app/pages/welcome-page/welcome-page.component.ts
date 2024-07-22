@@ -1,19 +1,19 @@
-import { Component, inject, LOCALE_ID } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
+import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
     standalone: true,
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, LocaleSelectorComponent],
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent {
     manager = inject(ManagerService);
     router = inject(Router);
-    locale = inject(LOCALE_ID);
 
     customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);

@@ -11,7 +11,7 @@ import { ManagerService } from "../../../../services/manager.service";
 })
 export class TrophyCaseEntryComponent {
     manager = inject(ManagerService);
-    @Input({required: true}) trophy!: string;
+    @Input({ required: true }) trophy!: string;
 
     get name(): string {
         return this.manager.game!.gameData.trophies[this.trophy].displayName;
