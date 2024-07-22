@@ -1,7 +1,7 @@
 @if (manager.game != null) {
     <div class="box centering">
         @if (!timerHidden) {
-            <app-time-display [ms]="manager.timeElapsed"></app-time-display>
+            {{ manager.timeElapsed | time }}
             <br />
             <button (click)="timerHidden = true" i18n="@@app-game-page.hide-timer">Hide Timer</button>
             <br />

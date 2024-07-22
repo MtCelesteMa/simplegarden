@@ -1,12 +1,12 @@
 import { Component, inject, Input } from "@angular/core";
 import { ManagerService } from "../../../../services/manager.service";
-import { TimeDisplayComponent } from "../../../../time-display/time-display.component";
+import { TimePipe } from "../../../../services/time.pipe";
 import * as g from "../../../../../game";
 
 @Component({
     selector: "app-seed-log-entry",
     standalone: true,
-    imports: [TimeDisplayComponent],
+    imports: [TimePipe],
     templateUrl: "./seed-log-entry.component.html",
     styleUrl: "./seed-log-entry.component.scss",
 })

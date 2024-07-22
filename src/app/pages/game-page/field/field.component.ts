@@ -2,13 +2,13 @@ import { Component, inject } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../../services/manager.service";
 import { FieldTileComponent } from "./field-tile/field-tile.component";
-import { TimeDisplayComponent } from "../../../time-display/time-display.component";
+import { TimePipe } from "../../../services/time.pipe";
 import * as g from "../../../../game";
 
 @Component({
     selector: "app-field",
     standalone: true,
-    imports: [ReactiveFormsModule, FieldTileComponent, TimeDisplayComponent],
+    imports: [ReactiveFormsModule, FieldTileComponent, TimePipe],
     templateUrl: "./field.component.html",
 })
 export class FieldComponent {

@@ -7,14 +7,16 @@
     {{ cropInfo.description }}
     <br />
     <br />
-    <ng-container i18n="@@app-seed-log-entry.maturity">Maturity: </ng-container>
-    <app-time-display [ms]="cropInfo.maturity * manager.game!.saveData.tickRate"></app-time-display>
+    <ng-container i18n="@@app-seed-log-entry.maturity"
+        >Maturity: {{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}</ng-container
+    >
     <br />
     @if (cropInfo.lifespan == null) {
         <ng-container i18n="@@app-seed-log-entry.immortal">Immortal</ng-container>
     } @else {
-        <ng-container i18n="@@app-seed-log-entry.lifespan">Lifespan: </ng-container>
-        <app-time-display [ms]="cropInfo.lifespan * manager.game!.saveData.tickRate"></app-time-display>
+        <ng-container i18n="@@app-seed-log-entry.lifespan"
+            >Lifespan: {{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}</ng-container
+        >
     }
     @if (cropInfo.infectionValue != null) {
         <br />
