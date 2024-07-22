@@ -13,4 +13,7 @@
     </div>
     <app-field></app-field>
     <app-seed-log></app-seed-log>
+    @if (manager.game!.saveData.hardMode) {
+        <app-trophy-case></app-trophy-case>
+    }
 }

@@ -15,7 +15,7 @@ export class WelcomePageComponent {
     router = inject(Router);
     locale = inject(LOCALE_ID);
 
-    customGameData: g.d.g.v1.GameData | null = null;
+    customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
     hardModeOption = new FormControl<boolean>(false);

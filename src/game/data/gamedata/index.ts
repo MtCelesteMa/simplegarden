@@ -1,12 +1,12 @@
 import { Loader } from "../loader";
-import * as v1 from "./v1";
-export * as v1 from "./v1";
+import * as v2 from "./v2";
+export * as v2 from "./v2";
 
-export const loader = new Loader("sg_gamedata", 1, v1.gameData as any, []);
+export const loader = new Loader("sg_gamedata", 2, v2.gameData as any, [v2.upgrade]);
 
-export const simpleClassic: v1.GameData = {
+export const simpleClassic: v2.GameData = {
     identifier: "sg_gamedata",
-    version: 1,
+    version: 2,
     crops: {
         wheat: {
             displayName: $localize`:@@game.crop.wheat.displayname:Wheat`,
@@ -750,6 +750,14 @@ export const simpleClassic: v1.GameData = {
             chance: 0.002,
         },
     ],
+    trophies: {
+        jbeet100: {
+            displayName: $localize`:@@game.trophy.jbeet100.displayname:You're Insane!`,
+            description: $localize`:@@game.trophy.jbeet100.description:Amass 100 Juicy Beets`,
+            target: "jbeet",
+            quantity: 100,
+        },
+    },
     initialCrops: ["wheat"],
     fieldSize: [6, 6],
 };

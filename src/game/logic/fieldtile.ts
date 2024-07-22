@@ -5,10 +5,10 @@ export type Mutation = { target: string; chance: number };
 
 export class FieldTile {
     private coords: [number, number];
-    private gameData: d.g.v1.GameData;
+    private gameData: d.g.v2.GameData;
     private saveData: d.s.v2.SaveData;
 
-    constructor(coords: [number, number], gameData: d.g.v1.GameData, saveData: d.s.v2.SaveData) {
+    constructor(coords: [number, number], gameData: d.g.v2.GameData, saveData: d.s.v2.SaveData) {
         this.coords = coords;
         this.gameData = gameData;
         this.saveData = saveData;
@@ -42,7 +42,7 @@ export class FieldTile {
         this.tile.age = value;
     }
 
-    get cropInfo(): d.g.v1.CropInfo | null {
+    get cropInfo(): d.g.v2.CropInfo | null {
         if (this.crop == null) return null;
         return JSON.parse(JSON.stringify(this.gameData.crops[this.crop]));
     }
@@ -94,6 +94,10 @@ export class FieldTile {
                 if (this.isUnlocked!) {
                     if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
                 } else this.saveData.inventory[this.crop] = 1;
+                for (let trophy of Object.entries(this.gameData.trophies)) {
+                    if (trophy[1].target == this.crop && this.saveData.inventory[this.crop]! >= trophy[1].quantity)
+                        this.saveData.trophies.push(trophy[0]);
+                }
             } else {
                 if (!this.isUnlocked!) this.saveData.inventory[this.crop] = null;
             }
@@ -148,7 +152,7 @@ export class FieldTile {
         if (this.crop != null) return [];
         let count = this.countNeighbors(field);
         return this.gameData.mutations
-            .filter((mutation: d.g.v1.MutationInfo): boolean => {
+            .filter((mutation: d.g.v2.MutationInfo): boolean => {
                 for (let req of Object.entries(mutation.requires)) {
                     if (req[1].min != 0) {
                         if (req[1].mature) {
@@ -161,7 +165,7 @@ export class FieldTile {
                 }
                 return true;
             })
-            .map((mutation: d.g.v1.MutationInfo): Mutation => {
+            .map((mutation: d.g.v2.MutationInfo): Mutation => {
                 return { target: mutation.target, chance: mutation.chance };
             });
     }

@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { versionedData } from "../loader";
 import * as v1 from "./v1";
-import { gameData } from "../gamedata/v1";
 
 export const fieldTile = z.object({
     crop: z.string().nullable(),
@@ -20,6 +19,7 @@ export const saveData = z
         lastTick: z.number().int().gte(0),
         field: fieldTile.array().array(),
         inventory: z.object({}).catchall(z.number().int().gte(0).nullable()),
+        trophies: z.string().array(),
     })
     .merge(versionedData);
 
@@ -38,6 +38,7 @@ export function upgrade(raw: unknown): SaveData {
         lastTick: obj.lastTick,
         field: obj.field,
         inventory: Object.fromEntries(obj.unlockedCrops.map((name: string): [string, number | null] => [name, null])),
+        trophies: [],
     };
     return saveData.parse(newObj);
 }

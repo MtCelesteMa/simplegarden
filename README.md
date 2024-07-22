@@ -45,13 +45,13 @@ Where `LOCALE_ID` is the ID of the locale to launch under. Currently supported a
 
 The mechanics are mostly the same as the Garden minigame in Cookie Clicker, with the same crops and mutation rules. As such, the [Garden](https://cookieclicker.fandom.com/wiki/Garden) page on the Cookie Clicker wiki can serve as a great guide. However, there are some key differences, not limited to:
 
-* Plant growth is deterministic. For example, wheat will always live for 13 ticks.
-* Planted crops provide no side effects, as there is no cookie production to boost.
-* Similarly, there are no "garden drops" obtained by harvesting certain crops.
-* Only one soil type. The game ticks at a fixed rate, and mutations/weed growth cannot be boosted.
-* All crops are free to plant (in Normal Mode).
-* Play with custom crops and mutations by uploading custom data files.
+-   Plant growth is deterministic. For example, wheat will always live for 13 ticks.
+-   Planted crops provide no side effects, as there is no cookie production to boost.
+-   Similarly, there are no "garden drops" obtained by harvesting certain crops.
+-   Only one soil type. The game ticks at a fixed rate, and mutations/weed growth cannot be boosted.
+-   All crops are free to plant (in Normal Mode).
+-   Play with custom crops and mutations by uploading custom data files.
 
 ### Hard Mode
 
-*Coming soon...*
+_Coming soon..._

@@ -23,9 +23,9 @@ export class SeedLogComponent {
 
     get listUnlockedCrops(): string[] {
         return Object.entries(this.manager.game!.gameData.crops)
-            .filter((value: [string, g.d.g.v1.CropInfo]): boolean => {
+            .filter((value: [string, g.d.g.v2.CropInfo]): boolean => {
                 return Object.hasOwn(this.manager.game!.saveData.inventory, value[0]);
             })
-            .map((value: [string, g.d.g.v1.CropInfo]): string => value[0]);
+            .map((value: [string, g.d.g.v2.CropInfo]): string => value[0]);
     }
 }
