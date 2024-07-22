@@ -81,7 +81,9 @@ export class FieldTile {
     harvestCrop(): void {
         if (this.crop == null) return;
         if (this.isMature! && !this.isUnlocked!) this.saveData.unlockedCrops.push(this.crop);
-        this.killCrop();
+        if (this.isMature! && this.cropInfo!.spreadOnHarvest.length > 0 && Math.random() < 0.1)
+            this.plantCrop(this.cropInfo!.spreadOnHarvest[Math.floor(Math.random() * this.cropInfo!.spreadOnHarvest.length)]);
+        else this.killCrop();
     }
 
     updateTile(): void {
