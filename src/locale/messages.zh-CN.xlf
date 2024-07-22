@@ -1,4 +1,4 @@
-<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-TW">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-CN">
   <file id="ngi18n" original="ng.template">
     <unit id="app-root.title">
       <segment state="initial">
@@ -39,7 +39,7 @@
     <unit id="game.crop.wheat.description">
       <segment state="initial">
         <source>A versatile crop used in the making of many staple foods.</source>
-        <target>一种用途广泛的作物，用于制作许多主食。</target>
+        <target>一种用途广泛的庄稼，用于制作许多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.corn.displayname">
@@ -57,7 +57,7 @@
     <unit id="game.crop.corn.description">
       <segment state="initial">
         <source>Another versatile crop used in the making of many staple foods.</source>
-        <target>另一种用途广泛的作物，用于制作许多主食。</target>
+        <target>另一种用途广泛的庄稼，用于制作许多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.displayname">
@@ -75,7 +75,7 @@
     <unit id="game.crop.rice.description">
       <segment state="initial">
         <source>A versatile crop used in many dishes across the world.</source>
-        <target>一种用途广泛的作物，用于世界各地的许多菜肴中。</target>
+        <target>一种用途广泛的庄稼，用于世界各地的许多菜肴中。</target>
       </segment>
     </unit>
     <unit id="game.crop.millet.displayname">
@@ -93,7 +93,7 @@
     <unit id="game.crop.millet.description">
       <segment state="initial">
         <source>A hardy crop that is resistant to many environmental factors.</source>
-        <target>一种耐多种环境因素的耐寒作物。</target>
+        <target>一种耐多种环境因素的耐寒庄稼。</target>
       </segment>
     </unit>
     <unit id="game.crop.clover.displayname">
@@ -147,7 +147,7 @@
     <unit id="game.crop.lily.description">
       <segment state="initial">
         <source>A flower that grows in water.</source>
-        <target>A flower that grows in water.</target>
+        <target>一种生长在水中的花。</target>
       </segment>
     </unit>
     <unit id="game.crop.wort.displayname">
@@ -177,7 +177,7 @@
     <unit id="game.crop.weed.shortname">
       <segment state="initial">
         <source>X</source>
-        <target>X</target>
+        <target>杂草</target>
       </segment>
     </unit>
     <unit id="game.crop.weed.description">

@@ -39,7 +39,7 @@
     <unit id="game.crop.wheat.description">
       <segment state="initial">
         <source>A versatile crop used in the making of many staple foods.</source>
-        <target>一種用途廣泛的作物，用於製作許多主食。</target>
+        <target>一種用途廣泛的莊稼，用於製作許多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.corn.displayname">
@@ -57,7 +57,7 @@
     <unit id="game.crop.corn.description">
       <segment state="initial">
         <source>Another versatile crop used in the making of many staple foods.</source>
-        <target>另一種用途廣泛的作物，用於製作許多主食。</target>
+        <target>另一種用途廣泛的莊稼，用於製作許多主食。</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.displayname">
@@ -75,7 +75,7 @@
     <unit id="game.crop.rice.description">
       <segment state="initial">
         <source>A versatile crop used in many dishes across the world.</source>
-        <target>一種用途廣泛的作物，用於世界各地的許多菜餚中。</target>
+        <target>一種用途廣泛的莊稼，用於世界各地的許多菜餚中。</target>
       </segment>
     </unit>
     <unit id="game.crop.millet.displayname">
@@ -93,7 +93,7 @@
     <unit id="game.crop.millet.description">
       <segment state="initial">
         <source>A hardy crop that is resistant to many environmental factors.</source>
-        <target>一種耐多種環境因素的耐寒作物。</target>
+        <target>一種耐多種環境因素的耐寒莊稼。</target>
       </segment>
     </unit>
     <unit id="game.crop.clover.displayname">
@@ -147,7 +147,7 @@
     <unit id="game.crop.lily.description">
       <segment state="initial">
         <source>A flower that grows in water.</source>
-        <target>A flower that grows in water.</target>
+        <target>一種生長在水中的花。</target>
       </segment>
     </unit>
     <unit id="game.crop.wort.displayname">
@@ -177,7 +177,7 @@
     <unit id="game.crop.weed.shortname">
       <segment state="initial">
         <source>X</source>
-        <target>X</target>
+        <target>雜草</target>
       </segment>
     </unit>
     <unit id="game.crop.weed.description">
