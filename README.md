@@ -40,18 +40,29 @@ cd simplegarden
 npm i
 ```
 
-4. Launch the application.
+4. (Method A) Launch the application using `ng serve`
 
 ```shell
-ng serve
+npx ng serve
 ```
 
 This will launch SimpleGarden under the `en-US` locale. To launch using a different locale, use the following command:
 
 ```shell
-ng serve --configuration=LOCALE_ID
+npx ng serve --configuration=LOCALE_ID
 ```
 
 Where `LOCALE_ID` is the ID of the locale to launch under. Currently supported alternative locales are: `zh-TW`, `zh-CN`.
 
-5. Open the provided link in your browser (by default it is `http://localhost:4200/`).
+As this method only allows one locale to be launched, the locale selector cannot be used.
+
+4. (Method B) Build and launch the application using `ng build` and `serve`.
+
+```shell
+npx ng build
+npx serve dist/simplegarden/browser
+```
+
+This method serves all locales simutaneously, and the locale selector may be used.
+
+5. Open the provided link in your browser (by default it is `http://localhost:4200/` for Method A and `http://localhost:3000/` for Method B).

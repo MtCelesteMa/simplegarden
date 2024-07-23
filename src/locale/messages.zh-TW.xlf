@@ -63,13 +63,13 @@
     <unit id="game.crop.rice.displayname">
       <segment state="initial">
         <source>Rice</source>
-        <target>米</target>
+        <target>稻米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.shortname">
       <segment state="initial">
         <source>R</source>
-        <target>米</target>
+        <target>稻米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.description">
