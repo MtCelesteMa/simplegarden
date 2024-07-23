@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 import { ManagerService } from "../../services/manager.service";
+import { RoutingService } from "../../services/routing.service";
 import { TimeDisplayComponent } from "../../time-display/time-display.component";
 import { FieldComponent } from "./field/field.component";
 import { SeedLogComponent } from "./seed-log/seed-log.component";
@@ -13,11 +13,11 @@ import { SeedLogComponent } from "./seed-log/seed-log.component";
 })
 export class GamePageComponent implements OnInit {
     manager = inject(ManagerService);
-    router = inject(Router);
+    router = inject(RoutingService);
 
     timerHidden: boolean = false;
 
     ngOnInit(): void {
-        if (this.manager.game == null) this.router.navigate([""]);
+        if (this.manager.game == null) this.router.page = "welcome";
     }
 }

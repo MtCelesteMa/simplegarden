@@ -1,7 +1,8 @@
 import { Component, inject } from "@angular/core";
-import { Router } from "@angular/router";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
+import { RoutingService } from "../../services/routing.service";
+import { CacheService } from "../../services/cache.service";
 import * as g from "../../../game";
 
 @Component({
@@ -12,18 +13,20 @@ import * as g from "../../../game";
 })
 export class WelcomePageComponent {
     manager = inject(ManagerService);
-    router = inject(Router);
+    router = inject(RoutingService);
+    cache = inject(CacheService);
 
     customGameData: g.d.g.v1.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
     cheatModeOption = new FormControl<boolean>(false);
+    disableCacheOption = new FormControl<boolean>(!this.cache.enabled);
 
     gameImportFailed: boolean = false;
 
     loadGame(): void {
         this.manager.loadGame();
-        this.router.navigate(["game"]);
+        this.router.page = "game";
     }
 
     exportGame(): void {
@@ -56,7 +59,7 @@ export class WelcomePageComponent {
         )
             return;
         this.manager.game = g.Game.newGame(this.customGameData, this.cheatModeOption.value!);
-        this.router.navigate(["game"]);
+        this.router.page = "game";
     }
 
     importGameData(): void {
@@ -94,7 +97,7 @@ export class WelcomePageComponent {
             reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
                 try {
                     this.manager.game = g.Game.fromRaw(e.target!.result as string);
-                    this.router.navigate(["game"]);
+                    this.router.page = "game";
                 } catch {
                     this.gameImportFailed = true;
                 }
@@ -102,5 +105,14 @@ export class WelcomePageComponent {
             reader.readAsText(file);
         });
         upl.click();
+    }
+
+    toggleCache(): void {
+        if (this.disableCacheOption.value!) {
+            alert(
+                $localize`:@@app-welcome-page.disable-cache-info:Caching allows the game to persist state across page reloads. It is not recommended to disable caching on mobile devices.`,
+            );
+            this.cache.disable();
+        } else this.cache.enable();
     }
 }

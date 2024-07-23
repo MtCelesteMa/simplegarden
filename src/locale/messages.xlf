@@ -716,5 +716,20 @@
         <source>WR</source>
       </segment>
     </unit>
+    <unit id="app-welcome-page.advanced-options">
+      <segment>
+        <source>Advanced Options</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.disable-cache">
+      <segment>
+        <source>Disable Cache</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.disable-cache-info">
+      <segment>
+        <source>Caching allows the game to persist state across page reloads. It is not recommended to disable caching on mobile devices.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

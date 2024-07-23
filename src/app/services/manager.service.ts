@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { CachedValue } from "./cache.service";
 import * as g from "../../game";
 
 @Injectable({
@@ -7,10 +8,23 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
+    private saveData = new CachedValue<g.d.s.v1.SaveData>("simplegarden_savedata", null);
+    private startTime = new CachedValue<number>("simplegarden_starttime", 0);
+
+    constructor() {
+        if (this.saveData.isCached && this.startTime.isCached) {
+            this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
+        }
+    }
 
     get timeElapsed(): number {
         if (this.game == null) return 0;
         return this.curTime - this.game.sessStartTime + this.game.saveData.playTime;
+    }
+
+    cacheSave(): void {
+        this.saveData.value = this.game!.saveData;
+        this.startTime.value = this.game!.sessStartTime;
     }
 
     saveExists(): boolean {
