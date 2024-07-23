@@ -1,6 +1,6 @@
 div.field-tile {
     background-color: brown;
-    color: #007f00;
+    color: #009f00;
     height: 30px;
     width: 30px;
     margin: auto;
@@ -12,4 +12,8 @@ div.field-tile[selected] {
 
 div.field-tile[mature] {
     color: #00ff00;
+}
+
+div.field-tile[manual] {
+    text-decoration: underline;
 }

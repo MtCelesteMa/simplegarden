@@ -1,7 +1,16 @@
 @if (manager.game != null) {
     <div class="box centering">
+        @if (manager.game!.saveData.difficulty.limitResources && manager.game!.saveData.difficulty.lrExploitPatch) {
+            <span style="color: darkred" i18n="@@app-game-page.brutal-mode-active">Brutal Mode Active</span>
+            <br />
+            <br />
+        } @else if (manager.game!.saveData.difficulty.limitResources) {
+            <span style="color: red" i18n="@@app-game-page.hard-mode-active">Hard Mode Active</span>
+            <br />
+            <br />
+        }
         @if (!timerHidden) {
-            <app-time-display [ms]="manager.timeElapsed"></app-time-display>
+            {{ manager.timeElapsed | time }}
             <br />
             <button (click)="timerHidden = true" i18n="@@app-game-page.hide-timer">Hide Timer</button>
             <br />
@@ -13,4 +22,7 @@
     </div>
     <app-field></app-field>
     <app-seed-log></app-seed-log>
+    @if (manager.game!.saveData.difficulty.limitResources) {
+        <app-trophy-case></app-trophy-case>
+    }
 }
