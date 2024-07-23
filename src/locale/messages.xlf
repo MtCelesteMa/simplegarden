@@ -874,5 +874,15 @@
         <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
       </segment>
     </unit>
+    <unit id="app-game-page.brutal-mode-active">
+      <segment>
+        <source>Brutal Mode Active</source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hard-mode-active">
+      <segment>
+        <source>Hard Mode Active</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

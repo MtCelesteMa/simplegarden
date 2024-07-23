@@ -13,7 +13,10 @@ export type FieldTile = z.infer<typeof fieldTile>;
 export const saveData = z
     .object({
         gameData: z.unknown(),
-        difficulty: z.string(),
+        difficulty: z.object({
+            limitResources: z.boolean(),
+            lrExploitPatch: z.boolean()
+        }),
         playTime: z.number().int().gte(0),
         tickRate: z.number().int().gte(0),
         lastTick: z.number().int().gte(0),
@@ -31,7 +34,7 @@ export function upgrade(raw: unknown): SaveData {
         identifier: obj.identifier,
         version: 2,
         gameData: obj.gameData,
-        difficulty: "normal",
+        difficulty: { limitResources: false, lrExploitPatch: false },
         playTime: obj.playTime,
         tickRate: obj.tickRate,
         lastTick: obj.lastTick,

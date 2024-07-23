@@ -80,7 +80,7 @@
                         >
                     }
                 }
-                @if (manager.game!.saveData.difficulty == "brutal" && selectedTile.manual) {
+                @if (manager.game!.saveData.difficulty.lrExploitPatch && selectedTile.manual) {
                     <br />
                     <span style="color: darkred" i18n="@@app-field.manually-planted"
                         >This crop is manually planted and will not yield anything when harvested.</span

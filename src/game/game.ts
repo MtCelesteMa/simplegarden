@@ -41,7 +41,10 @@ export class Game {
             identifier: "sg_savedata",
             version: 2,
             gameData: raw == null ? null : gameData,
-            difficulty: difficulty,
+            difficulty: {
+                limitResources: difficulty == "hard" || difficulty == "brutal",
+                lrExploitPatch: difficulty == "brutal"
+            },
             playTime: 0,
             tickRate: tickRate,
             lastTick: new Date().getTime(),

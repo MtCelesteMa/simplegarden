@@ -1047,5 +1047,17 @@
         <target>根困难模式一样，但是人工种植的庄稼收割时不会生产任何产品。</target>
       </segment>
     </unit>
+    <unit id="app-game-page.brutal-mode-active">
+      <segment state="initial">
+        <source>Brutal Mode Active</source>
+        <target>残暴模式开启</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hard-mode-active">
+      <segment state="initial">
+        <source>Hard Mode Active</source>
+        <target>困难模式开启</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

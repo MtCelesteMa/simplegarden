@@ -38,7 +38,7 @@ export class FieldTileComponent {
     }
 
     get isManual(): boolean {
-        return this.manager.game!.saveData.difficulty == "brutal" && this.tile.manual;
+        return this.manager.game!.saveData.difficulty.lrExploitPatch && this.tile.manual;
     }
 
     selectTile(): void {
