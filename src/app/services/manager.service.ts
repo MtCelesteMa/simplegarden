@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { CachedValue } from "./cache.service";
+import { PersistedValue } from "./persistence.service";
 import * as g from "../../game";
 
 @Injectable({
@@ -8,8 +8,8 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
-    private saveData = new CachedValue<g.d.s.v2.SaveData>("simplegarden_savedata", null);
-    private startTime = new CachedValue<number>("simplegarden_starttime", 0);
+    private saveData = new PersistedValue<g.d.s.v2.SaveData>("simplegarden_savedata", null);
+    private startTime = new PersistedValue<number>("simplegarden_starttime", 0);
 
     constructor() {
         if (this.saveData.isCached && this.startTime.isCached) {

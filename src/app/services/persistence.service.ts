@@ -1,7 +1,7 @@
 import { Injectable, inject } from "@angular/core";
 
-export class CachedValue<T> {
-    private cache = inject(CacheService);
+export class PersistedValue<T> {
+    private persistence = inject(PersistenceService);
     private key: string;
     private df: T | null;
     private v: T | null = null;
@@ -12,12 +12,12 @@ export class CachedValue<T> {
     }
 
     get isCached(): boolean {
-        return this.cache.enabled && sessionStorage.getItem(this.key) != null;
+        return this.persistence.enabled && sessionStorage.getItem(this.key) != null;
     }
 
     get value(): T {
         if (this.v == null) {
-            if (this.cache.enabled) {
+            if (this.persistence.enabled) {
                 let cv = sessionStorage.getItem(this.key);
                 if (cv == null) return this.df!;
                 else return JSON.parse(cv).value;
@@ -29,28 +29,28 @@ export class CachedValue<T> {
 
     set value(value: T) {
         this.v = value;
-        if (this.cache.enabled) sessionStorage.setItem(this.key, JSON.stringify({ value: value }));
+        if (this.persistence.enabled) sessionStorage.setItem(this.key, JSON.stringify({ value: value }));
     }
 }
 
 @Injectable({
     providedIn: "root",
 })
-export class CacheService {
+export class PersistenceService {
     enabled: boolean = true;
 
     constructor() {
-        let s = localStorage.getItem("simplegarden_disablecache");
+        let s = localStorage.getItem("simplegarden_disablepersistence");
         if (s != null) this.enabled = false;
     }
 
     enable(): void {
         this.enabled = true;
-        localStorage.removeItem("simplegarden_disablecache");
+        localStorage.removeItem("simplegarden_disablepersistence");
     }
 
     disable(): void {
         this.enabled = false;
-        localStorage.setItem("simplegarden_disablecache", "yes");
+        localStorage.setItem("simplegarden_disablepersistence", "yes");
     }
 }

@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
-import { CacheService } from "../../services/cache.service";
+import { PersistenceService } from "../../services/persistence.service";
 import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import * as g from "../../../game";
 
@@ -15,13 +15,13 @@ import * as g from "../../../game";
 export class WelcomePageComponent implements OnInit {
     manager = inject(ManagerService);
     router = inject(RoutingService);
-    cache = inject(CacheService);
+    persistence = inject(PersistenceService);
 
     customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
     difficultySelect = new FormControl<string>("normal");
-    disableCacheOption = new FormControl<boolean>(!this.cache.enabled);
+    disablePersistenceOption = new FormControl<boolean>(!this.persistence.enabled);
 
     gameImportFailed: boolean = false;
 
@@ -105,12 +105,12 @@ export class WelcomePageComponent implements OnInit {
         upl.click();
     }
 
-    toggleCache(): void {
-        if (this.disableCacheOption.value!) {
+    togglePersistence(): void {
+        if (this.disablePersistenceOption.value!) {
             alert(
-                $localize`:@@app-welcome-page.disable-cache-info:Caching allows the game to persist state across page reloads. It is not recommended to disable caching on mobile devices.`,
+                $localize`:@@app-welcome-page.disable-persistence-info:Persistence allows the game to persist state across page reloads. It is not recommended to disable persistence on mobile devices.`,
             );
-            this.cache.disable();
-        } else this.cache.enable();
+            this.persistence.disable();
+        } else this.persistence.enable();
     }
 }
