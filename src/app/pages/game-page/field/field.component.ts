@@ -5,7 +5,7 @@ import { FieldTileComponent } from "./field-tile/field-tile.component";
 import { TimePipe } from "../../../services/time.pipe";
 import * as g from "../../../../game";
 
-type SoilType = {displayName: string, tickRate: number}
+type SoilType = { displayName: string; tickRate: number };
 
 @Component({
     selector: "app-field",
@@ -16,37 +16,34 @@ type SoilType = {displayName: string, tickRate: number}
 export class FieldComponent implements OnInit {
     manager = inject(ManagerService);
     soilSelector = new FormControl<string>("");
-    soils: {[k: string]: SoilType} = {
+    soils: { [k: string]: SoilType } = {
         tfertilizer: {
             displayName: $localize`:@@app-field.soil-tfertilizer:Turbo Fertilizer`,
-            tickRate: 60000
+            tickRate: 60000,
         },
         fertilizer: {
             displayName: $localize`:@@app-field.soil-fertilizer:Fertilizer`,
-            tickRate: 180000
+            tickRate: 180000,
         },
         dirt: {
             displayName: $localize`:@@app-field.soil-dirt:Dirt`,
-            tickRate: 300000
+            tickRate: 300000,
         },
         clay: {
             displayName: $localize`:@@app-field.soil-clay:Clay`,
-            tickRate: 600000
+            tickRate: 600000,
         },
         fdirt: {
             displayName: $localize`:@@app-field.soil-fdirt:Frozen Dirt`,
-            tickRate: 1800000
-        }
-    }
+            tickRate: 1800000,
+        },
+    };
 
     ngOnInit(): void {
         let rate = this.manager.game!.saveData.tickRate;
-        let soil = this.listSoils.filter(
-            (value: [string, SoilType]): boolean => value[1].tickRate == rate
-        )
-        .map(
-            (value: [string, SoilType]): string => value[0]
-        );
+        let soil = this.listSoils
+            .filter((value: [string, SoilType]): boolean => value[1].tickRate == rate)
+            .map((value: [string, SoilType]): string => value[0]);
         this.soilSelector.setValue(soil.length == 1 ? soil[0] : "");
     }
 

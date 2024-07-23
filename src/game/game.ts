@@ -29,7 +29,7 @@ export class Game {
 
     private static emptyField(dims: [number, number]): d.s.v2.FieldTile[][] {
         let field = Array<d.s.v2.FieldTile[]>(dims[0]).fill(
-            Array<d.s.v2.FieldTile>(dims[1]).fill({ crop: null, age: 0 }),
+            Array<d.s.v2.FieldTile>(dims[1]).fill({ crop: null, age: 0, manual: false }),
         );
         return JSON.parse(JSON.stringify(field));
     }

@@ -5,6 +5,7 @@ import * as v1 from "./v1";
 export const fieldTile = z.object({
     crop: z.string().nullable(),
     age: z.number().int().gte(0),
+    manual: z.boolean(),
 });
 
 export type FieldTile = z.infer<typeof fieldTile>;
@@ -34,7 +35,11 @@ export function upgrade(raw: unknown): SaveData {
         playTime: obj.playTime,
         tickRate: obj.tickRate,
         lastTick: obj.lastTick,
-        field: obj.field,
+        field: obj.field.map((row: v1.FieldTile[]): FieldTile[] =>
+            row.map((tile: v1.FieldTile): FieldTile => {
+                return { crop: tile.crop, age: tile.age, manual: false };
+            }),
+        ),
         inventory: Object.fromEntries(obj.unlockedCrops.map((name: string): [string, number | null] => [name, null])),
         trophies: {},
     };

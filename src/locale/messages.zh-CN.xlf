@@ -1029,5 +1029,23 @@
         <target>一个具有挑战性的难度，你的庄稼数量是有限的。</target>
       </segment>
     </unit>
+    <unit id="app-field.manually-planted">
+      <segment state="initial">
+        <source>This crop is manually planted and will not yield anything when harvested.</source>
+        <target>这个庄稼是人工种植的，收割后不会产生任何产品。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode">
+      <segment state="initial">
+        <source>Brutal Mode</source>
+        <target>残暴模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode-desc">
+      <segment state="initial">
+        <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
+        <target>根困难模式一样，但是人工种植的庄稼收割时不会生产任何产品。</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

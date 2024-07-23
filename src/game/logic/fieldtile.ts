@@ -42,6 +42,14 @@ export class FieldTile {
         this.tile.age = value;
     }
 
+    get manual(): boolean {
+        return this.tile.manual;
+    }
+
+    set manual(value: boolean) {
+        this.tile.manual = value;
+    }
+
     get cropInfo(): d.g.v2.CropInfo | null {
         if (this.crop == null) return null;
         return JSON.parse(JSON.stringify(this.gameData.crops[this.crop]));
@@ -71,29 +79,37 @@ export class FieldTile {
     plantCrop(crop: string): void {
         this.crop = crop;
         this.age = 0;
+        this.manual = false;
     }
 
     killCrop(): void {
         this.crop = null;
         this.age = 0;
+        this.manual = false;
     }
 
     sowCrop(crop: string): void {
         if (!Object.hasOwn(this.saveData.inventory, crop)) return;
-        if (this.saveData.difficulty == "hard" && this.saveData.inventory[crop] != null) {
+        if (
+            (this.saveData.difficulty == "hard" || this.saveData.difficulty == "brutal") &&
+            this.saveData.inventory[crop] != null
+        ) {
             if (this.saveData.inventory[crop] < 1) return;
             this.saveData.inventory[crop]--;
         }
         this.plantCrop(crop);
+        this.manual = true;
     }
 
     harvestCrop(): void {
         if (this.crop == null) return;
         if (this.isMature!) {
-            if (this.saveData.difficulty == "hard") {
-                if (this.isUnlocked!) {
-                    if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
-                } else this.saveData.inventory[this.crop] = 1;
+            if (this.saveData.difficulty == "hard" || this.saveData.difficulty == "brutal") {
+                if (this.saveData.difficulty != "brutal" || !this.manual) {
+                    if (this.isUnlocked!) {
+                        if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
+                    } else this.saveData.inventory[this.crop] = 1;
+                }
                 for (let trophy of Object.entries(this.gameData.trophies)) {
                     if (
                         !Object.hasOwn(this.saveData.trophies, trophy[0]) &&

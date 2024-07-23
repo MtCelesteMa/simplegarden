@@ -53,10 +53,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     newGame(): void {
-        this.manager.game = g.Game.newGame(
-            this.customGameData,
-            this.difficultySelect.value!,
-        );
+        this.manager.game = g.Game.newGame(this.customGameData, this.difficultySelect.value!);
         this.router.navigate(["game"]);
     }
 

@@ -13,3 +13,7 @@ div.field-tile[selected] {
 div.field-tile[mature] {
     color: #00ff00;
 }
+
+div.field-tile[manual] {
+    text-decoration: underline;
+}

@@ -859,5 +859,20 @@
         <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
       </segment>
     </unit>
+    <unit id="app-field.manually-planted">
+      <segment>
+        <source>This crop is manually planted and will not yield anything when harvested.</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode">
+      <segment>
+        <source>Brutal Mode</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode-desc">
+      <segment>
+        <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

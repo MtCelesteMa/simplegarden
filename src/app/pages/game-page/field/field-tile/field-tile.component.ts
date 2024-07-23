@@ -37,6 +37,10 @@ export class FieldTileComponent {
         return this.tile.isMature!;
     }
 
+    get isManual(): boolean {
+        return this.manager.game!.saveData.difficulty == "brutal" && this.tile.manual;
+    }
+
     selectTile(): void {
         this.manager.game!.selectedTile = [this.rowN, this.colN];
         if (this.manager.game!.paintMode) {
