@@ -981,5 +981,35 @@
         <target><ph id="0" equiv="PH" disp="s"/>秒</target>
       </segment>
     </unit>
+    <unit id="app-field.select-soil">
+      <segment state="initial">
+        <source>Select Soil:</source>
+        <target>选择土壤：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-tfertilizer">
+      <segment state="initial">
+        <source>Turbo Fertilizer</source>
+        <target>超级肥料</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-fertilizer">
+      <segment state="initial">
+        <source>Fertilizer</source>
+        <target>肥料</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-dirt">
+      <segment state="initial">
+        <source>Dirt</source>
+        <target>土</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-clay">
+      <segment state="initial">
+        <source>Clay</source>
+        <target>黏土</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -819,5 +819,30 @@
         <source>1 second</source>
       </segment>
     </unit>
+    <unit id="app-field.select-soil">
+      <segment>
+        <source>Select Soil:</source>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-clay">
+      <segment>
+        <source>Clay</source>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-dirt">
+      <segment>
+        <source>Dirt</source>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-fertilizer">
+      <segment>
+        <source>Fertilizer</source>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-tfertilizer">
+      <segment>
+        <source>Turbo Fertilizer</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

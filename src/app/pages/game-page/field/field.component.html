@@ -11,6 +11,14 @@
         </select>
         &nbsp;
         <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
+        <br />
+        <ng-container i18n="@@app-field.select-soil">Select Soil:</ng-container>
+        <select (change)="changeSoil()" [formControl]="soilSelector">
+            <option value="" selected disabled></option>
+            @for (soil of listSoils; track soil[0]) {
+                <option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</option>
+            }
+        </select>
     </div>
     <div style="overflow-x: scroll">
         <table style="margin-left: auto; margin-right: auto">
