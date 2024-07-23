@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
@@ -11,7 +11,7 @@ import * as g from "../../../game";
     imports: [ReactiveFormsModule, LocaleSelectorComponent],
     templateUrl: "./welcome-page.component.html",
 })
-export class WelcomePageComponent {
+export class WelcomePageComponent implements OnInit {
     manager = inject(ManagerService);
     router = inject(Router);
 
@@ -22,6 +22,10 @@ export class WelcomePageComponent {
     cheatModeOption = new FormControl<boolean>(false);
 
     gameImportFailed: boolean = false;
+
+    ngOnInit(): void {
+        this.manager.game = null;
+    }
 
     loadGame(): void {
         this.manager.loadGame();
