@@ -18,14 +18,14 @@ export class SeedLogComponent {
     }
 
     get nCropsUnlocked(): number {
-        return this.manager.game!.saveData.unlockedCrops.length;
+        return Object.keys(this.manager.game!.saveData.inventory).length;
     }
 
     get listUnlockedCrops(): string[] {
         return Object.entries(this.manager.game!.gameData.crops)
-            .filter((value: [string, g.d.g.v1.CropInfo]): boolean => {
-                return this.manager.game!.saveData.unlockedCrops.includes(value[0]);
+            .filter((value: [string, g.d.g.v2.CropInfo]): boolean => {
+                return Object.hasOwn(this.manager.game!.saveData.inventory, value[0]);
             })
-            .map((value: [string, g.d.g.v1.CropInfo]): string => value[0]);
+            .map((value: [string, g.d.g.v2.CropInfo]): string => value[0]);
     }
 }

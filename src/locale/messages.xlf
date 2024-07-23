@@ -211,26 +211,6 @@
         <source>Erase Game</source>
       </segment>
     </unit>
-    <unit id="app-time-display.dstr">
-      <segment>
-        <source>{VAR_PLURAL, plural, =1 {1 day} other {<ph id="0" equiv="INTERPOLATION"/> days}}</source>
-      </segment>
-    </unit>
-    <unit id="app-time-display.hstr">
-      <segment>
-        <source>{VAR_PLURAL, plural, =1 {1 hour} other {<ph id="0" equiv="INTERPOLATION"/> hours}}</source>
-      </segment>
-    </unit>
-    <unit id="app-time-display.mstr">
-      <segment>
-        <source>{VAR_PLURAL, plural, =1 {1 minute} other {<ph id="0" equiv="INTERPOLATION"/> minutes}}</source>
-      </segment>
-    </unit>
-    <unit id="app-time-display.sstr">
-      <segment>
-        <source>{VAR_PLURAL, plural, =1 {1 second} other {<ph id="0" equiv="INTERPOLATION"/> seconds}}</source>
-      </segment>
-    </unit>
     <unit id="app-game-page.hide-timer">
       <segment>
         <source>Hide Timer</source>
@@ -253,7 +233,7 @@
     </unit>
     <unit id="app-field.next-tick-in">
       <segment>
-        <source>Next tick in </source>
+        <source>Next tick in <ph id="0" equiv="INTERPOLATION" disp="{{ timeToNextTick | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-field.no-tile-selected">
@@ -288,7 +268,7 @@
     </unit>
     <unit id="app-field.age">
       <segment>
-        <source>Age: </source>
+        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-field.is-immortal">
@@ -298,12 +278,12 @@
     </unit>
     <unit id="app-field.expires-in">
       <segment>
-        <source>Expires in </source>
+        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-field.matures-in">
       <segment>
-        <source>Matures in </source>
+        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-field.unknown-crop">
@@ -323,12 +303,12 @@
     </unit>
     <unit id="app-seed-log-entry.lifespan">
       <segment>
-        <source>Lifespan: </source>
+        <source>Lifespan: <ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.maturity">
       <segment>
-        <source>Maturity: </source>
+        <source>Maturity: <ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}"/></source>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.mutations">
@@ -714,6 +694,129 @@
     <unit id="game.crop.wroot.shortname">
       <segment>
         <source>WR</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode">
+      <segment>
+        <source>Hard Mode</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode-info">
+      <segment>
+        <source>You have a limited number of crops in hard mode. Harvest mature crops to get more.</source>
+      </segment>
+    </unit>
+    <unit id="4522588066054962495">
+      <notes>
+        <note category="description">app-trophy-case.title</note>
+      </notes>
+      <segment>
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained }}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+      </segment>
+    </unit>
+    <unit id="app-trophy-case-entry.obtained-on">
+      <segment>
+        <source>Obtained On: <ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/></source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.description">
+      <segment>
+        <source>Amass 100 Juicy Beets</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.displayname">
+      <segment>
+        <source>You&apos;re Insane!</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.flavortext">
+      <segment>
+        <source>Sure I am, what&apos;s your point?</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.description">
+      <segment>
+        <source>Amass 100 Corn</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.displayname">
+      <segment>
+        <source>Acres of Corn</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.flavortext">
+      <segment>
+        <source>The corn will die soon.</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.description">
+      <segment>
+        <source>Amass 100 Taters</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.displayname">
+      <segment>
+        <source>Dedication</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.flavortext">
+      <segment>
+        <source>Don&apos;t you have anything better to do?</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.description">
+      <segment>
+        <source>Amass 100 Weed</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.displayname">
+      <segment>
+        <source>Drug Lord</source>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.flavortext">
+      <segment>
+        <source>No, you still can&apos;t smoke them.</source>
+      </segment>
+    </unit>
+    <unit id="time.dp">
+      <segment>
+        <source><ph id="0" equiv="PH" disp="d"/> days</source>
+      </segment>
+    </unit>
+    <unit id="time.ds">
+      <segment>
+        <source>1 day</source>
+      </segment>
+    </unit>
+    <unit id="time.hp">
+      <segment>
+        <source><ph id="0" equiv="PH" disp="h"/> hours</source>
+      </segment>
+    </unit>
+    <unit id="time.hs">
+      <segment>
+        <source>1 hour</source>
+      </segment>
+    </unit>
+    <unit id="time.mp">
+      <segment>
+        <source><ph id="0" equiv="PH" disp="m"/> minutes</source>
+      </segment>
+    </unit>
+    <unit id="time.ms">
+      <segment>
+        <source>1 minute</source>
+      </segment>
+    </unit>
+    <unit id="time.sp">
+      <segment>
+        <source><ph id="0" equiv="PH" disp="s"/> seconds</source>
+      </segment>
+    </unit>
+    <unit id="time.ss">
+      <segment>
+        <source>1 second</source>
       </segment>
     </unit>
   </file>

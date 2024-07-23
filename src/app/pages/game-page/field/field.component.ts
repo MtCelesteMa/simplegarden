@@ -2,13 +2,13 @@ import { Component, inject } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../../services/manager.service";
 import { FieldTileComponent } from "./field-tile/field-tile.component";
-import { TimeDisplayComponent } from "../../../time-display/time-display.component";
+import { TimePipe } from "../../../services/time.pipe";
 import * as g from "../../../../game";
 
 @Component({
     selector: "app-field",
     standalone: true,
-    imports: [ReactiveFormsModule, FieldTileComponent, TimeDisplayComponent],
+    imports: [ReactiveFormsModule, FieldTileComponent, TimePipe],
     templateUrl: "./field.component.html",
 })
 export class FieldComponent {
@@ -21,6 +21,10 @@ export class FieldComponent {
     get selectedTile(): g.l.FieldTile | null {
         if (this.manager.game!.selectedTile == null) return null;
         return this.manager.game!.field.tiles[this.manager.game!.selectedTile[0]][this.manager.game!.selectedTile[1]];
+    }
+
+    get unlockedCrops(): string[] {
+        return Object.keys(this.manager.game!.saveData.inventory);
     }
 
     togglePaintMode(ev: Event) {
