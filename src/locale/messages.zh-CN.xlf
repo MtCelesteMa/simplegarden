@@ -210,12 +210,6 @@
         <target> 设置导入失败 </target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.cheat-mode-conf">
-      <segment state="initial">
-        <source>Save files created with cheat mode active will be marked. Continue?</source>
-        <target>用作弊模式创建的保存文件会被标记。确认开始？</target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.import-game">
       <segment state="initial">
         <source>Import Game</source>
@@ -840,12 +834,6 @@
         <target>困难模式</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.hard-mode-info">
-      <segment state="initial">
-        <source>You have a limited number of crops in hard mode. Harvest mature crops to get more.</source>
-        <target>在困难模式里庄稼数量是有限的。收割成熟的庄稼可以让你获取更多的庄稼。</target>
-      </segment>
-    </unit>
     <unit id="app-trophy-case-entry.obtained-on">
       <segment state="initial">
         <source>Obtained On: <ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/></source>
@@ -1009,6 +997,36 @@
       <segment state="initial">
         <source>Clay</source>
         <target>黏土</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-fdirt">
+      <segment state="initial">
+        <source>Frozen Dirt</source>
+        <target>冻土</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.difficulty">
+      <segment state="initial">
+        <source>Difficulty</source>
+        <target>难度</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.normal-mode">
+      <segment state="initial">
+        <source>Normal Mode</source>
+        <target>正常模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.normal-mode-desc">
+      <segment state="initial">
+        <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
+        <target>标准体验。收割成熟的未知庄稼以永久解锁它们。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode-desc">
+      <segment state="initial">
+        <source>A challenging difficulty where you have a limited number of crops.</source>
+        <target>一个具有挑战性的难度，你的庄稼数量是有限的。</target>
       </segment>
     </unit>
   </file>

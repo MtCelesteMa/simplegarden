@@ -34,15 +34,14 @@ export class Game {
         return JSON.parse(JSON.stringify(field));
     }
 
-    static newGame(raw: unknown, cheatMode: boolean = false, hardMode: boolean = false): Game {
+    static newGame(raw: unknown, difficulty: string): Game {
         let tickRate: number = 60000;
         let gameData: d.g.v2.GameData = raw == null ? d.g.loader.load(d.g.simpleClassic) : d.g.loader.load(raw);
         let saveData: d.s.v2.SaveData = {
             identifier: "sg_savedata",
             version: 2,
             gameData: raw == null ? null : gameData,
-            cheat: cheatMode,
-            hardMode: hardMode,
+            difficulty: difficulty,
             playTime: 0,
             tickRate: tickRate,
             lastTick: new Date().getTime(),

@@ -80,7 +80,7 @@ export class FieldTile {
 
     sowCrop(crop: string): void {
         if (!Object.hasOwn(this.saveData.inventory, crop)) return;
-        if (this.saveData.hardMode && this.saveData.inventory[crop] != null) {
+        if (this.saveData.difficulty == "hard" && this.saveData.inventory[crop] != null) {
             if (this.saveData.inventory[crop] < 1) return;
             this.saveData.inventory[crop]--;
         }
@@ -90,7 +90,7 @@ export class FieldTile {
     harvestCrop(): void {
         if (this.crop == null) return;
         if (this.isMature!) {
-            if (this.saveData.hardMode) {
+            if (this.saveData.difficulty == "hard") {
                 if (this.isUnlocked!) {
                     if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
                 } else this.saveData.inventory[this.crop] = 1;

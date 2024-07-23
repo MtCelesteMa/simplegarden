@@ -18,8 +18,7 @@ export class WelcomePageComponent implements OnInit {
     customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
-    hardModeOption = new FormControl<boolean>(false);
-    cheatModeOption = new FormControl<boolean>(false);
+    difficultySelect = new FormControl<string>("normal");
 
     gameImportFailed: boolean = false;
 
@@ -54,21 +53,9 @@ export class WelcomePageComponent implements OnInit {
     }
 
     newGame(): void {
-        if (
-            this.cheatModeOption.value &&
-            !confirm(
-                $localize`:@@app-welcome-page.cheat-mode-conf:Save files created with cheat mode active will be marked. Continue?`,
-            )
-        )
-            return;
-        if (this.hardModeOption.value!)
-            alert(
-                $localize`:@@app-welcome-page.hard-mode-info:You have a limited number of crops in hard mode. Harvest mature crops to get more.`,
-            );
         this.manager.game = g.Game.newGame(
             this.customGameData,
-            this.cheatModeOption.value!,
-            this.hardModeOption.value!,
+            this.difficultySelect.value!,
         );
         this.router.navigate(["game"]);
     }

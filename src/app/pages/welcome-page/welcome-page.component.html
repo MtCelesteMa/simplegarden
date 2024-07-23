@@ -19,6 +19,21 @@
             <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
         }
         <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
+        <span style="font-weight: bold;" i18n="@@app-welcome-page.difficulty">Difficulty</span>
+        <br />
+        <input type="radio" [formControl]="difficultySelect" value="normal">
+        <span i18n="@@app-welcome-page.normal-mode">Normal Mode</span>
+        <br />
+        <input type="radio" [formControl]="difficultySelect" value="hard">
+        <span style="color: red" i18n="@@app-welcome-page.hard-mode">Hard Mode</span>
+        <br />
+        @if (difficultySelect.value! == "normal") {
+            <span style="font-style: italic;" i18n="@@app-welcome-page.normal-mode-desc">The standard experience. Harvest mature unknown crops to permanently unlock them.</span>
+        } @else if (difficultySelect.value! == "hard") {
+            <span style="color: red; font-style: italic;" i18n="@@app-welcome-page.hard-mode-desc">A challenging difficulty where you have a limited number of crops.</span>
+        }
+        <br />
+        <br />
         <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
         <br />
         <input type="checkbox" [formControl]="customGameDataOption" (change)="importGameData()" />
@@ -27,14 +42,6 @@
             <br />
             <span style="color: red" i18n="@@app-welcome-page.custom-game-data-import-failed"> Import failed. </span>
         }
-        <br />
-        <input type="checkbox" [formControl]="hardModeOption" />
-        <span style="color: red" i18n="@@app-welcome-page.hard-mode">Hard Mode</span>
-        <!--
-            <br />
-            <input type="checkbox" [formControl]="cheatModeOption" />
-            <span style="color: red" i18n="@@app-welcome-page.cheat-mode">Enable cheat mode</span>
-        -->
         <br />
         <br />
         <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>

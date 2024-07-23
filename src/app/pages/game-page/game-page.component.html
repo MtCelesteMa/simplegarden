@@ -13,7 +13,7 @@
     </div>
     <app-field></app-field>
     <app-seed-log></app-seed-log>
-    @if (manager.game!.saveData.hardMode) {
+    @if (manager.game!.saveData.difficulty == "hard") {
         <app-trophy-case></app-trophy-case>
     }
 }

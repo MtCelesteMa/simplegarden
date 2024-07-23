@@ -32,6 +32,10 @@ export class FieldComponent implements OnInit {
         clay: {
             displayName: $localize`:@@app-field.soil-clay:Clay`,
             tickRate: 600000
+        },
+        fdirt: {
+            displayName: $localize`:@@app-field.soil-fdirt:Frozen Dirt`,
+            tickRate: 1800000
         }
     }
 
