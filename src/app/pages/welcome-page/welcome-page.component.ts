@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
+import { RoutingService } from "../../services/routing.service";
 import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import * as g from "../../../game";
 
@@ -13,7 +13,7 @@ import * as g from "../../../game";
 })
 export class WelcomePageComponent implements OnInit {
     manager = inject(ManagerService);
-    router = inject(Router);
+    router = inject(RoutingService);
 
     customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
@@ -27,8 +27,8 @@ export class WelcomePageComponent implements OnInit {
     }
 
     loadGame(): void {
-        this.manager.loadGame();
-        this.router.navigate(["game"]);
+        this.manager.loadGameFromStorage();
+        this.router.page = "game";
     }
 
     exportGame(): void {
@@ -54,7 +54,7 @@ export class WelcomePageComponent implements OnInit {
 
     newGame(): void {
         this.manager.game = g.Game.newGame(this.customGameData, this.difficultySelect.value!);
-        this.router.navigate(["game"]);
+        this.router.page = "game";
     }
 
     importGameData(): void {
@@ -91,8 +91,8 @@ export class WelcomePageComponent implements OnInit {
             let reader = new FileReader();
             reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
                 try {
-                    this.manager.game = g.Game.fromRaw(e.target!.result as string);
-                    this.router.navigate(["game"]);
+                    this.manager.loadGame(e.target!.result as string);
+                    this.router.page = "game";
                 } catch {
                     this.gameImportFailed = true;
                 }

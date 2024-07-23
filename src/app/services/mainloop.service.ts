@@ -7,7 +7,17 @@ import { ManagerService } from "./manager.service";
 export class MainloopService implements OnDestroy {
     manager = inject(ManagerService);
     intervalId = setInterval((): void => this.mainloop(), 100);
-    multipleUpdates: boolean = false;
+    private mu: boolean | null = null;
+
+    get multipleUpdates(): boolean {
+        let s = sessionStorage.getItem("simplegarden_multipleupdates");
+        return this.mu == null ? (s == null ? false : (s == "0" ? false : true)) : this.mu;
+    }
+
+    set multipleUpdates(value: boolean) {
+        this.mu = value;
+        sessionStorage.setItem("simplegarden_multipleupdates", value ? "1" : "0");
+    }
 
     mainloop(): void {
         this.manager.curTime = new Date().getTime();
@@ -15,6 +25,7 @@ export class MainloopService implements OnDestroy {
             this.multipleUpdates = false;
             return;
         }
+        this.manager.cacheSave();
         if (this.manager.curTime - this.manager.game.saveData.lastTick >= this.manager.game.saveData.tickRate) {
             if (this.multipleUpdates) {
                 let n = Math.floor(

@@ -7,10 +7,21 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
+    
+    constructor() {
+        let saveData = sessionStorage.getItem("simplegarden_savedata");
+        let startTime = sessionStorage.getItem("simplegarden_starttime");
+        if (saveData != null && startTime != null) this.game = g.Game.fromRaw(saveData, Number(startTime));
+    }
 
     get timeElapsed(): number {
         if (this.game == null) return 0;
         return this.curTime - this.game.sessStartTime + this.game.saveData.playTime;
+    }
+
+    cacheSave(): void {
+        sessionStorage.setItem("simplegarden_savedata", JSON.stringify(this.game!.saveData));
+        sessionStorage.setItem("simplegarden_starttime", String(this.game!.sessStartTime));
     }
 
     saveExists(): boolean {
@@ -26,8 +37,16 @@ export class ManagerService {
         }
     }
 
-    loadGame(): void {
-        this.game = g.Game.fromRaw(localStorage.getItem("simplegarden_save"));
+    newGame(raw: unknown, difficulty: string): void {
+        this.game = g.Game.newGame(raw, difficulty);
+    }
+
+    loadGame(raw: unknown): void {
+        this.game = g.Game.fromRaw(raw);
+    }
+
+    loadGameFromStorage(): void {
+        this.loadGame(localStorage.getItem("simplegarden_save"))
     }
 
     saveGame(): void {

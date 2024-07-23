@@ -15,7 +15,7 @@ export const saveData = z
         gameData: z.unknown(),
         difficulty: z.object({
             limitResources: z.boolean(),
-            lrExploitPatch: z.boolean()
+            lrExploitPatch: z.boolean(),
         }),
         playTime: z.number().int().gte(0),
         tickRate: z.number().int().gte(0),
