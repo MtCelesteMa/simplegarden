@@ -1,18 +1,17 @@
 import { Injectable } from "@angular/core";
+import { CachedValue } from "./cache.service";
 
 @Injectable({
     providedIn: "root",
 })
 export class RoutingService {
-    private page_: string | null = null;
+    private page_ = new CachedValue("simplegarden_page", "welcome");
 
     get page(): string {
-        let s = sessionStorage.getItem("simplegarden_page");
-        return this.page_ == null ? (s == null ? "welcome": s) : this.page_;
+        return this.page_.value;
     }
 
     set page(value: string) {
-        this.page_ = value;
-        sessionStorage.setItem("simplegarden_page", value);
+        this.page_.value = value;
     }
 }

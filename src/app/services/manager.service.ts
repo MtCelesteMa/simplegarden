@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { CachedValue } from "./cache.service";
 import * as g from "../../game";
 
 @Injectable({
@@ -7,11 +8,13 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
-    
+    private saveData = new CachedValue<g.d.s.v2.SaveData>("simplegarden_savedata", null);
+    private startTime = new CachedValue<number>("simplegarden_starttime", 0);
+
     constructor() {
-        let saveData = sessionStorage.getItem("simplegarden_savedata");
-        let startTime = sessionStorage.getItem("simplegarden_starttime");
-        if (saveData != null && startTime != null) this.game = g.Game.fromRaw(saveData, Number(startTime));
+        if (this.saveData.isCached && this.startTime.isCached) {
+            this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
+        }
     }
 
     get timeElapsed(): number {
@@ -20,8 +23,8 @@ export class ManagerService {
     }
 
     cacheSave(): void {
-        sessionStorage.setItem("simplegarden_savedata", JSON.stringify(this.game!.saveData));
-        sessionStorage.setItem("simplegarden_starttime", String(this.game!.sessStartTime));
+        this.saveData.value = this.game!.saveData;
+        this.startTime.value = this.game!.sessStartTime;
     }
 
     saveExists(): boolean {
@@ -46,7 +49,7 @@ export class ManagerService {
     }
 
     loadGameFromStorage(): void {
-        this.loadGame(localStorage.getItem("simplegarden_save"))
+        this.loadGame(localStorage.getItem("simplegarden_save"));
     }
 
     saveGame(): void {

@@ -1,5 +1,6 @@
 import { Injectable, inject, OnDestroy } from "@angular/core";
 import { ManagerService } from "./manager.service";
+import { CachedValue } from "./cache.service";
 
 @Injectable({
     providedIn: "root",
@@ -7,27 +8,17 @@ import { ManagerService } from "./manager.service";
 export class MainloopService implements OnDestroy {
     manager = inject(ManagerService);
     intervalId = setInterval((): void => this.mainloop(), 100);
-    private mu: boolean | null = null;
-
-    get multipleUpdates(): boolean {
-        let s = sessionStorage.getItem("simplegarden_multipleupdates");
-        return this.mu == null ? (s == null ? false : (s == "0" ? false : true)) : this.mu;
-    }
-
-    set multipleUpdates(value: boolean) {
-        this.mu = value;
-        sessionStorage.setItem("simplegarden_multipleupdates", value ? "1" : "0");
-    }
+    multipleUpdates = new CachedValue<boolean>("simplegarden_multipleupdates", false);
 
     mainloop(): void {
         this.manager.curTime = new Date().getTime();
         if (this.manager.game == null) {
-            this.multipleUpdates = false;
+            this.multipleUpdates.value = false;
             return;
         }
         this.manager.cacheSave();
         if (this.manager.curTime - this.manager.game.saveData.lastTick >= this.manager.game.saveData.tickRate) {
-            if (this.multipleUpdates) {
+            if (this.multipleUpdates.value) {
                 let n = Math.floor(
                     (this.manager.curTime - this.manager.game.saveData.lastTick) / this.manager.game.saveData.tickRate,
                 );
@@ -39,7 +30,7 @@ export class MainloopService implements OnDestroy {
             this.manager.saveGame();
             this.manager.game.lastSaveTime = this.manager.curTime;
         }
-        this.multipleUpdates = true;
+        this.multipleUpdates.value = true;
     }
 
     ngOnDestroy(): void {
