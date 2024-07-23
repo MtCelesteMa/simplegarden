@@ -3,7 +3,7 @@
         @if (locale.id == curLocale) {
             <strong>{{ locale.displayName }}</strong>
         } @else {
-            <a href="/simplegarden/{{ locale.id }}/">{{ locale.displayName }}</a>
+            <a href="{{ baseHref }}../{{ locale.id }}/">{{ locale.displayName }}</a>
         }
         @if (!isLast) {
             |

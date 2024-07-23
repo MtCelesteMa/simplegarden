@@ -1,4 +1,5 @@
 import { Component, inject, LOCALE_ID } from "@angular/core";
+import { PathLocationStrategy } from "@angular/common";
 
 type Locale = { id: string; displayName: string };
 
@@ -10,6 +11,7 @@ type Locale = { id: string; displayName: string };
 })
 export class LocaleSelectorComponent {
     curLocale = inject(LOCALE_ID);
+    baseHref = inject(PathLocationStrategy).getBaseHref();
 
     locales: Locale[] = [
         { id: "en-US", displayName: "🇬🇧 English" },
