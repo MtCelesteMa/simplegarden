@@ -1,6 +1,6 @@
 import { Injectable, inject, OnDestroy } from "@angular/core";
 import { ManagerService } from "./manager.service";
-import { CachedValue } from "./cache.service";
+import { PersistedValue } from "./persistence.service";
 
 @Injectable({
     providedIn: "root",
@@ -8,7 +8,7 @@ import { CachedValue } from "./cache.service";
 export class MainloopService implements OnDestroy {
     manager = inject(ManagerService);
     intervalId = setInterval((): void => this.mainloop(), 100);
-    multipleUpdates = new CachedValue<boolean>("simplegarden_multipleupdates", false);
+    multipleUpdates = new PersistedValue<boolean>("multipleUpdates", false);
 
     mainloop(): void {
         this.manager.curTime = new Date().getTime();

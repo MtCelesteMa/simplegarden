@@ -290,7 +290,7 @@
     </unit>
     <unit id="app-game-page.save-game-desc">
       <segment state="initial">
-        <source>Game is automatically save every 1 minute.</source>
+        <source>Game is automatically saved every minute.</source>
         <target>遊戲會每一分鐘自動保存</target>
       </segment>
     </unit>
@@ -858,22 +858,34 @@
         <target>純白色的根。</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.advanced-options">
+    <unit id="app-game-page.unpersist">
       <segment state="initial">
-        <source>Advanced Options</source>
-        <target>高級選項</target>
+        <source>Unpersist Data</source>
+        <target>解除持久化</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-cache">
+    <unit id="app-welcome-page.persistence-options">
       <segment state="initial">
-        <source>Disable Cache</source>
-        <target>停用緩存</target>
+        <source>Persistence Options</source>
+        <target>持久化選項</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-cache-info">
+    <unit id="app-welcome-page.persistence-transient">
       <segment state="initial">
-        <source>Caching allows the game to persist state across page reloads. It is not recommended to disable caching on mobile devices.</source>
-        <target>緩存允許遊戲在頁面重新加載時保持狀態。不建議在移動設備上禁用緩存。</target>
+        <source>Disable</source>
+        <target>關閉</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-session">
+      <segment state="initial">
+        <source>Normal Persistence</source>
+        <target>正常持久化</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-local">
+      <segment state="initial">
+        <source>True Persistence (NOT RECOMMENDED)</source>
+        <target>長期持久化（不推薦使用）</target>
       </segment>
     </unit>
   </file>
