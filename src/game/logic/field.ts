@@ -3,14 +3,14 @@ import { FieldTile, Mutation } from "./fieldtile";
 
 export class Field {
     tiles: FieldTile[][];
-    private gameData: d.g.v1.GameData;
-    private saveData: d.s.v1.SaveData;
+    private gameData: d.g.v2.GameData;
+    private saveData: d.s.v2.SaveData;
 
-    constructor(gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData) {
+    constructor(gameData: d.g.v2.GameData, saveData: d.s.v2.SaveData) {
         this.gameData = gameData;
         this.saveData = saveData;
-        this.tiles = this.saveData.field.map((row: d.s.v1.FieldTile[], rowN: number): FieldTile[] => {
-            return row.map((tile: d.s.v1.FieldTile, colN: number): FieldTile => {
+        this.tiles = this.saveData.field.map((row: d.s.v2.FieldTile[], rowN: number): FieldTile[] => {
+            return row.map((tile: d.s.v2.FieldTile, colN: number): FieldTile => {
                 return new FieldTile([rowN, colN], this.gameData, this.saveData);
             });
         });

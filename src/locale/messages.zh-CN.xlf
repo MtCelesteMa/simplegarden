@@ -63,13 +63,13 @@
     <unit id="game.crop.rice.displayname">
       <segment state="initial">
         <source>Rice</source>
-        <target>米</target>
+        <target>稻米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.shortname">
       <segment state="initial">
         <source>R</source>
-        <target>米</target>
+        <target>稻米</target>
       </segment>
     </unit>
     <unit id="game.crop.rice.description">
@@ -210,12 +210,6 @@
         <target> 设置导入失败 </target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.cheat-mode-conf">
-      <segment state="initial">
-        <source>Save files created with cheat mode active will be marked. Continue?</source>
-        <target>用作弊模式创建的保存文件会被标记。确认开始？</target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.import-game">
       <segment state="initial">
         <source>Import Game</source>
@@ -250,30 +244,6 @@
       <segment state="initial">
         <source>ARE YOU SURE?</source>
         <target>你真的确定吗？</target>
-      </segment>
-    </unit>
-    <unit id="app-time-display.dstr">
-      <segment state="initial">
-        <source>{VAR_PLURAL, plural, =1 {1 day} other {<ph id="0" equiv="INTERPOLATION"/> days}}</source>
-        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>天}}</target>
-      </segment>
-    </unit>
-    <unit id="app-time-display.hstr">
-      <segment state="initial">
-        <source>{VAR_PLURAL, plural, =1 {1 hour} other {<ph id="0" equiv="INTERPOLATION"/> hours}}</source>
-        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>时}}</target>
-      </segment>
-    </unit>
-    <unit id="app-time-display.mstr">
-      <segment state="initial">
-        <source>{VAR_PLURAL, plural, =1 {1 minute} other {<ph id="0" equiv="INTERPOLATION"/> minutes}}</source>
-        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>分}}</target>
-      </segment>
-    </unit>
-    <unit id="app-time-display.sstr">
-      <segment state="initial">
-        <source>{VAR_PLURAL, plural, =1 {1 second} other {<ph id="0" equiv="INTERPOLATION"/> seconds}}</source>
-        <target>{VAR_PLURAL, plural, other {<ph id="0" equiv="INTERPOLATION"/>秒}}</target>
       </segment>
     </unit>
     <unit id="app-game-page.hide-timer">
@@ -320,8 +290,8 @@
     </unit>
     <unit id="app-field.next-tick-in">
       <segment state="initial">
-        <source>Next tick in </source>
-        <target>离下次更新剩余 </target>
+        <source>Next tick in <ph id="0" equiv="INTERPOLATION" disp="{{ timeToNextTick | time }}"/></source>
+        <target>离下次更新剩余 <ph id="0" equiv="INTERPOLATION" disp="{{ timeToNextTick | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-field.clear-field">
@@ -350,20 +320,20 @@
     </unit>
     <unit id="app-field.age">
       <segment state="initial">
-        <source>Age: </source>
-        <target>年龄：</target>
+        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></source>
+        <target>年龄：<ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-field.expires-in">
       <segment state="initial">
-        <source>Expires in </source>
-        <target>寿命剩余时间：</target>
+        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></source>
+        <target>寿命还剩余 <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-field.matures-in">
       <segment state="initial">
-        <source>Matures in </source>
-        <target>成长剩余时间：</target>
+        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></source>
+        <target>离成熟还剩 <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-field.unknown-crop">
@@ -374,8 +344,8 @@
     </unit>
     <unit id="app-seed-log-entry.maturity">
       <segment state="initial">
-        <source>Maturity: </source>
-        <target>成长时间：</target>
+        <source>Maturity: <ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}"/></source>
+        <target>成熟：<ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.immortal">
@@ -386,8 +356,8 @@
     </unit>
     <unit id="app-seed-log-entry.lifespan">
       <segment state="initial">
-        <source>Lifespan: </source>
-        <target>寿命：</target>
+        <source>Lifespan: <ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}"/></source>
+        <target>寿命：<ph id="0" equiv="INTERPOLATION" disp="{{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}"/></target>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.infection">
@@ -856,6 +826,237 @@
       <segment state="initial">
         <source>A pure-white root.</source>
         <target>纯白色的根。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode">
+      <segment state="initial">
+        <source>Hard Mode</source>
+        <target>困难模式</target>
+      </segment>
+    </unit>
+    <unit id="app-trophy-case-entry.obtained-on">
+      <segment state="initial">
+        <source>Obtained On: <ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/></source>
+        <target>在<ph id="0" equiv="INTERPOLATION" disp="{{ obtainedOn | date: &quot;medium&quot; }}"/>得到的</target>
+      </segment>
+    </unit>
+    <unit id="4522588066054962495">
+      <notes>
+        <note category="description">app-trophy-case.title</note>
+      </notes>
+      <segment state="initial">
+        <source>Trophy Case (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained }}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</source>
+        <target>奖杯盒 (<ph id="0" equiv="INTERPOLATION" disp="{{ nTrophiesObtained}}"/> / <ph id="1" equiv="INTERPOLATION_1" disp="{{ nTrophies }}"/>)</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.displayname">
+      <segment state="initial">
+        <source>You&apos;re Insane!</source>
+        <target>你疯了！</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.flavortext">
+      <segment state="initial">
+        <source>Sure I am, what&apos;s your point?</source>
+        <target>的确是，你是什么意思？</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.jbeet100.description">
+      <segment state="initial">
+        <source>Amass 100 Juicy Beets</source>
+        <target>得到100个多汁甜菜</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.displayname">
+      <segment state="initial">
+        <source>Acres of Corn</source>
+        <target>无数的玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.flavortext">
+      <segment state="initial">
+        <source>The corn will die soon.</source>
+        <target>玉米很快也会灭亡</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.corn100.description">
+      <segment state="initial">
+        <source>Amass 100 Corn</source>
+        <target>得到100个玉米</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.displayname">
+      <segment state="initial">
+        <source>Drug Lord</source>
+        <target>毒枭</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.flavortext">
+      <segment state="initial">
+        <source>No, you still can&apos;t smoke them.</source>
+        <target>你仍然吸不了杂草</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.weed100.description">
+      <segment state="initial">
+        <source>Amass 100 Weed</source>
+        <target>得到100个杂草</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.displayname">
+      <segment state="initial">
+        <source>Dedication</source>
+        <target>奉献精神</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.flavortext">
+      <segment state="initial">
+        <source>Don&apos;t you have anything better to do?</source>
+        <target>你就没有更好的事可做吗？</target>
+      </segment>
+    </unit>
+    <unit id="game.trophy.tater100.description">
+      <segment state="initial">
+        <source>Amass 100 Taters</source>
+        <target>得到100个塔特</target>
+      </segment>
+    </unit>
+    <unit id="time.ds">
+      <segment state="initial">
+        <source>1 day</source>
+        <target>1天</target>
+      </segment>
+    </unit>
+    <unit id="time.dp">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="d"/> days</source>
+        <target><ph id="0" equiv="PH" disp="d"/>天</target>
+      </segment>
+    </unit>
+    <unit id="time.hs">
+      <segment state="initial">
+        <source>1 hour</source>
+        <target>1时</target>
+      </segment>
+    </unit>
+    <unit id="time.hp">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="h"/> hours</source>
+        <target><ph id="0" equiv="PH" disp="h"/>时</target>
+      </segment>
+    </unit>
+    <unit id="time.ms">
+      <segment state="initial">
+        <source>1 minute</source>
+        <target>1分</target>
+      </segment>
+    </unit>
+    <unit id="time.mp">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="m"/> minutes</source>
+        <target><ph id="0" equiv="PH" disp="m"/>分</target>
+      </segment>
+    </unit>
+    <unit id="time.ss">
+      <segment state="initial">
+        <source>1 second</source>
+        <target>1秒</target>
+      </segment>
+    </unit>
+    <unit id="time.sp">
+      <segment state="initial">
+        <source><ph id="0" equiv="PH" disp="s"/> seconds</source>
+        <target><ph id="0" equiv="PH" disp="s"/>秒</target>
+      </segment>
+    </unit>
+    <unit id="app-field.select-soil">
+      <segment state="initial">
+        <source>Select Soil:</source>
+        <target>选择土壤：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-tfertilizer">
+      <segment state="initial">
+        <source>Turbo Fertilizer</source>
+        <target>超级肥料</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-fertilizer">
+      <segment state="initial">
+        <source>Fertilizer</source>
+        <target>肥料</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-dirt">
+      <segment state="initial">
+        <source>Dirt</source>
+        <target>土</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-clay">
+      <segment state="initial">
+        <source>Clay</source>
+        <target>黏土</target>
+      </segment>
+    </unit>
+    <unit id="app-field.soil-fdirt">
+      <segment state="initial">
+        <source>Frozen Dirt</source>
+        <target>冻土</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.difficulty">
+      <segment state="initial">
+        <source>Difficulty</source>
+        <target>难度</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.normal-mode">
+      <segment state="initial">
+        <source>Normal Mode</source>
+        <target>正常模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.normal-mode-desc">
+      <segment state="initial">
+        <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
+        <target>标准体验。收割成熟的未知庄稼以永久解锁它们。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.hard-mode-desc">
+      <segment state="initial">
+        <source>A challenging difficulty where you have a limited number of crops.</source>
+        <target>一个具有挑战性的难度，你的庄稼数量是有限的。</target>
+      </segment>
+    </unit>
+    <unit id="app-field.manually-planted">
+      <segment state="initial">
+        <source>This crop is manually planted and will not yield anything when harvested.</source>
+        <target>这个庄稼是人工种植的，收割后不会产生任何产品。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode">
+      <segment state="initial">
+        <source>Brutal Mode</source>
+        <target>残暴模式</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.brutal-mode-desc">
+      <segment state="initial">
+        <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
+        <target>根困难模式一样，但是人工种植的庄稼收割时不会生产任何产品。</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.brutal-mode-active">
+      <segment state="initial">
+        <source>Brutal Mode Active</source>
+        <target>残暴模式开启</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.hard-mode-active">
+      <segment state="initial">
+        <source>Hard Mode Active</source>
+        <target>困难模式开启</target>
       </segment>
     </unit>
     <unit id="app-game-page.unpersist">

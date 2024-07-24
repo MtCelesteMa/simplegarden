@@ -1,31 +1,36 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
 import { PersistenceService } from "../../services/persistence.service";
+import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
     standalone: true,
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, LocaleSelectorComponent],
     templateUrl: "./welcome-page.component.html",
 })
-export class WelcomePageComponent {
+export class WelcomePageComponent implements OnInit {
     manager = inject(ManagerService);
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
 
-    customGameData: g.d.g.v1.GameData | null = null;
+    customGameData: g.d.g.v2.GameData | null = null;
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
-    cheatModeOption = new FormControl<boolean>(false);
+    difficultySelect = new FormControl<string>("normal");
     persistenceSelect = new FormControl<string>(this.persistence.location);
 
     gameImportFailed: boolean = false;
 
+    ngOnInit(): void {
+        this.manager.game = null;
+    }
+
     loadGame(): void {
-        this.manager.loadGame();
+        this.manager.loadGameFromStorage();
         this.router.page = "game";
     }
 
@@ -51,14 +56,7 @@ export class WelcomePageComponent {
     }
 
     newGame(): void {
-        if (
-            this.cheatModeOption.value &&
-            !confirm(
-                $localize`:@@app-welcome-page.cheat-mode-conf:Save files created with cheat mode active will be marked. Continue?`,
-            )
-        )
-            return;
-        this.manager.game = g.Game.newGame(this.customGameData, this.cheatModeOption.value!);
+        this.manager.game = g.Game.newGame(this.customGameData, this.difficultySelect.value!);
         this.router.page = "game";
     }
 
@@ -96,7 +94,7 @@ export class WelcomePageComponent {
             let reader = new FileReader();
             reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
                 try {
-                    this.manager.game = g.Game.fromRaw(e.target!.result as string);
+                    this.manager.loadGame(e.target!.result as string);
                     this.router.page = "game";
                 } catch {
                     this.gameImportFailed = true;

@@ -8,7 +8,7 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
-    private saveData = new PersistedValue<g.d.s.v1.SaveData>("saveData");
+    private saveData = new PersistedValue<g.d.s.v2.SaveData>("saveData");
     private startTime = new PersistedValue<number>("startTime");
 
     constructor() {
@@ -40,8 +40,16 @@ export class ManagerService {
         }
     }
 
-    loadGame(): void {
-        this.game = g.Game.fromRaw(localStorage.getItem("simplegarden_save"));
+    newGame(raw: unknown, difficulty: string): void {
+        this.game = g.Game.newGame(raw, difficulty);
+    }
+
+    loadGame(raw: unknown): void {
+        this.game = g.Game.fromRaw(raw);
+    }
+
+    loadGameFromStorage(): void {
+        this.loadGame(localStorage.getItem("simplegarden_save"));
     }
 
     saveGame(): void {

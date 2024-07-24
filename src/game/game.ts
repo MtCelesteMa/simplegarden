@@ -2,8 +2,8 @@ import * as d from "./data";
 import * as l from "./logic";
 
 export class Game {
-    readonly gameData: d.g.v1.GameData;
-    readonly saveData: d.s.v1.SaveData;
+    readonly gameData: d.g.v2.GameData;
+    readonly saveData: d.s.v2.SaveData;
     readonly field: l.Field;
     readonly sessStartTime: number;
     lastSaveTime: number;
@@ -11,7 +11,7 @@ export class Game {
     paintMode: boolean = false;
     selectedCrop: string | null = null;
 
-    constructor(gameData: d.g.v1.GameData, saveData: d.s.v1.SaveData, startTime: number | null = null) {
+    constructor(gameData: d.g.v2.GameData, saveData: d.s.v2.SaveData, startTime: number | null = null) {
         this.gameData = gameData;
         this.saveData = saveData;
 
@@ -24,29 +24,35 @@ export class Game {
         let saveData = d.s.loader.load(raw);
         if (saveData.gameData == null) return new Game(d.g.loader.load(d.g.simpleClassic), saveData, startTime);
         d.g.loader.loadInPlace(saveData.gameData);
-        return new Game(saveData.gameData as d.g.v1.GameData, saveData, startTime);
+        return new Game(saveData.gameData as d.g.v2.GameData, saveData, startTime);
     }
 
-    private static emptyField(dims: [number, number]): d.s.v1.FieldTile[][] {
-        let field = Array<d.s.v1.FieldTile[]>(dims[0]).fill(
-            Array<d.s.v1.FieldTile>(dims[1]).fill({ crop: null, age: 0 }),
+    private static emptyField(dims: [number, number]): d.s.v2.FieldTile[][] {
+        let field = Array<d.s.v2.FieldTile[]>(dims[0]).fill(
+            Array<d.s.v2.FieldTile>(dims[1]).fill({ crop: null, age: 0, manual: false }),
         );
         return JSON.parse(JSON.stringify(field));
     }
 
-    static newGame(raw: unknown, cheatMode: boolean = false): Game {
+    static newGame(raw: unknown, difficulty: string): Game {
         let tickRate: number = 60000;
-        let gameData = raw == null ? d.g.loader.load(d.g.simpleClassic) : d.g.loader.load(raw);
-        let saveData: d.s.v1.SaveData = {
+        let gameData: d.g.v2.GameData = raw == null ? d.g.loader.load(d.g.simpleClassic) : d.g.loader.load(raw);
+        let saveData: d.s.v2.SaveData = {
             identifier: "sg_savedata",
-            version: 1,
+            version: 2,
             gameData: raw == null ? null : gameData,
-            cheat: cheatMode,
+            difficulty: {
+                limitResources: difficulty == "hard" || difficulty == "brutal",
+                lrExploitPatch: difficulty == "brutal",
+            },
             playTime: 0,
             tickRate: tickRate,
             lastTick: new Date().getTime(),
             field: this.emptyField(gameData.fieldSize),
-            unlockedCrops: JSON.parse(JSON.stringify(gameData.initialCrops)),
+            inventory: Object.fromEntries(
+                gameData.initialCrops.map((name: string): [string, number | null] => [name, null]),
+            ),
+            trophies: {},
         };
         return new Game(gameData, saveData);
     }
