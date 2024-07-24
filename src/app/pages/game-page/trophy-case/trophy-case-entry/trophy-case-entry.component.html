@@ -1,0 +1,14 @@
+<div class="box trophy-case-entry">
+    <h2 style="margin-bottom: 5px">{{ name }}</h2>
+    <i>{{ flavorText }}</i>
+    <br />
+    <br />
+    {{ description }}
+    <br />
+    <br />
+    @if (obtainedOn != null) {
+        <ng-container i18n="@@app-trophy-case-entry.obtained-on"
+            >Obtained On: {{ obtainedOn | date: "medium" }}</ng-container
+        >
+    }
+</div>

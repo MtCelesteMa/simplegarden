@@ -5,12 +5,20 @@
         &nbsp;
         <select (change)="selectCrop($event)">
             <option value="" i18n="@@app-field.unearth-harvest">(Unearth/Harvest)</option>
-            @for (crop of manager.game!.saveData.unlockedCrops; track crop) {
+            @for (crop of unlockedCrops; track crop) {
                 <option value="{{ crop }}">{{ manager.game!.gameData.crops[crop].displayName }}</option>
             }
         </select>
         &nbsp;
         <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
+        <br />
+        <ng-container i18n="@@app-field.select-soil">Select Soil:</ng-container>
+        <select (change)="changeSoil()" [formControl]="soilSelector">
+            <option value="" selected disabled></option>
+            @for (soil of listSoils; track soil[0]) {
+                <option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</option>
+            }
+        </select>
     </div>
     <div style="overflow-x: scroll">
         <table style="margin-left: auto; margin-right: auto">
@@ -50,34 +58,38 @@
                 @if (this.selectedTile.isImmortal && this.selectedTile.isMature) {
                     <ng-container i18n="@@app-field.is-immortal">This crop is immortal.</ng-container>
                 } @else {
-                    <ng-container i18n="@@app-field.age">Age: </ng-container>
-                    <app-time-display
-                        [ms]="this.manager.game!.saveData.tickRate * this.selectedTile.age"
-                    ></app-time-display>
+                    <ng-container i18n="@@app-field.age"
+                        >Age: {{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}</ng-container
+                    >
                     <br />
                     @if (this.selectedTile.isMature) {
-                        <ng-container i18n="@@app-field.expires-in">Expires in </ng-container>
-                        <app-time-display
-                            [ms]="
+                        <ng-container i18n="@@app-field.expires-in"
+                            >Expires in
+                            {{
                                 this.manager.game!.saveData.tickRate *
-                                (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age)
-                            "
-                        ></app-time-display>
+                                    (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time
+                            }}</ng-container
+                        >
                     } @else {
-                        <ng-container i18n="@@app-field.matures-in">Matures in </ng-container>
-                        <app-time-display
-                            [ms]="
+                        <ng-container i18n="@@app-field.matures-in"
+                            >Matures in
+                            {{
                                 this.manager.game!.saveData.tickRate *
-                                (this.selectedTile.cropInfo!.maturity - this.selectedTile.age)
-                            "
-                        ></app-time-display>
+                                    (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time
+                            }}</ng-container
+                        >
                     }
+                }
+                @if (manager.game!.saveData.difficulty.lrExploitPatch && selectedTile.manual) {
+                    <br />
+                    <span style="color: darkred" i18n="@@app-field.manually-planted"
+                        >This crop is manually planted and will not yield anything when harvested.</span
+                    >
                 }
             }
         }
         <br />
         <br />
-        <ng-container i18n="@@app-field.next-tick-in">Next tick in </ng-container>
-        <app-time-display [ms]="timeToNextTick"></app-time-display>
+        <ng-container i18n="@@app-field.next-tick-in">Next tick in {{ timeToNextTick | time }}</ng-container>
     </div>
 </div>

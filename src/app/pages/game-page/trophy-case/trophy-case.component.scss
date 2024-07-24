@@ -1,0 +1,7 @@
+div.trophy-case {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    height: 300px;
+    overflow-y: scroll;
+}

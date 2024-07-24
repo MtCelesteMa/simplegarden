@@ -37,11 +37,15 @@ export class FieldTileComponent {
         return this.tile.isMature!;
     }
 
+    get isManual(): boolean {
+        return this.manager.game!.saveData.difficulty.lrExploitPatch && this.tile.manual;
+    }
+
     selectTile(): void {
         this.manager.game!.selectedTile = [this.rowN, this.colN];
         if (this.manager.game!.paintMode) {
             if (this.tile.crop == null && this.manager.game!.selectedCrop != null) {
-                this.tile.plantCrop(this.manager.game!.selectedCrop);
+                this.tile.sowCrop(this.manager.game!.selectedCrop);
             }
             if (this.tile.crop != null && this.manager.game!.selectedCrop == null) {
                 this.tile.harvestCrop();
