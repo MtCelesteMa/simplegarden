@@ -21,7 +21,7 @@ export class WelcomePageComponent implements OnInit {
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
     difficultySelect = new FormControl<string>("normal");
-    disablePersistenceOption = new FormControl<boolean>(!this.persistence.enabled);
+    persistenceSelect = new FormControl<string>(this.persistence.location);
 
     gameImportFailed: boolean = false;
 
@@ -105,12 +105,7 @@ export class WelcomePageComponent implements OnInit {
         upl.click();
     }
 
-    togglePersistence(): void {
-        if (this.disablePersistenceOption.value!) {
-            alert(
-                $localize`:@@app-welcome-page.disable-persistence-info:Persistence allows the game to persist state across page reloads. It is not recommended to disable persistence on mobile devices.`,
-            );
-            this.persistence.disable();
-        } else this.persistence.enable();
+    setPersistence(): void {
+        this.persistence.location = this.persistenceSelect.value!;
     }
 }

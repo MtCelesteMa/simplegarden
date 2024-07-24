@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from "@angular/core";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
+import { PersistenceService } from "../../services/persistence.service";
 import { TimePipe } from "../../services/time.pipe";
 import { FieldComponent } from "./field/field.component";
 import { SeedLogComponent } from "./seed-log/seed-log.component";
@@ -15,6 +16,7 @@ import { TrophyCaseComponent } from "./trophy-case/trophy-case.component";
 export class GamePageComponent implements OnInit {
     manager = inject(ManagerService);
     router = inject(RoutingService);
+    persistence = inject(PersistenceService);
 
     timerHidden: boolean = false;
 

@@ -218,7 +218,7 @@
     </unit>
     <unit id="app-game-page.save-game-desc">
       <segment>
-        <source>Game is automatically save every 1 minute.</source>
+        <source>Game is automatically saved every minute.</source>
       </segment>
     </unit>
     <unit id="app-field.unearth-harvest">
@@ -884,19 +884,29 @@
         <source>Hard Mode Active</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.advanced-options">
+    <unit id="app-game-page.unpersist">
       <segment>
-        <source>Advanced Options</source>
+        <source>Unpersist Data</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-persistence-info">
+    <unit id="app-welcome-page.persistence-local">
       <segment>
-        <source>Persistence allows the game to persist state across page reloads. It is not recommended to disable persistence on mobile devices.</source>
+        <source>True Persistence (NOT RECOMMENDED)</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-persistence">
+    <unit id="app-welcome-page.persistence-options">
       <segment>
-        <source>Disable Persistence</source>
+        <source>Persistence Options</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-session">
+      <segment>
+        <source>Normal Persistence</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-transient">
+      <segment>
+        <source>Disable</source>
       </segment>
     </unit>
   </file>

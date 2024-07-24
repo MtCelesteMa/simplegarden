@@ -3,33 +3,24 @@ import { Injectable, inject } from "@angular/core";
 export class PersistedValue<T> {
     private persistence = inject(PersistenceService);
     private key: string;
-    private df: T | null;
-    private v: T | null = null;
+    private defaultValue?: T;
 
-    constructor(key: string, df: T | null) {
+    constructor(key: string, defaultValue?: T) {
         this.key = key;
-        this.df = df;
+        this.defaultValue = defaultValue;
     }
 
     get isCached(): boolean {
-        return this.persistence.enabled && sessionStorage.getItem(this.key) != null;
+        return this.persistence.hasItem(this.key);
     }
 
     get value(): T {
-        if (this.v == null) {
-            if (this.persistence.enabled) {
-                let cv = sessionStorage.getItem(this.key);
-                if (cv == null) return this.df!;
-                else return JSON.parse(cv).value;
-            }
-            return this.df!;
-        }
-        return this.v;
+        if (this.persistence.getItem(this.key) == undefined) return this.defaultValue!;
+        return this.persistence.getItem(this.key);
     }
 
     set value(value: T) {
-        this.v = value;
-        if (this.persistence.enabled) sessionStorage.setItem(this.key, JSON.stringify({ value: value }));
+        this.persistence.setItem(this.key, value);
     }
 }
 
@@ -37,20 +28,55 @@ export class PersistedValue<T> {
     providedIn: "root",
 })
 export class PersistenceService {
-    enabled: boolean = true;
+    private loc: string = "transient";
+    private data: { [k: string]: any } = {};
 
     constructor() {
-        let s = localStorage.getItem("simplegarden_disablepersistence");
-        if (s != null) this.enabled = false;
+        let loc = localStorage.getItem("simplegarden_persistence");
+        if (loc != null) this.loc = loc;
+        let data: string | null = null;
+        if (this.loc == "session") data = sessionStorage.getItem("simplegarden_persisted");
+        else if (this.loc == "local") data = localStorage.getItem("simplegarden_persisted");
+        try {
+            if (data != null) this.data = JSON.parse(data);
+        } catch {
+            if (this.loc == "session") sessionStorage.removeItem("simplegarden_persisted");
+            else if (this.loc == "local") localStorage.removeItem("simplegarden_persisted");
+            window.location.reload();
+        }
     }
 
-    enable(): void {
-        this.enabled = true;
-        localStorage.removeItem("simplegarden_disablepersistence");
+    get location(): string {
+        return this.loc;
     }
 
-    disable(): void {
-        this.enabled = false;
-        localStorage.setItem("simplegarden_disablepersistence", "yes");
+    set location(value: string) {
+        if (this.loc == "session") sessionStorage.removeItem("simplegarden_persisted");
+        else if (this.loc == "local") localStorage.removeItem("simplegarden_persisted");
+        this.loc = value;
+        localStorage.setItem("simplegarden_persistence", value);
+        if (this.loc == "session") sessionStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+        else if (this.loc == "local") localStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+    }
+
+    hasItem(key: string) {
+        return Object.hasOwn(this.data, key);
+    }
+
+    getItem(key: string): any {
+        if (!this.hasItem(key)) return undefined;
+        return this.data[key];
+    }
+
+    setItem(key: string, value: any): any {
+        this.data[key] = value;
+        if (this.loc == "session") sessionStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+        else if (this.loc == "local") localStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+    }
+
+    clear(): void {
+        if (this.loc == "session") sessionStorage.removeItem("simplegarden_persisted");
+        else if (this.loc == "local") localStorage.removeItem("simplegarden_persisted");
+        window.location.reload();
     }
 }

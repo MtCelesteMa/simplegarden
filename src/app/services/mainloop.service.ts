@@ -8,7 +8,7 @@ import { PersistedValue } from "./persistence.service";
 export class MainloopService implements OnDestroy {
     manager = inject(ManagerService);
     intervalId = setInterval((): void => this.mainloop(), 100);
-    multipleUpdates = new PersistedValue<boolean>("simplegarden_multipleupdates", false);
+    multipleUpdates = new PersistedValue<boolean>("multipleUpdates", false);
 
     mainloop(): void {
         this.manager.curTime = new Date().getTime();

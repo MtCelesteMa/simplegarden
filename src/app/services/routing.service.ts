@@ -5,7 +5,7 @@ import { PersistedValue } from "./persistence.service";
     providedIn: "root",
 })
 export class RoutingService {
-    private page_ = new PersistedValue("simplegarden_page", "welcome");
+    private page_ = new PersistedValue("page", "welcome");
 
     get page(): string {
         return this.page_.value;

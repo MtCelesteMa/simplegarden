@@ -8,8 +8,8 @@ import * as g from "../../game";
 export class ManagerService {
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
-    private saveData = new PersistedValue<g.d.s.v2.SaveData>("simplegarden_savedata", null);
-    private startTime = new PersistedValue<number>("simplegarden_starttime", 0);
+    private saveData = new PersistedValue<g.d.s.v2.SaveData>("saveData");
+    private startTime = new PersistedValue<number>("startTime");
 
     constructor() {
         if (this.saveData.isCached && this.startTime.isCached) {

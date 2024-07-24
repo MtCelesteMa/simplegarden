@@ -260,7 +260,7 @@
     </unit>
     <unit id="app-game-page.save-game-desc">
       <segment state="initial">
-        <source>Game is automatically save every 1 minute.</source>
+        <source>Game is automatically saved every minute.</source>
         <target>游戏会每一分钟自动保存</target>
       </segment>
     </unit>
@@ -1059,22 +1059,34 @@
         <target>困难模式开启</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.advanced-options">
+    <unit id="app-game-page.unpersist">
       <segment state="initial">
-        <source>Advanced Options</source>
-        <target>高级选项</target>
+        <source>Unpersist Data</source>
+        <target>解除持久化</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-persistence-info">
+    <unit id="app-welcome-page.persistence-options">
       <segment state="initial">
-        <source>Persistence allows the game to persist state across page reloads. It is not recommended to disable persistence on mobile devices.</source>
-        <target>持久性允许游戏在页面重新加载时保持状态。不建议在移动设备上停用持久性。</target>
+        <source>Persistence Options</source>
+        <target>持久化选项</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.disable-persistence">
+    <unit id="app-welcome-page.persistence-transient">
       <segment state="initial">
-        <source>Disable Persistence</source>
-        <target>停用持久性</target>
+        <source>Disable</source>
+        <target>关闭</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-session">
+      <segment state="initial">
+        <source>Normal Persistence</source>
+        <target>正常持久化</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-local">
+      <segment state="initial">
+        <source>True Persistence (NOT RECOMMENDED)</source>
+        <target>长期持久化（不推荐使用）</target>
       </segment>
     </unit>
   </file>
