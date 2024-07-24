@@ -22,7 +22,7 @@
         @if (persistence.location == "local") {
             <br />
             <br />
-            <button style="color: red" (click)="persistence.clear()" i18n="@@app-game-page.unpersist">Unpersist Data</button>
+            <button style="color: red" (click)="persistence.unpersist()" i18n="@@app-game-page.unpersist">Unpersist Data</button>
         }
     </div>
     <app-field></app-field>
