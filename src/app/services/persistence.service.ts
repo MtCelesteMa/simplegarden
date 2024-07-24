@@ -40,9 +40,7 @@ export class PersistenceService {
         try {
             if (data != null) this.data = JSON.parse(data);
         } catch {
-            if (this.loc == "session") sessionStorage.removeItem("simplegarden_persisted");
-            else if (this.loc == "local") localStorage.removeItem("simplegarden_persisted");
-            window.location.reload();
+            this.unpersist();
         }
     }
 

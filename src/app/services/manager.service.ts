@@ -1,11 +1,12 @@
-import { Injectable } from "@angular/core";
-import { PersistedValue } from "./persistence.service";
+import { Injectable, inject } from "@angular/core";
+import { PersistenceService, PersistedValue } from "./persistence.service";
 import * as g from "../../game";
 
 @Injectable({
     providedIn: "root",
 })
 export class ManagerService {
+    persistence = inject(PersistenceService);
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
     private saveData = new PersistedValue<g.d.s.v2.SaveData>("saveData");
@@ -13,7 +14,11 @@ export class ManagerService {
 
     constructor() {
         if (this.saveData.isCached && this.startTime.isCached) {
-            this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
+            try {
+                this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
+            } catch {
+                this.persistence.unpersist();
+            }
         }
     }
 
