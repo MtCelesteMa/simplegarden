@@ -879,11 +879,6 @@
         <source>Hard Mode Active</source>
       </segment>
     </unit>
-    <unit id="app-game-page.unpersist">
-      <segment>
-        <source> Unpersist Data </source>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.persistence-local">
       <segment>
         <source>True Persistence (NOT RECOMMENDED)</source>
@@ -950,6 +945,16 @@
     <unit id="app-game-page.export-game">
       <segment>
         <source>Export Game</source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.homepage">
+      <segment>
+        <source> Return to Homepage </source>
+      </segment>
+    </unit>
+    <unit id="app-game-page.homepage-conf">
+      <segment>
+        <source>This does not automatically save your progress. Return to homepage?</source>
       </segment>
     </unit>
   </file>

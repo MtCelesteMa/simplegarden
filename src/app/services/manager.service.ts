@@ -17,7 +17,7 @@ export class ManagerService {
             try {
                 this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
             } catch {
-                this.persistence.unpersist();
+                this.persistence.clear();
             }
         }
     }

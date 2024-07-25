@@ -40,7 +40,7 @@ export class PersistenceService {
         try {
             if (data != null) this.data = JSON.parse(data);
         } catch {
-            this.unpersist();
+            this.location = "transient";
         }
     }
 
@@ -72,7 +72,15 @@ export class PersistenceService {
         else if (this.loc == "local") localStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
     }
 
-    unpersist(): void {
-        this.location = "transient";
+    removeItem(key: string): void {
+        delete this.data[key];
+        if (this.loc == "session") sessionStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+        else if (this.loc == "local") localStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+    }
+
+    clear(): void {
+        this.data = {};
+        if (this.loc == "session") sessionStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
+        else if (this.loc == "local") localStorage.setItem("simplegarden_persisted", JSON.stringify(this.data));
     }
 }

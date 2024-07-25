@@ -1053,12 +1053,6 @@
         <target>困難模式開啟</target>
       </segment>
     </unit>
-    <unit id="app-game-page.unpersist">
-      <segment state="initial">
-        <source> Unpersist Data </source>
-        <target>解除持久化</target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.persistence-options">
       <segment state="initial">
         <source>Persistence Options</source>
@@ -1138,6 +1132,18 @@
       <segment state="initial">
         <source>Export Game</source>
         <target>導出遊戲</target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.homepage">
+      <segment state="initial">
+        <source> Return to Homepage </source>
+        <target> 返回主頁 </target>
+      </segment>
+    </unit>
+    <unit id="app-game-page.homepage-conf">
+      <segment state="initial">
+        <source>This does not automatically save your progress. Return to homepage?</source>
+        <target>此操作不會自動保存遊戲。確認返回主頁？</target>
       </segment>
     </unit>
   </file>
