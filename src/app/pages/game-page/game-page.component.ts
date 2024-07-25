@@ -23,4 +23,15 @@ export class GamePageComponent implements OnInit {
     ngOnInit(): void {
         if (this.manager.game == null) this.router.page = "welcome";
     }
+
+    exportGame(): void {
+        this.manager.saveGame();
+        let blob = new Blob([localStorage.getItem("simplegarden_save")!], { type: "application/json;charset=utf-8" });
+        let url = URL.createObjectURL(blob);
+        let dl = document.createElement("a");
+        dl.href = url;
+        dl.download = "simplegarden_save";
+        dl.click();
+        URL.revokeObjectURL(url);
+    }
 }

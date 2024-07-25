@@ -947,5 +947,10 @@
         <source>Now try playing on Hard Mode, where you no longer have infinite crops.</source>
       </segment>
     </unit>
+    <unit id="app-game-page.export-game">
+      <segment>
+        <source>Export Game</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

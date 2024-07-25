@@ -1134,5 +1134,11 @@
         <target>现在尝试玩困难模式，你不再有无限的庄稼。</target>
       </segment>
     </unit>
+    <unit id="app-game-page.export-game">
+      <segment state="initial">
+        <source>Export Game</source>
+        <target>导出游戏</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
