@@ -105,7 +105,10 @@ export class FieldTile {
                 if (!this.saveData.difficulty.lrExploitPatch || !this.manual) {
                     if (this.isUnlocked!) {
                         if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
-                    } else this.saveData.inventory[this.crop] = 1;
+                    } else {
+                        this.saveData.inventory[this.crop] = 1;
+                        alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
+                    }
                 }
                 for (let trophy of Object.entries(this.gameData.trophies)) {
                     if (
@@ -116,7 +119,10 @@ export class FieldTile {
                         this.saveData.trophies[trophy[0]] = new Date().getTime();
                 }
             } else {
-                if (!this.isUnlocked!) this.saveData.inventory[this.crop] = null;
+                if (!this.isUnlocked!) {
+                    this.saveData.inventory[this.crop] = null;
+                    alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
+                }
             }
         }
         if (this.isMature! && this.cropInfo!.spreadOnHarvest.length > 0 && Math.random() < 0.1)

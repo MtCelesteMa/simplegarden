@@ -1037,7 +1037,7 @@
     </unit>
     <unit id="app-welcome-page.brutal-mode-desc">
       <segment state="initial">
-        <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
+        <source>Hard mode, but manually-planted crops do not yield anything when harvested.</source>
         <target>根困難模式一樣，但是人工種植的莊稼收割時不會生產任何產品。</target>
       </segment>
     </unit>
@@ -1055,7 +1055,7 @@
     </unit>
     <unit id="app-game-page.unpersist">
       <segment state="initial">
-        <source>Unpersist Data</source>
+        <source> Unpersist Data </source>
         <target>解除持久化</target>
       </segment>
     </unit>
@@ -1102,6 +1102,12 @@
       <segment state="initial">
         <source>Field frozen. Plants will not grow or mutate.</source>
         <target>田地已被凍結。莊稼不會成長或變異。</target>
+      </segment>
+    </unit>
+    <unit id="game.crop-unlocked">
+      <segment state="initial">
+        <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
+        <target>你解鎖了<ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></target>
       </segment>
     </unit>
   </file>

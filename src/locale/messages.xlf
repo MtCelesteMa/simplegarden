@@ -866,7 +866,7 @@
     </unit>
     <unit id="app-welcome-page.brutal-mode-desc">
       <segment>
-        <source>Hard mode, but manually-planted crops do not yield anything when harvested. Only for the insane.</source>
+        <source>Hard mode, but manually-planted crops do not yield anything when harvested.</source>
       </segment>
     </unit>
     <unit id="app-game-page.brutal-mode-active">
@@ -881,7 +881,7 @@
     </unit>
     <unit id="app-game-page.unpersist">
       <segment>
-        <source>Unpersist Data</source>
+        <source> Unpersist Data </source>
       </segment>
     </unit>
     <unit id="app-welcome-page.persistence-local">
@@ -920,6 +920,11 @@
     <unit id="app-field.freeze-message">
       <segment>
         <source>Field frozen. Plants will not grow or mutate.</source>
+      </segment>
+    </unit>
+    <unit id="game.crop-unlocked">
+      <segment>
+        <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
       </segment>
     </unit>
   </file>
