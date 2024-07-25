@@ -19,7 +19,7 @@
         <button (click)="manager.saveGame()" i18n="@@app-game-page.save-game">Save Game</button>
         <br />
         <ng-container i18n="@@app-game-page.save-game-desc">Game is automatically saved every minute.</ng-container>
-        @if (persistence.location == "local") {
+        @if (persistence.location == "local" || persistence.location == "session") {
             <br />
             <br />
             <button style="color: red" (click)="persistence.unpersist()" i18n="@@app-game-page.unpersist">Unpersist Data</button>

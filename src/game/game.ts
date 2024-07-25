@@ -46,6 +46,7 @@ export class Game {
                 lrExploitPatch: difficulty == "brutal",
             },
             playTime: 0,
+            freeze: false,
             tickRate: tickRate,
             lastTick: new Date().getTime(),
             field: this.emptyField(gameData.fieldSize),

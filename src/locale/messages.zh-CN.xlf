@@ -999,12 +999,6 @@
         <target>黏土</target>
       </segment>
     </unit>
-    <unit id="app-field.soil-fdirt">
-      <segment state="initial">
-        <source>Frozen Dirt</source>
-        <target>冻土</target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.difficulty">
       <segment state="initial">
         <source>Difficulty</source>
@@ -1087,6 +1081,27 @@
       <segment state="initial">
         <source>True Persistence (NOT RECOMMENDED)</source>
         <target>长期持久化（不推荐使用）</target>
+      </segment>
+    </unit>
+    <unit id="8229753466347165232">
+      <notes>
+        <note category="description">@app-field.freeze-field</note>
+      </notes>
+      <segment state="initial">
+        <source>Freeze Field:</source>
+        <target>冻结田地：</target>
+      </segment>
+    </unit>
+    <unit id="app-field.cryo">
+      <segment state="initial">
+        <source>Cryo Fluid</source>
+        <target>冷液体</target>
+      </segment>
+    </unit>
+    <unit id="app-field.freeze-message">
+      <segment state="initial">
+        <source>Field frozen. Plants will not grow or mutate.</source>
+        <target>田地已被冻结。庄稼不会成长或变异。</target>
       </segment>
     </unit>
   </file>

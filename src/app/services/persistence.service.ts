@@ -73,9 +73,6 @@ export class PersistenceService {
     }
 
     unpersist(): void {
-        if (this.loc == "session") sessionStorage.removeItem("simplegarden_persisted");
-        else if (this.loc == "local") localStorage.removeItem("simplegarden_persisted");
         this.location = "transient";
-        this.data = {};
     }
 }

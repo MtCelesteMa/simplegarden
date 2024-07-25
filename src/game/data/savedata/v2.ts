@@ -18,6 +18,7 @@ export const saveData = z
             lrExploitPatch: z.boolean(),
         }),
         playTime: z.number().int().gte(0),
+        freeze: z.boolean(),
         tickRate: z.number().int().gte(0),
         lastTick: z.number().int().gte(0),
         field: fieldTile.array().array(),
@@ -36,6 +37,7 @@ export function upgrade(raw: unknown): SaveData {
         gameData: obj.gameData,
         difficulty: { limitResources: false, lrExploitPatch: false },
         playTime: obj.playTime,
+        freeze: false,
         tickRate: obj.tickRate,
         lastTick: obj.lastTick,
         field: obj.field.map((row: v1.FieldTile[]): FieldTile[] =>

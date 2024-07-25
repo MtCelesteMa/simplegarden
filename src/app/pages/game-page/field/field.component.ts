@@ -33,11 +33,12 @@ export class FieldComponent implements OnInit {
             displayName: $localize`:@@app-field.soil-clay:Clay`,
             tickRate: 600000,
         },
-        fdirt: {
-            displayName: $localize`:@@app-field.soil-fdirt:Frozen Dirt`,
+        cryo: {
+            displayName: $localize`:@@app-field.cryo:Cryo Fluid`,
             tickRate: 1800000,
         },
     };
+    freezeOption = new FormControl<boolean>(this.manager.game!.saveData.freeze);
 
     ngOnInit(): void {
         let rate = this.manager.game!.saveData.tickRate;
@@ -85,5 +86,9 @@ export class FieldComponent implements OnInit {
 
     changeSoil(): void {
         this.manager.game!.saveData.tickRate = this.soils[this.soilSelector.value!].tickRate;
+    }
+
+    toggleFreeze(): void {
+        this.manager.game!.saveData.freeze = this.freezeOption.value!;
     }
 }

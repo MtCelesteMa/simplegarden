@@ -19,6 +19,9 @@
                 <option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</option>
             }
         </select>
+        &nbsp;
+        <ng-container i18n="@app-field.freeze-field">Freeze Field:</ng-container>
+        <input type="checkbox" (change)="toggleFreeze()" [formControl]="freezeOption" />
     </div>
     <div style="overflow-x: scroll">
         <table style="margin-left: auto; margin-right: auto">
@@ -91,5 +94,9 @@
         <br />
         <br />
         <ng-container i18n="@@app-field.next-tick-in">Next tick in {{ timeToNextTick | time }}</ng-container>
+        @if (manager.game!.saveData.freeze) {
+            <br />
+            <span style="color: #007fff;" i18n="@@app-field.freeze-message">Field frozen. Plants will not grow or mutate.</span>
+        }
     </div>
 </div>

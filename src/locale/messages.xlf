@@ -834,11 +834,6 @@
         <source>Turbo Fertilizer</source>
       </segment>
     </unit>
-    <unit id="app-field.soil-fdirt">
-      <segment>
-        <source>Frozen Dirt</source>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.difficulty">
       <segment>
         <source>Difficulty</source>
@@ -907,6 +902,24 @@
     <unit id="app-welcome-page.persistence-transient">
       <segment>
         <source>Disable</source>
+      </segment>
+    </unit>
+    <unit id="8229753466347165232">
+      <notes>
+        <note category="description">@app-field.freeze-field</note>
+      </notes>
+      <segment>
+        <source>Freeze Field:</source>
+      </segment>
+    </unit>
+    <unit id="app-field.cryo">
+      <segment>
+        <source>Cryo Fluid</source>
+      </segment>
+    </unit>
+    <unit id="app-field.freeze-message">
+      <segment>
+        <source>Field frozen. Plants will not grow or mutate.</source>
       </segment>
     </unit>
   </file>

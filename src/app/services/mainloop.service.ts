@@ -18,12 +18,14 @@ export class MainloopService implements OnDestroy {
         }
         this.manager.cacheSave();
         if (this.manager.curTime - this.manager.game.saveData.lastTick >= this.manager.game.saveData.tickRate) {
-            if (this.multipleUpdates.value) {
-                let n = Math.floor(
-                    (this.manager.curTime - this.manager.game.saveData.lastTick) / this.manager.game.saveData.tickRate,
-                );
-                for (let i = 0; i < Math.min(n, 1440); i++) this.manager.game.field.updateField();
-            } else this.manager.game.field.updateField();
+            if (!this.manager.game.saveData.freeze) {
+                if (this.multipleUpdates.value) {
+                    let n = Math.floor(
+                        (this.manager.curTime - this.manager.game.saveData.lastTick) / this.manager.game.saveData.tickRate,
+                    );
+                    for (let i = 0; i < Math.min(n, 1440); i++) this.manager.game.field.updateField();
+                } else this.manager.game.field.updateField();
+            }
             this.manager.game.saveData.lastTick = this.manager.curTime;
         }
         if (this.manager.curTime - this.manager.game.lastSaveTime >= 60000) {
