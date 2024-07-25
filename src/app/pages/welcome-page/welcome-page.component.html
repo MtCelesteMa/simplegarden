@@ -65,12 +65,30 @@
 <div class="centering">
     <strong i18n="@@app-welcome-page.persistence-options">Persistence Options</strong>
     <br />
-    <input type="radio" [formControl]="persistenceSelect" (change)="setPersistence()" value="transient" name="persistenceSelect" />
+    <input
+        type="radio"
+        [formControl]="persistenceSelect"
+        (change)="setPersistence()"
+        value="transient"
+        name="persistenceSelect"
+    />
     <span i18n="@@app-welcome-page.persistence-transient">Disable</span>
     <br />
-    <input type="radio" [formControl]="persistenceSelect" (change)="setPersistence()" value="session" name="persistenceSelect" />
+    <input
+        type="radio"
+        [formControl]="persistenceSelect"
+        (change)="setPersistence()"
+        value="session"
+        name="persistenceSelect"
+    />
     <span i18n="@@app-welcome-page.persistence-session">Normal Persistence</span>
     <br />
-    <input type="radio" [formControl]="persistenceSelect" (change)="setPersistence()" value="local" name="persistenceSelect" />
+    <input
+        type="radio"
+        [formControl]="persistenceSelect"
+        (change)="setPersistence()"
+        value="local"
+        name="persistenceSelect"
+    />
     <span style="color: red" i18n="@@app-welcome-page.persistence-local">True Persistence (NOT RECOMMENDED)</span>
 </div>

@@ -21,7 +21,8 @@ export class MainloopService implements OnDestroy {
             if (!this.manager.game.saveData.freeze) {
                 if (this.multipleUpdates.value) {
                     let n = Math.floor(
-                        (this.manager.curTime - this.manager.game.saveData.lastTick) / this.manager.game.saveData.tickRate,
+                        (this.manager.curTime - this.manager.game.saveData.lastTick) /
+                            this.manager.game.saveData.tickRate,
                     );
                     for (let i = 0; i < Math.min(n, 1440); i++) this.manager.game.field.updateField();
                 } else this.manager.game.field.updateField();
