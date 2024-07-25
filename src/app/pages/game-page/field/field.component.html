@@ -5,8 +5,16 @@
         &nbsp;
         <select (change)="selectCrop($event)">
             <option value="" i18n="@@app-field.unearth-harvest">(Unearth/Harvest)</option>
-            @for (crop of unlockedCrops; track crop) {
-                <option value="{{ crop }}">{{ manager.game!.gameData.crops[crop].displayName }}</option>
+            @for (crop of unlockedCrops; track crop[0]) {
+                @if (manager.game!.saveData.difficulty.limitResources) {
+                    @if (crop[1] == null) {
+                        <option [value]="crop[0]">{{ manager.game!.gameData.crops[crop[0]].displayName }} (x&infin;)</option>
+                    } @else {
+                        <option [value]="crop[0]">{{ manager.game!.gameData.crops[crop[0]].displayName }} (x{{ crop[1] }})</option>
+                    }
+                } @else {
+                    <option [value]="crop[0]">{{ manager.game!.gameData.crops[crop[0]].displayName }}</option>
+                }
             }
         </select>
         &nbsp;
