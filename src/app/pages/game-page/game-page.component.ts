@@ -36,7 +36,12 @@ export class GamePageComponent implements OnInit {
     }
 
     returnHome(): void {
-        if (!confirm($localize`:@@app-game-page.homepage-conf:This does not automatically save your progress. Return to homepage?`)) return;
+        if (
+            !confirm(
+                $localize`:@@app-game-page.homepage-conf:This does not automatically save your progress. Return to homepage?`,
+            )
+        )
+            return;
         this.persistence.clear();
     }
 }

@@ -17,3 +17,7 @@ div.field-tile[mature] {
 div.field-tile[manual] {
     text-decoration: underline;
 }
+
+div.field-tile[frozen] {
+    background-color: color-mix(in srgb, brown 90%, #007fff 10%);
+}

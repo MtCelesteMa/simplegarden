@@ -41,6 +41,10 @@ export class FieldTileComponent {
         return this.manager.game!.saveData.difficulty.lrExploitPatch && this.tile.manual;
     }
 
+    get isFrozen(): boolean {
+        return this.manager.game!.saveData.freeze;
+    }
+
     selectTile(): void {
         this.manager.game!.selectedTile = [this.rowN, this.colN];
         if (this.manager.game!.paintMode) {
