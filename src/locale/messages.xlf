@@ -927,5 +927,25 @@
         <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
       </segment>
     </unit>
+    <unit id="app-seed-log.completion-msg">
+      <segment>
+        <source>Congratulations! You have discovered all <ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/> crops!</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-brutal">
+      <segment>
+        <source>Please take a break, and stay tuned for the next update!</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-hard">
+      <segment>
+        <source>If you are up for the challenge, try playing on Brutal Mode.</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-normal">
+      <segment>
+        <source>Now try playing on Hard Mode, where you no longer have infinite crops.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

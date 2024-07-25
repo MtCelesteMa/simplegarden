@@ -411,7 +411,7 @@
     <unit id="game.crop.root.description">
       <segment state="initial">
         <source>A plant seemingly only consisting of underground components.</source>
-        <target>看起来只由地下部分组成的工厂。</target>
+        <target>看起来只由地下部分组成的植物。</target>
       </segment>
     </unit>
     <unit id="game.crop.bloom.displayname">
@@ -1108,6 +1108,30 @@
       <segment state="initial">
         <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
         <target>你解锁了<ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg">
+      <segment state="initial">
+        <source>Congratulations! You have discovered all <ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/> crops!</source>
+        <target>Congratulations! You have discovered all <ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/> crops!</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-brutal">
+      <segment state="initial">
+        <source>Please take a break, and stay tuned for the next update!</source>
+        <target>请稍事休息，敬请关注后续更新！</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-hard">
+      <segment state="initial">
+        <source>If you are up for the challenge, try playing on Brutal Mode.</source>
+        <target>如果你准备好迎接挑战，请尝试玩残暴模式。</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.completion-msg-normal">
+      <segment state="initial">
+        <source>Now try playing on Hard Mode, where you no longer have infinite crops.</source>
+        <target>现在尝试玩困难模式，你不再有无限的庄稼。</target>
       </segment>
     </unit>
   </file>

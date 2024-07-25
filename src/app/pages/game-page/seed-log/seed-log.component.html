@@ -1,5 +1,18 @@
 <div class="box centering">
     <h1 i18n="@@app-seed-log.title">Seed Log ({{ nCropsUnlocked }}/{{ nCrops }})</h1>
+    @if (nCropsUnlocked == nCrops) {
+        <span style="color: green" i18n="@@app-seed-log.completion-msg">Congratulations! You have discovered all {{ nCrops }} crops!</span>
+        @if (manager.game!.saveData.difficulty.limitResources && manager.game!.saveData.difficulty.lrExploitPatch) {
+            <br />
+            <span style="color: green" i18n="@@app-seed-log.completion-msg-brutal">Please take a break, and stay tuned for the next update!</span>
+        } @else if (manager.game!.saveData.difficulty.limitResources) {
+            <br />
+            <span style="color: green" i18n="@@app-seed-log.completion-msg-hard">If you are up for the challenge, try playing on Brutal Mode.</span>
+        } @else {
+            <br />
+            <span style="color: green" i18n="@@app-seed-log.completion-msg-normal">Now try playing on Hard Mode, where you no longer have infinite crops.</span>
+        }
+    }
     <div class="seed-log">
         @for (crop of listUnlockedCrops; track crop) {
             <app-seed-log-entry [crop]="crop"></app-seed-log-entry>
