@@ -45,14 +45,10 @@
         }
         <br />
         <br />
-        <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
+        <app-datapack-selector [(datapack)]="datapack"></app-datapack-selector>
         <br />
-        <input type="checkbox" [formControl]="customGameDataOption" (change)="importGameData()" />
-        <ng-container i18n="@@app-welcome-page.custom-gd">Use custom game data</ng-container>
-        @if (customGameDataImportFailed) {
-            <br />
-            <span style="color: red" i18n="@@app-welcome-page.custom-game-data-import-failed"> Import failed. </span>
-        }
+        <br />
+        <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
         <br />
         <br />
         <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>

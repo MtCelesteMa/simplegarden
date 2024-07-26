@@ -4,12 +4,13 @@ import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
 import { PersistenceService } from "../../services/persistence.service";
 import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
+import { DatapackSelectorComponent } from "./datapack-selector/datapack-selector.component";
 import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
     standalone: true,
-    imports: [ReactiveFormsModule, LocaleSelectorComponent],
+    imports: [ReactiveFormsModule, LocaleSelectorComponent, DatapackSelectorComponent],
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent implements OnInit {
@@ -17,10 +18,8 @@ export class WelcomePageComponent implements OnInit {
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
 
-    customGameData: g.d.g.v2.GameData | string = "classic";
-    customGameDataOption = new FormControl<boolean>(false);
-    customGameDataImportFailed: boolean = false;
     difficultySelect = new FormControl<string>("normal");
+    datapack: string | g.d.d.v1.DataPack = "classic";
     persistenceSelect = new FormControl<string>(this.persistence.location);
 
     gameImportFailed: boolean = false;
@@ -56,33 +55,8 @@ export class WelcomePageComponent implements OnInit {
     }
 
     newGame(): void {
-        this.manager.game = g.Game.newGame(this.customGameData, this.difficultySelect.value!);
+        this.manager.game = g.Game.newGame(this.datapack, this.difficultySelect.value!);
         this.router.page = "game";
-    }
-
-    importGameData(): void {
-        if (this.customGameDataOption.value) {
-            let upl = document.createElement("input");
-            upl.type = "file";
-            upl.accept = "application/json";
-            upl.addEventListener("change", (ev: Event): void => {
-                let file = (ev.target as HTMLInputElement).files![0];
-                let reader = new FileReader();
-                reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
-                    try {
-                        this.customGameData = g.d.g.loader.load(e.target!.result as string);
-                        this.customGameDataImportFailed = false;
-                    } catch {
-                        this.customGameDataImportFailed = true;
-                        this.customGameDataOption.setValue(false);
-                    }
-                });
-                reader.readAsText(file);
-            });
-            upl.click();
-        } else {
-            this.customGameData = "static";
-        }
     }
 
     importGame(): void {

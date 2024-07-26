@@ -62,8 +62,8 @@ function trophyL10n(
     return {
         displayName: displayName,
         flavorText: flavorText,
-        description: description
-    }
+        description: description,
+    };
 }
 
 export function gameDataL10n(dataPack: v1.DataPack, locale: string | null = null): g.v2.GameData {
@@ -82,12 +82,14 @@ export function gameDataL10n(dataPack: v1.DataPack, locale: string | null = null
         ),
         mutations: dataPack.gameData.mutations,
         trophies: Object.fromEntries(
-            Object.entries(dataPack.gameData.trophies).map((trophy: [string, g.v2.TrophyInfo]): [string, g.v2.TrophyInfo] => {
-                return [
-                    trophy[0],
-                    Object.assign(JSON.parse(JSON.stringify(trophy[1])), trophyL10n(dataPack, locale, trophy[0])),
-                ];
-            }),
+            Object.entries(dataPack.gameData.trophies).map(
+                (trophy: [string, g.v2.TrophyInfo]): [string, g.v2.TrophyInfo] => {
+                    return [
+                        trophy[0],
+                        Object.assign(JSON.parse(JSON.stringify(trophy[1])), trophyL10n(dataPack, locale, trophy[0])),
+                    ];
+                },
+            ),
         ),
         initialCrops: dataPack.gameData.initialCrops,
         fieldSize: dataPack.gameData.fieldSize,

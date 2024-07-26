@@ -26,16 +26,6 @@
         <source>Welcome!</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.custom-game-data-import-failed">
-      <segment>
-        <source> Import failed. </source>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.custom-gd">
-      <segment>
-        <source>Use custom game data</source>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.new-game">
       <segment>
         <source>New Game</source>
@@ -405,6 +395,41 @@
     <unit id="app-welcome-page.persistence-desc-2">
       <segment>
         <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.builtin">
+      <segment>
+        <source>Built In</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.custom">
+      <segment>
+        <source>Custom</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.import">
+      <segment>
+        <source>Import</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.import-failed">
+      <segment>
+        <source>Import Failed</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.packname">
+      <segment>
+        <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>)</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.select-builtin">
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>) </source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.title">
+      <segment>
+        <source>Datapack</source>
       </segment>
     </unit>
   </file>

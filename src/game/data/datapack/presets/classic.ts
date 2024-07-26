@@ -789,6 +789,8 @@ export const classic: v1.DataPack = {
         defaultLocale: "en-US",
         locales: {
             "zh-TW": {
+                name: "經典",
+                description: "經典餅乾計數器花園體驗。",
                 crops: {
                     wheat: {
                         displayName: "小麥",
@@ -985,6 +987,8 @@ export const classic: v1.DataPack = {
                 },
             },
             "zh-CN": {
+                name: "经典",
+                description: "经典饼干计数器花园体验。",
                 crops: {
                     wheat: {
                         displayName: "小麦",

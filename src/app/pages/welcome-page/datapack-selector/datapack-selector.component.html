@@ -1,0 +1,35 @@
+<strong i18n="@@app-datapack-selector.title">Datapack</strong>
+<br />
+<input type="radio" name="dpModeSelect" value="builtin" [formControl]="modeSelect" />
+<span i18n="@@app-datapack-selector.builtin">Built In</span>
+<br />
+<input type="radio" name="dpModeSelect" value="custom" [formControl]="modeSelect" />
+<span i18n="@@app-datapack-selector.custom">Custom</span>
+@if (modeSelect.value! == "builtin") {
+    <br />
+    <select [formControl]="builtInSelect" (change)="selectBuiltIn()">
+        <option value="" selected disabled></option>
+        @for (pack of listBuiltIn(); track pack[0]) {
+            <option [value]="pack[0]" i18n="@@app-datapack-selector.select-builtin">
+                {{ l10nName(pack[1]) }} (by {{ pack[1].author }})
+            </option>
+        }
+    </select>
+    @if (builtInPack != null) {
+        <br />
+        {{ l10nDescription(builtInPack) }}
+    }
+} @else if (modeSelect.value! == "custom") {
+    <br />
+    <button (click)="importDatapack()" i18n="@@app-datapack-selector.import">Import</button>
+    @if (importFailed) {
+        <br />
+        <span style="color: red" i18n="@@app-datapack-selector.import-failed">Import Failed</span>
+    }
+    @if (customPack != null) {
+        <br />
+        <span i18n="@@app-datapack-selector.packname">{{ l10nName(customPack) }} (by {{ customPack.author }})</span>
+        <br />
+        {{ l10nDescription(customPack) }}
+    }
+}

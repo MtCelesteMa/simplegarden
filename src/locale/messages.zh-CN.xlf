@@ -36,18 +36,6 @@
         <target>开始新游戏</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.custom-gd">
-      <segment state="initial">
-        <source>Use custom game data</source>
-        <target>使用自定义游戏设置</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.custom-game-data-import-failed">
-      <segment state="initial">
-        <source> Import failed. </source>
-        <target> 设置导入失败 </target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.import-game">
       <segment state="initial">
         <source>Import Game</source>
@@ -484,6 +472,48 @@
       <segment state="initial">
         <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
         <target>仅当正常持久化无法保留游戏状态时才使用長期持久化（这是 iOS 上的一个已知问题）。</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.title">
+      <segment state="initial">
+        <source>Datapack</source>
+        <target>数据包</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.builtin">
+      <segment state="initial">
+        <source>Built In</source>
+        <target>内置</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.custom">
+      <segment state="initial">
+        <source>Custom</source>
+        <target>自定义</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.select-builtin">
+      <segment state="initial">
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>) </source>
+        <target> <ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>） </target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.import">
+      <segment state="initial">
+        <source>Import</source>
+        <target>导入</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.import-failed">
+      <segment state="initial">
+        <source>Import Failed</source>
+        <target>导入失败</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.packname">
+      <segment state="initial">
+        <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>)</source>
+        <target><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>）</target>
       </segment>
     </unit>
   </file>

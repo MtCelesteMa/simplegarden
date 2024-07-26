@@ -23,6 +23,8 @@ export const trophyL10n = z
 export type TrophyL10n = z.infer<typeof trophyL10n>;
 
 export const l10nPack = z.object({
+    name: z.string().optional(),
+    description: z.string().optional(),
     crops: z.object({}).catchall(cropL10n),
     trophies: z.object({}).catchall(trophyL10n),
 });
