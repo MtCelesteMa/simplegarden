@@ -17,7 +17,7 @@ export class WelcomePageComponent implements OnInit {
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
 
-    customGameData: g.d.g.v2.GameData | null = null;
+    customGameData: g.d.g.v2.GameData | string = "classic";
     customGameDataOption = new FormControl<boolean>(false);
     customGameDataImportFailed: boolean = false;
     difficultySelect = new FormControl<string>("normal");
@@ -81,7 +81,7 @@ export class WelcomePageComponent implements OnInit {
             });
             upl.click();
         } else {
-            this.customGameData = null;
+            this.customGameData = "static";
         }
     }
 

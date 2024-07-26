@@ -20,13 +20,17 @@ export class Loader<T extends typeof versionedData> {
         this.upgraders = upgraders;
     }
 
-    load(raw: unknown): z.infer<T> {
+    loadVersion(raw: unknown, version: number): any {
         if (typeof raw == "string") raw = JSON.parse(raw);
         let rawv = versionedData.parse(raw);
         if (rawv.identifier != this.identifier) throw new Error("Identifier mismatch");
-        if (rawv.version > this.version) throw new Error("Version incompatible");
-        for (let v = rawv.version; v < this.version; v++) raw = this.upgraders[v - 1](raw);
-        return this.schema.parse(raw);
+        if (rawv.version > version) throw new Error("Version incompatible");
+        for (let v = rawv.version; v < version; v++) raw = this.upgraders[v - 1](raw);
+        return raw;
+    }
+
+    load(raw: unknown): z.infer<T> {
+        return this.schema.parse(this.loadVersion(raw, this.version));
     }
 
     loadInPlace(raw: unknown): void {

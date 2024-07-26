@@ -1,9 +1,10 @@
+import { inject, LOCALE_ID } from "@angular/core";
 import * as d from "./data";
 import * as l from "./logic";
 
 export class Game {
     readonly gameData: d.g.v2.GameData;
-    readonly saveData: d.s.v2.SaveData;
+    readonly saveData: d.s.v3.SaveData;
     readonly field: l.Field;
     readonly sessStartTime: number;
     lastSaveTime: number;
@@ -11,36 +12,37 @@ export class Game {
     paintMode: boolean = false;
     selectedCrop: string | null = null;
 
-    constructor(gameData: d.g.v2.GameData, saveData: d.s.v2.SaveData, startTime: number | null = null) {
-        this.gameData = gameData;
+    constructor(saveData: d.s.v3.SaveData, locale: string | null = null, startTime: number | null = null) {
+        this.gameData = d.d.gameDataL10n(
+            typeof saveData.dataPack == "string" ? d.d.classic : saveData.dataPack,
+            locale,
+        );
         this.saveData = saveData;
 
-        this.field = new l.Field(gameData, saveData);
+        this.field = new l.Field(this.gameData, saveData);
         this.sessStartTime = startTime == null ? new Date().getTime() : startTime;
         this.lastSaveTime = this.sessStartTime;
     }
 
-    static fromRaw(raw: unknown, startTime: number | null = null): Game {
+    static fromRaw(raw: unknown, locale: string | null = null, startTime: number | null = null): Game {
         let saveData = d.s.loader.load(raw);
-        if (saveData.gameData == null) return new Game(d.g.loader.load(d.g.simpleClassic), saveData, startTime);
-        d.g.loader.loadInPlace(saveData.gameData);
-        return new Game(saveData.gameData as d.g.v2.GameData, saveData, startTime);
+        return new Game(saveData, locale, startTime);
     }
 
-    private static emptyField(dims: [number, number]): d.s.v2.FieldTile[][] {
-        let field = Array<d.s.v2.FieldTile[]>(dims[0]).fill(
-            Array<d.s.v2.FieldTile>(dims[1]).fill({ crop: null, age: 0, manual: false }),
+    private static emptyField(dims: [number, number]): d.s.v3.FieldTile[][] {
+        let field = Array<d.s.v3.FieldTile[]>(dims[0]).fill(
+            Array<d.s.v3.FieldTile>(dims[1]).fill({ crop: null, age: 0, manual: false }),
         );
         return JSON.parse(JSON.stringify(field));
     }
 
-    static newGame(raw: unknown, difficulty: string): Game {
+    static newGame(rawDataPack: unknown, difficulty: string, locale: string | null = null): Game {
         let tickRate: number = 60000;
-        let gameData: d.g.v2.GameData = raw == null ? d.g.loader.load(d.g.simpleClassic) : d.g.loader.load(raw);
-        let saveData: d.s.v2.SaveData = {
+        let dataPack: d.d.v1.DataPack = d.d.loader.load(typeof rawDataPack == "string" ? d.d.classic : rawDataPack);
+        let saveData: d.s.v3.SaveData = {
             identifier: "sg_savedata",
-            version: 2,
-            gameData: raw == null ? null : gameData,
+            version: 3,
+            dataPack: typeof rawDataPack == "string" ? rawDataPack : dataPack,
             difficulty: {
                 limitResources: difficulty == "hard" || difficulty == "brutal",
                 lrExploitPatch: difficulty == "brutal",
@@ -49,15 +51,15 @@ export class Game {
             freeze: false,
             tickRate: tickRate,
             lastTick: new Date().getTime(),
-            field: this.emptyField(gameData.fieldSize),
+            field: this.emptyField(dataPack.gameData.fieldSize),
             cropsUnlocked: Object.fromEntries(
-                gameData.initialCrops.map((name: string): [string, d.s.v2.CropUnlockData] => [
+                dataPack.gameData.initialCrops.map((name: string): [string, d.s.v3.CropUnlockData] => [
                     name,
                     { quantity: null, timeDiscovered: null },
                 ]),
             ),
             trophies: {},
         };
-        return new Game(gameData, saveData);
+        return new Game(saveData, locale);
     }
 }

@@ -1,4 +1,4 @@
-import { Injectable, inject } from "@angular/core";
+import { Injectable, inject, LOCALE_ID } from "@angular/core";
 import { PersistenceService, PersistedValue } from "./persistence.service";
 import * as g from "../../game";
 
@@ -7,15 +7,16 @@ import * as g from "../../game";
 })
 export class ManagerService {
     persistence = inject(PersistenceService);
+    locale = inject(LOCALE_ID);
     game: g.Game | null = null;
     curTime: number = new Date().getTime();
-    private saveData = new PersistedValue<g.d.s.v2.SaveData>("saveData");
+    private saveData = new PersistedValue<g.d.s.v3.SaveData>("saveData");
     private startTime = new PersistedValue<number>("startTime");
 
     constructor() {
         if (this.saveData.isCached && this.startTime.isCached) {
             try {
-                this.game = g.Game.fromRaw(this.saveData.value, this.startTime.value);
+                this.game = g.Game.fromRaw(this.saveData.value, this.locale, this.startTime.value);
             } catch {
                 this.persistence.clear();
             }
@@ -46,11 +47,11 @@ export class ManagerService {
     }
 
     newGame(raw: unknown, difficulty: string): void {
-        this.game = g.Game.newGame(raw, difficulty);
+        this.game = g.Game.newGame(raw, difficulty, this.locale);
     }
 
     loadGame(raw: unknown): void {
-        this.game = g.Game.fromRaw(raw);
+        this.game = g.Game.fromRaw(raw, this.locale);
     }
 
     loadGameFromStorage(): void {

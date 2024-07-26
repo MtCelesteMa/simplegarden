@@ -6,9 +6,9 @@ export type Mutation = { target: string; chance: number };
 export class FieldTile {
     private coords: [number, number];
     private gameData: d.g.v2.GameData;
-    private saveData: d.s.v2.SaveData;
+    private saveData: d.s.v3.SaveData;
 
-    constructor(coords: [number, number], gameData: d.g.v2.GameData, saveData: d.s.v2.SaveData) {
+    constructor(coords: [number, number], gameData: d.g.v2.GameData, saveData: d.s.v3.SaveData) {
         this.coords = coords;
         this.gameData = gameData;
         this.saveData = saveData;
@@ -22,7 +22,7 @@ export class FieldTile {
         return this.coords[1];
     }
 
-    get tile(): d.s.v2.FieldTile {
+    get tile(): d.s.v3.FieldTile {
         return this.saveData.field[this.rowN][this.colN];
     }
 
@@ -109,8 +109,8 @@ export class FieldTile {
                     } else {
                         this.saveData.cropsUnlocked[this.crop] = {
                             quantity: 1,
-                            timeDiscovered: new Date().getTime()
-                        }
+                            timeDiscovered: new Date().getTime(),
+                        };
                         alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                     }
                 }
@@ -126,8 +126,8 @@ export class FieldTile {
                 if (!this.isUnlocked!) {
                     this.saveData.cropsUnlocked[this.crop] = {
                         quantity: 1,
-                        timeDiscovered: new Date().getTime()
-                    }
+                        timeDiscovered: new Date().getTime(),
+                    };
                     alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                 }
             }
