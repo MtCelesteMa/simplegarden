@@ -50,8 +50,11 @@ export class Game {
             tickRate: tickRate,
             lastTick: new Date().getTime(),
             field: this.emptyField(gameData.fieldSize),
-            inventory: Object.fromEntries(
-                gameData.initialCrops.map((name: string): [string, number | null] => [name, null]),
+            cropsUnlocked: Object.fromEntries(
+                gameData.initialCrops.map((name: string): [string, d.s.v2.CropUnlockData] => [
+                    name,
+                    { quantity: null, timeDiscovered: null },
+                ]),
             ),
             trophies: {},
         };

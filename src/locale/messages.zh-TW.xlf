@@ -1136,7 +1136,7 @@
     </unit>
     <unit id="app-game-page.homepage">
       <segment state="initial">
-        <source> Return to Homepage </source>
+        <source>Return to Homepage</source>
         <target> 返回主頁 </target>
       </segment>
     </unit>
@@ -1144,6 +1144,30 @@
       <segment state="initial">
         <source>This does not automatically save your progress. Return to homepage?</source>
         <target>此操作不會自動保存遊戲。確認返回主頁？</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.discovered-on">
+      <segment state="initial">
+        <source>Discovered on <ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></source>
+        <target>發現於<ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.no-mutations">
+      <segment state="initial">
+        <source>None</source>
+        <target>無</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-desc">
+      <segment state="initial">
+        <source>Persistence allows the game state to be preserved across page reloads, which is useful if your browser automatically refreshes pages.</source>
+        <target>持久化允許在頁面重新加載時保留遊戲狀態。如果你的瀏覽器自動刷新頁面，這將非常有用。</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-desc-2">
+      <segment state="initial">
+        <source>Only use True Persistence if Normal Persistence fails preserve game state (e.g., you are using iOS).</source>
+        <target>僅當正常持久化無法保留遊戲狀態時才使用長期持久化（這是 iOS 上的一個已知的問題）。</target>
       </segment>
     </unit>
   </file>

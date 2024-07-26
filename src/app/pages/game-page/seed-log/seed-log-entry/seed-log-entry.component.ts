@@ -1,4 +1,5 @@
 import { Component, inject, Input } from "@angular/core";
+import { DatePipe } from "@angular/common";
 import { ManagerService } from "../../../../services/manager.service";
 import { TimePipe } from "../../../../services/time.pipe";
 import * as g from "../../../../../game";
@@ -6,7 +7,7 @@ import * as g from "../../../../../game";
 @Component({
     selector: "app-seed-log-entry",
     standalone: true,
-    imports: [TimePipe],
+    imports: [TimePipe, DatePipe],
     templateUrl: "./seed-log-entry.component.html",
     styleUrl: "./seed-log-entry.component.scss",
 })
@@ -14,9 +15,12 @@ export class SeedLogEntryComponent {
     manager = inject(ManagerService);
     @Input({ required: true }) crop: string = "";
 
-    get quantity(): string {
-        if (this.manager.game!.saveData.inventory[this.crop] == null) return "∞";
-        return String(this.manager.game!.saveData.inventory[this.crop]);
+    get quantity(): number | null {
+        return this.manager.game!.saveData.cropsUnlocked[this.crop].quantity;
+    }
+
+    get timeDiscovered(): number | null {
+        return this.manager.game!.saveData.cropsUnlocked[this.crop].timeDiscovered;
     }
 
     get cropInfo(): g.d.g.v2.CropInfo {
@@ -37,7 +41,7 @@ export class SeedLogEntryComponent {
             })
             .map((name: string): [string, string] => {
                 let dname = this.manager.game!.gameData.crops[name].displayName;
-                if (Object.hasOwn(this.manager.game!.saveData.inventory, name)) return [dname, dname];
+                if (Object.hasOwn(this.manager.game!.saveData.cropsUnlocked, name)) return [dname, dname];
                 return [dname, "???"];
             });
     }

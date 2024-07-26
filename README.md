@@ -13,13 +13,17 @@ The mechanics are mostly the same as the Garden minigame in Cookie Clicker, with
 -   Plant growth is deterministic. For example, wheat will always live for 13 ticks.
 -   Planted crops provide no side effects, as there is no cookie production to boost.
 -   Similarly, there are no "garden drops" obtained by harvesting certain crops.
--   Only one soil type. The game ticks at a fixed rate, and mutations/weed growth cannot be boosted.
+-   Different soil types only affect tick rate, and can be changed at will.
 -   All crops are free to plant (in Normal Mode).
 -   Play with custom crops and mutations by uploading custom data files.
 
 ### Hard Mode
 
-_Coming soon..._
+Hard Mode introduces a new challenge by limiting the number of crops you have. With the exception of Wheat (which you still could plant as many as you want), harvesting a mature crop will only yield one of that crop, which is consumed when you plant it (harvesting immature crops do not yield anything). The only way to get more of a crop is to breed more of it through mutations. This requires you to manage your resources carefully in Hard Mode in contrast to Normal Mode which allows you to plant as many crops as you want.
+
+**Trophies (Beta):** In Hard Mode, accumulating a certain quantity of certain crops will award you with a trophy. There are currently four trophies, with more to come (hopefully).
+
+**Brutal Mode:** Hard Mode as it is originally intended, it "fixes" an "exploit" present in Hard Mode that makes it significantly easier than the intention. It is split into its own difficulty as Hard Mode without the "exploit" may be too difficult/annoying for many players.
 
 ## Installation
 

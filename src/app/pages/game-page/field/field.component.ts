@@ -61,8 +61,8 @@ export class FieldComponent implements OnInit {
         return this.manager.game!.field.tiles[this.manager.game!.selectedTile[0]][this.manager.game!.selectedTile[1]];
     }
 
-    get unlockedCrops(): [string, number | null][] {
-        return Object.entries(this.manager.game!.saveData.inventory);
+    get unlockedCrops(): [string, g.d.s.v2.CropUnlockData][] {
+        return Object.entries(this.manager.game!.saveData.cropsUnlocked);
     }
 
     togglePaintMode(ev: Event): void {

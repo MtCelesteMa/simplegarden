@@ -57,7 +57,7 @@ export class FieldTile {
 
     get isUnlocked(): boolean | null {
         if (this.crop == null) return null;
-        return Object.keys(this.saveData.inventory).includes(this.crop);
+        return Object.hasOwn(this.saveData.cropsUnlocked, this.crop);
     }
 
     get isMature(): boolean | null {
@@ -89,10 +89,10 @@ export class FieldTile {
     }
 
     sowCrop(crop: string): void {
-        if (!Object.hasOwn(this.saveData.inventory, crop)) return;
-        if (this.saveData.difficulty.limitResources && this.saveData.inventory[crop] != null) {
-            if (this.saveData.inventory[crop] < 1) return;
-            this.saveData.inventory[crop]--;
+        if (!Object.hasOwn(this.saveData.cropsUnlocked, crop)) return;
+        if (this.saveData.difficulty.limitResources && this.saveData.cropsUnlocked[crop].quantity != null) {
+            if (this.saveData.cropsUnlocked[crop].quantity < 1) return;
+            this.saveData.cropsUnlocked[crop].quantity--;
         }
         this.plantCrop(crop);
         this.manual = true;
@@ -104,9 +104,13 @@ export class FieldTile {
             if (this.saveData.difficulty.limitResources) {
                 if (!this.saveData.difficulty.lrExploitPatch || !this.manual) {
                     if (this.isUnlocked!) {
-                        if (this.saveData.inventory[this.crop] != null) this.saveData.inventory[this.crop]! += 1;
+                        if (this.saveData.cropsUnlocked[this.crop] != null)
+                            this.saveData.cropsUnlocked[this.crop].quantity! += 1;
                     } else {
-                        this.saveData.inventory[this.crop] = 1;
+                        this.saveData.cropsUnlocked[this.crop] = {
+                            quantity: 1,
+                            timeDiscovered: new Date().getTime()
+                        }
                         alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                     }
                 }
@@ -114,13 +118,16 @@ export class FieldTile {
                     if (
                         !Object.hasOwn(this.saveData.trophies, trophy[0]) &&
                         trophy[1].target == this.crop &&
-                        this.saveData.inventory[this.crop]! >= trophy[1].quantity
+                        this.saveData.cropsUnlocked[this.crop].quantity! >= trophy[1].quantity
                     )
                         this.saveData.trophies[trophy[0]] = new Date().getTime();
                 }
             } else {
                 if (!this.isUnlocked!) {
-                    this.saveData.inventory[this.crop] = null;
+                    this.saveData.cropsUnlocked[this.crop] = {
+                        quantity: 1,
+                        timeDiscovered: new Date().getTime()
+                    }
                     alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                 }
             }

@@ -949,12 +949,32 @@
     </unit>
     <unit id="app-game-page.homepage">
       <segment>
-        <source> Return to Homepage </source>
+        <source>Return to Homepage</source>
       </segment>
     </unit>
     <unit id="app-game-page.homepage-conf">
       <segment>
         <source>This does not automatically save your progress. Return to homepage?</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.discovered-on">
+      <segment>
+        <source>Discovered on <ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log.no-mutations">
+      <segment>
+        <source>None</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-desc">
+      <segment>
+        <source>Persistence allows the game state to be preserved across page reloads, which is useful if your browser automatically refreshes pages.</source>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.persistence-desc-2">
+      <segment>
+        <source>Only use True Persistence if Normal Persistence fails preserve game state (e.g., you are using iOS).</source>
       </segment>
     </unit>
   </file>

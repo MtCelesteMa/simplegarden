@@ -10,6 +10,13 @@ export const fieldTile = z.object({
 
 export type FieldTile = z.infer<typeof fieldTile>;
 
+export const cropUnlockData = z.object({
+    quantity: z.number().int().gte(0).nullable(),
+    timeDiscovered: z.number().int().gte(0).nullable(),
+});
+
+export type CropUnlockData = z.infer<typeof cropUnlockData>;
+
 export const saveData = z
     .object({
         gameData: z.unknown(),
@@ -22,7 +29,7 @@ export const saveData = z
         tickRate: z.number().int().gte(0),
         lastTick: z.number().int().gte(0),
         field: fieldTile.array().array(),
-        inventory: z.object({}).catchall(z.number().int().gte(0).nullable()),
+        cropsUnlocked: z.object({}).catchall(cropUnlockData),
         trophies: z.object({}).catchall(z.number().int().gte(0)),
     })
     .merge(versionedData);
@@ -45,7 +52,12 @@ export function upgrade(raw: unknown): SaveData {
                 return { crop: tile.crop, age: tile.age, manual: false };
             }),
         ),
-        inventory: Object.fromEntries(obj.unlockedCrops.map((name: string): [string, number | null] => [name, null])),
+        cropsUnlocked: Object.fromEntries(
+            obj.unlockedCrops.map((name: string): [string, CropUnlockData] => [
+                name,
+                { quantity: null, timeDiscovered: null },
+            ]),
+        ),
         trophies: {},
     };
     return saveData.parse(newObj);
