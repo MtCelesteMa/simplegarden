@@ -1,4 +1,4 @@
-<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-CN">
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-TW">
   <file id="ngi18n" original="ng.template">
     <unit id="app-root.title">
       <segment state="initial">
@@ -387,7 +387,7 @@
       </notes>
       <segment state="initial">
         <source>Freeze Field:</source>
-        <target>冻结田地：</target>
+        <target>冻结田地</target>
       </segment>
     </unit>
     <unit id="app-field.cryo">
@@ -411,7 +411,7 @@
     <unit id="app-seed-log.completion-msg">
       <segment state="initial">
         <source>Congratulations! You have discovered all <ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/> crops!</source>
-        <target>Congratulations! You have discovered all <ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/> crops!</target>
+        <target>恭喜你找到全<ph id="0" equiv="INTERPOLATION" disp="{{ nCrops }}"/>种庄稼！</target>
       </segment>
     </unit>
     <unit id="app-seed-log.completion-msg-brutal">
@@ -423,7 +423,7 @@
     <unit id="app-seed-log.completion-msg-hard">
       <segment state="initial">
         <source>If you are up for the challenge, try playing on Brutal Mode.</source>
-        <target>如果你准备好迎接挑战，请尝试玩残暴模式。</target>
+        <target>如果你准备好迎接挑战的话，请尝试玩残暴模式。</target>
       </segment>
     </unit>
     <unit id="app-seed-log.completion-msg-normal">
@@ -465,13 +465,13 @@
     <unit id="app-welcome-page.persistence-desc">
       <segment state="initial">
         <source>Persistence allows the game state to be preserved across page reloads, which is useful if your browser automatically refreshes pages.</source>
-        <target>持久性允许在页面重新加载时保留游戏状态。如果你的浏览器自动刷新页面，这将非常有用。</target>
+        <target>持久化允许在页面重新加载时保留游戏状态。如果你的浏览器自动刷新页面，这将非常有用。</target>
       </segment>
     </unit>
     <unit id="app-welcome-page.persistence-desc-2">
       <segment state="initial">
         <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
-        <target>仅当正常持久化无法保留游戏状态时才使用長期持久化（这是 iOS 上的一个已知问题）。</target>
+        <target>仅当正常持久化无法保留游戏状态时才使用长期持久化（这是 iOS 上的一个已知的问题）。</target>
       </segment>
     </unit>
     <unit id="app-datapack-selector.title">
@@ -514,6 +514,72 @@
       <segment state="initial">
         <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>)</source>
         <target><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>）</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.open-workbench">
+      <segment state="initial">
+        <source>Open Workbench</source>
+        <target>打开工作台</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.return-home">
+      <segment state="initial">
+        <source>Return to Homepage</source>
+        <target>返回主页</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-datapack">
+      <segment state="initial">
+        <source>Import Datapack</source>
+        <target>导入数据包</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.export-datapack">
+      <segment state="initial">
+        <source>Export Datapack</source>
+        <target>导出数据包</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-failed">
+      <segment state="initial">
+        <source>Import Failed</source>
+        <target>导入失败</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.save-info">
+      <segment state="initial">
+        <source>Unlike save data, datapacks are not saved to any long-term storage. Remember to export your work!</source>
+        <target>数据包不会保存到任何长期存储中。记得导出你的作品！</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.name">
+      <segment state="initial">
+        <source>Datapack Name: </source>
+        <target>数据包名称：</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.author">
+      <segment state="initial">
+        <source>Author Name: </source>
+        <target>作者：</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-conf">
+      <segment state="initial">
+        <source>This will overwrite the datapack currently in the editor. Import datapack?</source>
+        <target>此操作会覆蓋编辑器里的数据包。确认导入？</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.homepage-conf">
+      <segment state="initial">
+        <source>This does not automatically save your work. Return to homepage?</source>
+        <target>此操作不会自动保存你的作品。确认返回主页？</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.description">
+      <segment state="initial">
+        <source>Description: </source>
+        <target>介绍：</target>
       </segment>
     </unit>
   </file>

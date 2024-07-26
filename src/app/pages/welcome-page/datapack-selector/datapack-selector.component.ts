@@ -1,5 +1,6 @@
 import { Component, inject, LOCALE_ID, EventEmitter, Input, Output } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
+import { FileService } from "../../../services/file.service";
 import * as g from "../../../../game";
 
 @Component({
@@ -10,6 +11,7 @@ import * as g from "../../../../game";
 })
 export class DatapackSelectorComponent {
     locale = inject(LOCALE_ID);
+    fileService = inject(FileService);
     @Input() datapack: string | g.d.d.v1.DataPack = "classic";
     @Output() datapackChange = new EventEmitter<string | g.d.d.v1.DataPack>();
 
@@ -57,23 +59,14 @@ export class DatapackSelectorComponent {
     }
 
     importDatapack(): void {
-        let upl = document.createElement("input");
-        upl.type = "file";
-        upl.accept = "application/json";
-        upl.addEventListener("change", (ev: Event): void => {
-            let file = (ev.target as HTMLInputElement).files![0];
-            let reader = new FileReader();
-            reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
-                try {
-                    this.datapack = g.d.d.loader.load(e.target!.result as string);
-                    this.datapackChange.emit(this.datapack);
-                    this.importFailed = false;
-                } catch {
-                    this.importFailed = true;
-                }
-            });
-            reader.readAsText(file);
+        this.fileService.upload((content: string): void => {
+            try {
+                this.datapack = g.d.d.loader.load(content);
+                this.datapackChange.emit(this.datapack);
+                this.importFailed = false;
+            } catch {
+                this.importFailed = true;
+            }
         });
-        upl.click();
     }
 }

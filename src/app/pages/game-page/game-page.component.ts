@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from "@angular/core";
+import { FileService } from "../../services/file.service";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
 import { PersistenceService } from "../../services/persistence.service";
@@ -14,6 +15,7 @@ import { TrophyCaseComponent } from "./trophy-case/trophy-case.component";
     templateUrl: "./game-page.component.html",
 })
 export class GamePageComponent implements OnInit {
+    fileService = inject(FileService);
     manager = inject(ManagerService);
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
@@ -25,14 +27,9 @@ export class GamePageComponent implements OnInit {
     }
 
     exportGame(): void {
-        this.manager.saveGame();
-        let blob = new Blob([localStorage.getItem("simplegarden_save")!], { type: "application/json;charset=utf-8" });
-        let url = URL.createObjectURL(blob);
-        let dl = document.createElement("a");
-        dl.href = url;
-        dl.download = "simplegarden_save";
-        dl.click();
-        URL.revokeObjectURL(url);
+        let saveData = JSON.parse(JSON.stringify(this.manager.game!.saveData));
+        saveData.playTime = this.manager.timeElapsed;
+        this.fileService.download("simplegarden_save", JSON.stringify(saveData));
     }
 
     returnHome(): void {

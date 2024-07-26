@@ -516,5 +516,71 @@
         <target><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>）</target>
       </segment>
     </unit>
+    <unit id="app-welcome-page.open-workbench">
+      <segment state="initial">
+        <source>Open Workbench</source>
+        <target>打開工作台</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.return-home">
+      <segment state="initial">
+        <source>Return to Homepage</source>
+        <target>返回主頁</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-datapack">
+      <segment state="initial">
+        <source>Import Datapack</source>
+        <target>導入數據包</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.export-datapack">
+      <segment state="initial">
+        <source>Export Datapack</source>
+        <target>導出數據包</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-failed">
+      <segment state="initial">
+        <source>Import Failed</source>
+        <target>導入失敗</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.save-info">
+      <segment state="initial">
+        <source>Unlike save data, datapacks are not saved to any long-term storage. Remember to export your work!</source>
+        <target>數據包不會保存到任何長期存儲中。記得導出你的作品！</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.name">
+      <segment state="initial">
+        <source>Datapack Name: </source>
+        <target>數據包名稱：</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.author">
+      <segment state="initial">
+        <source>Author Name: </source>
+        <target>作者：</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.import-conf">
+      <segment state="initial">
+        <source>This will overwrite the datapack currently in the editor. Import datapack?</source>
+        <target>此操作會覆蓋編輯器裡的數據包。確認導入？</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.homepage-conf">
+      <segment state="initial">
+        <source>This does not automatically save your work. Return to homepage?</source>
+        <target>此操作不會自動保存你的作品。確認返回主頁？</target>
+      </segment>
+    </unit>
+    <unit id="app-workbench-page.description">
+      <segment state="initial">
+        <source>Description: </source>
+        <target>介紹：</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

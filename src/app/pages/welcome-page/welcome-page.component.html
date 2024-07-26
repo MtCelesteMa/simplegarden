@@ -8,6 +8,9 @@
         <br />
         <br />
         <button style="color: red" (click)="eraseGame()" i18n="@@app-welcompe-page.erase-game">Erase Game</button>
+        <br />
+        <br />
+        <button (click)="openWorkbench()" i18n="@@app-welcome-page.open-workbench">Open Workbench</button>
     </div>
 } @else {
     <div class="box centering">
@@ -19,20 +22,23 @@
             <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
         }
         <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
-        <app-difficulty-selector [(difficulty)]="difficulty"></app-difficulty-selector>
-        <br />
-        <br />
-        <app-datapack-selector [(datapack)]="datapack"></app-datapack-selector>
-        <br />
-        <br />
-        <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
-        <br />
-        <br />
+        <div class="box">
+            <app-difficulty-selector [(difficulty)]="difficulty"></app-difficulty-selector>
+            <br />
+            <br />
+            <app-datapack-selector [(datapack)]="datapack"></app-datapack-selector>
+            <br />
+            <br />
+            <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
+        </div>
         <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>
         @if (gameImportFailed) {
             <br />
             <span style="color: red" i18n="@@app-welcome-page.game-import-failed"> Import failed. </span>
         }
+        <br />
+        <br />
+        <button (click)="openWorkbench()" i18n="@@app-welcome-page.open-workbench">Open Workbench</button>
     </div>
 }
 <div class="centering">

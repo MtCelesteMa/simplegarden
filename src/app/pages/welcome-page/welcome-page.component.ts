@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
+import { FileService } from "../../services/file.service";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
 import { PersistenceService } from "../../services/persistence.service";
@@ -15,6 +16,7 @@ import * as g from "../../../game";
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent implements OnInit {
+    fileService = inject(FileService);
     manager = inject(ManagerService);
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
@@ -35,13 +37,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     exportGame(): void {
-        let blob = new Blob([localStorage.getItem("simplegarden_save")!], { type: "application/json;charset=utf-8" });
-        let url = URL.createObjectURL(blob);
-        let dl = document.createElement("a");
-        dl.href = url;
-        dl.download = "simplegarden_save";
-        dl.click();
-        URL.revokeObjectURL(url);
+        this.fileService.download("simplegarden_save", localStorage.getItem("simplegarden_save")!);
     }
 
     eraseGame(): void {
@@ -61,26 +57,21 @@ export class WelcomePageComponent implements OnInit {
     }
 
     importGame(): void {
-        let upl = document.createElement("input");
-        upl.type = "file";
-        upl.accept = "application/json";
-        upl.addEventListener("change", (ev: Event): void => {
-            let file = (ev.target as HTMLInputElement).files![0];
-            let reader = new FileReader();
-            reader.addEventListener("load", (e: ProgressEvent<FileReader>): void => {
-                try {
-                    this.manager.loadGame(e.target!.result as string);
-                    this.router.page = "game";
-                } catch {
-                    this.gameImportFailed = true;
-                }
-            });
-            reader.readAsText(file);
+        this.fileService.upload((content: string): void => {
+            try {
+                this.manager.loadGame(content);
+                this.router.page = "game";
+            } catch {
+                this.gameImportFailed = true;
+            }
         });
-        upl.click();
     }
 
     setPersistence(): void {
         this.persistence.location = this.persistenceSelect.value!;
+    }
+
+    openWorkbench(): void {
+        this.router.page = "workbench";
     }
 }
