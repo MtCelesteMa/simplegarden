@@ -1,4 +1,3 @@
-import { inject, LOCALE_ID } from "@angular/core";
 import * as d from "./data";
 import * as l from "./logic";
 
@@ -14,7 +13,7 @@ export class Game {
 
     constructor(saveData: d.s.v3.SaveData, locale: string | null = null, startTime: number | null = null) {
         this.gameData = d.d.gameDataL10n(
-            typeof saveData.dataPack == "string" ? d.d.classic : saveData.dataPack,
+            typeof saveData.dataPack == "string" ? d.d.presets[saveData.dataPack] : saveData.dataPack,
             locale,
         );
         this.saveData = saveData;
@@ -38,7 +37,9 @@ export class Game {
 
     static newGame(rawDataPack: unknown, difficulty: string, locale: string | null = null): Game {
         let tickRate: number = 60000;
-        let dataPack: d.d.v1.DataPack = d.d.loader.load(typeof rawDataPack == "string" ? d.d.classic : rawDataPack);
+        let dataPack: d.d.v1.DataPack = d.d.loader.load(
+            typeof rawDataPack == "string" ? d.d.presets[rawDataPack] : rawDataPack,
+        );
         let saveData: d.s.v3.SaveData = {
             identifier: "sg_savedata",
             version: 3,
