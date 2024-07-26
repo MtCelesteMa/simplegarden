@@ -1,0 +1,26 @@
+<span style="font-weight: bold" i18n="@@app-difficulty-selector.title">Difficulty</span>
+<br />
+<input type="radio" [formControl]="difficultySelect" (change)="updateDifficulty()" value="normal" name="difficultySelect" />
+<span i18n="@@app-difficulty-selector.normal-mode">Normal Mode</span>
+<br />
+<input type="radio" [formControl]="difficultySelect" (change)="updateDifficulty()" value="hard" name="difficultySelect" />
+<span style="color: red" i18n="@@app-difficulty-selector.hard-mode">Hard Mode</span>
+<br />
+<input type="radio" [formControl]="difficultySelect" (change)="updateDifficulty()" value="brutal" name="difficultySelect" />
+<span style="color: darkred" i18n="@@app-difficulty-selector.brutal-mode">Brutal Mode</span>
+@if (difficultySelect.value! == "normal") {
+    <br />
+    <span style="font-style: italic" i18n="@@app-difficulty-selector.normal-mode-desc"
+        >The standard experience. Harvest mature unknown crops to permanently unlock them.</span
+    >
+} @else if (difficultySelect.value! == "hard") {
+    <br />
+    <span style="color: red; font-style: italic" i18n="@@app-difficulty-selector.hard-mode-desc"
+        >A challenging difficulty where you have a limited number of crops.</span
+    >
+} @else if (difficultySelect.value! == "brutal") {
+    <br />
+    <span style="color: darkred; font-style: italic" i18n="@@app-difficulty-selector.brutal-mode-desc"
+        >Hard mode, but manually-planted crops do not yield anything when harvested.</span
+    >
+}

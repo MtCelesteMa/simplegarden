@@ -4,13 +4,14 @@ import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
 import { PersistenceService } from "../../services/persistence.service";
 import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
+import { DifficultySelectorComponent } from "./difficulty-selector/difficulty-selector.component";
 import { DatapackSelectorComponent } from "./datapack-selector/datapack-selector.component";
 import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
     standalone: true,
-    imports: [ReactiveFormsModule, LocaleSelectorComponent, DatapackSelectorComponent],
+    imports: [ReactiveFormsModule, LocaleSelectorComponent, DatapackSelectorComponent, DifficultySelectorComponent],
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent implements OnInit {
@@ -18,7 +19,7 @@ export class WelcomePageComponent implements OnInit {
     router = inject(RoutingService);
     persistence = inject(PersistenceService);
 
-    difficultySelect = new FormControl<string>("normal");
+    difficulty: string = "normal";
     datapack: string | g.d.d.v1.DataPack = "classic";
     persistenceSelect = new FormControl<string>(this.persistence.location);
 
@@ -55,7 +56,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     newGame(): void {
-        this.manager.game = g.Game.newGame(this.datapack, this.difficultySelect.value!);
+        this.manager.game = g.Game.newGame(this.datapack, this.difficulty);
         this.router.page = "game";
     }
 

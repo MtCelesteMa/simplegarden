@@ -204,7 +204,7 @@
         <target>种子纪录 (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.hard-mode">
+    <unit id="app-difficulty-selector.hard-mode">
       <segment state="initial">
         <source>Hard Mode</source>
         <target>困难模式</target>
@@ -303,25 +303,25 @@
         <target>黏土</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.difficulty">
+    <unit id="app-difficulty-selector.title">
       <segment state="initial">
         <source>Difficulty</source>
         <target>难度</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.normal-mode">
+    <unit id="app-difficulty-selector.normal-mode">
       <segment state="initial">
         <source>Normal Mode</source>
         <target>正常模式</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.normal-mode-desc">
+    <unit id="app-difficulty-selector.normal-mode-desc">
       <segment state="initial">
         <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
         <target>标准体验。收割成熟的未知庄稼以永久解锁它们。</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.hard-mode-desc">
+    <unit id="app-difficulty-selector.hard-mode-desc">
       <segment state="initial">
         <source>A challenging difficulty where you have a limited number of crops.</source>
         <target>一个具有挑战性的难度，你的庄稼数量是有限的。</target>
@@ -333,13 +333,13 @@
         <target>这个庄稼是人工种植的，收割后不会产生任何产品。</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.brutal-mode">
+    <unit id="app-difficulty-selector.brutal-mode">
       <segment state="initial">
         <source>Brutal Mode</source>
         <target>残暴模式</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.brutal-mode-desc">
+    <unit id="app-difficulty-selector.brutal-mode-desc">
       <segment state="initial">
         <source>Hard mode, but manually-planted crops do not yield anything when harvested.</source>
         <target>根困难模式一样，但是人工种植的庄稼收割时不会生产任何产品。</target>

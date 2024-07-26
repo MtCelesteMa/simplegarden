@@ -171,7 +171,7 @@
         <source>Seed Log (<ph id="0" equiv="INTERPOLATION" disp="{{ nCropsUnlocked }}"/>/<ph id="1" equiv="INTERPOLATION_1" disp="{{ nCrops }}"/>)</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.hard-mode">
+    <unit id="app-difficulty-selector.hard-mode">
       <segment>
         <source>Hard Mode</source>
       </segment>
@@ -254,22 +254,22 @@
         <source>Turbo Fertilizer</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.difficulty">
+    <unit id="app-difficulty-selector.title">
       <segment>
         <source>Difficulty</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.hard-mode-desc">
+    <unit id="app-difficulty-selector.hard-mode-desc">
       <segment>
         <source>A challenging difficulty where you have a limited number of crops.</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.normal-mode">
+    <unit id="app-difficulty-selector.normal-mode">
       <segment>
         <source>Normal Mode</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.normal-mode-desc">
+    <unit id="app-difficulty-selector.normal-mode-desc">
       <segment>
         <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
       </segment>
@@ -279,12 +279,12 @@
         <source>This crop is manually planted and will not yield anything when harvested.</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.brutal-mode">
+    <unit id="app-difficulty-selector.brutal-mode">
       <segment>
         <source>Brutal Mode</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.brutal-mode-desc">
+    <unit id="app-difficulty-selector.brutal-mode-desc">
       <segment>
         <source>Hard mode, but manually-planted crops do not yield anything when harvested.</source>
       </segment>

@@ -1,6 +1,6 @@
 <strong i18n="@@app-datapack-selector.title">Datapack</strong>
 <br />
-<input type="radio" name="dpModeSelect" value="builtin" [formControl]="modeSelect" />
+<input type="radio" name="dpModeSelect" value="builtin" [formControl]="modeSelect" (click)="selectBuiltIn()" />
 <span i18n="@@app-datapack-selector.builtin">Built In</span>
 <br />
 <input type="radio" name="dpModeSelect" value="custom" [formControl]="modeSelect" />

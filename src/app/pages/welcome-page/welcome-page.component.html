@@ -19,30 +19,7 @@
             <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
         }
         <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
-        <span style="font-weight: bold" i18n="@@app-welcome-page.difficulty">Difficulty</span>
-        <br />
-        <input type="radio" [formControl]="difficultySelect" value="normal" name="difficultySelect" />
-        <span i18n="@@app-welcome-page.normal-mode">Normal Mode</span>
-        <br />
-        <input type="radio" [formControl]="difficultySelect" value="hard" name="difficultySelect" />
-        <span style="color: red" i18n="@@app-welcome-page.hard-mode">Hard Mode</span>
-        <br />
-        <input type="radio" [formControl]="difficultySelect" value="brutal" name="difficultySelect" />
-        <span style="color: darkred" i18n="@@app-welcome-page.brutal-mode">Brutal Mode</span>
-        <br />
-        @if (difficultySelect.value! == "normal") {
-            <span style="font-style: italic" i18n="@@app-welcome-page.normal-mode-desc"
-                >The standard experience. Harvest mature unknown crops to permanently unlock them.</span
-            >
-        } @else if (difficultySelect.value! == "hard") {
-            <span style="color: red; font-style: italic" i18n="@@app-welcome-page.hard-mode-desc"
-                >A challenging difficulty where you have a limited number of crops.</span
-            >
-        } @else if (difficultySelect.value! == "brutal") {
-            <span style="color: darkred; font-style: italic" i18n="@@app-welcome-page.brutal-mode-desc"
-                >Hard mode, but manually-planted crops do not yield anything when harvested.</span
-            >
-        }
+        <app-difficulty-selector [(difficulty)]="difficulty"></app-difficulty-selector>
         <br />
         <br />
         <app-datapack-selector [(datapack)]="datapack"></app-datapack-selector>
