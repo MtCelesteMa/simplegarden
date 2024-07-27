@@ -519,5 +519,11 @@
         <target>成熟剩餘<ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></target>
       </segment>
     </unit>
+    <unit id="app-seed-log.search">
+      <segment state="initial">
+        <source>Search</source>
+        <target>搜索</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

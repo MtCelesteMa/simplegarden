@@ -30,9 +30,16 @@
             </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
+            <mat-form-field>
+                <mat-label i18n="@@app-seed-log.search">Search</mat-label>
+                <mat-icon matPrefix fontIcon="search" />
+                <input matInput type="text" [formControl]="cropSearch" />
+            </mat-form-field>
             <div class="seed-log">
-                @for (crop of listUnlockedCrops; track crop) {
-                    <app-seed-log-entry [crop]="crop"></app-seed-log-entry>
+                @for (crop of listUnlockedCrops; track crop[0]) {
+                    @if (crop[1].displayName.toLocaleLowerCase().includes(cropSearch.value!.toLocaleLowerCase())) {
+                        <app-seed-log-entry [crop]="crop[0]"></app-seed-log-entry>
+                    }
                 }
             </div>
         </mat-card-content>
