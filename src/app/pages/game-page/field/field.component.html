@@ -1,116 +1,46 @@
-<div class="box">
-    <div class="centering">
-        <ng-container i18n="@@app-field.paint-mode">Paint Mode:</ng-container>
-        <input type="checkbox" (change)="togglePaintMode($event)" />
-        &nbsp;
-        <select (change)="selectCrop($event)">
-            <option value="" i18n="@@app-field.unearth-harvest">(Unearth/Harvest)</option>
-            @for (crop of unlockedCrops; track crop[0]) {
-                @if (manager.game!.saveData.difficulty.limitResources) {
-                    @if (crop[1].quantity == null) {
-                        <option [value]="crop[0]">
-                            {{ manager.game!.gameData.crops[crop[0]].displayName }} (x&infin;)
-                        </option>
-                    } @else {
-                        <option [value]="crop[0]">
-                            {{ manager.game!.gameData.crops[crop[0]].displayName }} (x{{ crop[1].quantity }})
-                        </option>
-                    }
-                } @else {
-                    <option [value]="crop[0]">{{ manager.game!.gameData.crops[crop[0]].displayName }}</option>
-                }
-            }
-        </select>
-        &nbsp;
-        <button style="color: red" (click)="clearField()" i18n="@@app-field.clear-field">Clear Field</button>
-        <br />
-        <ng-container i18n="@@app-field.select-soil">Select Soil:</ng-container>
-        <select (change)="changeSoil()" [formControl]="soilSelector">
-            <option value="" selected disabled></option>
-            @for (soil of listSoils; track soil[0]) {
-                <option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</option>
-            }
-        </select>
-        &nbsp;
-        <ng-container i18n="@app-field.freeze-field">Freeze Field:</ng-container>
-        <input type="checkbox" (change)="toggleFreeze()" [formControl]="freezeOption" />
-    </div>
-    <div style="overflow-x: scroll">
-        <table style="margin-left: auto; margin-right: auto">
-            <tbody>
-                @for (row of manager.game!.field.tiles; track row[0].rowN) {
-                    <tr>
-                        @for (tile of row; track tile.colN) {
-                            <td>
-                                <app-field-tile [rowN]="tile.rowN" [colN]="tile.colN"></app-field-tile>
-                            </td>
+<div class="centering">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            <app-field-controller></app-field-controller>
+            <div style="overflow-x: scroll">
+                <table style="margin-left: auto; margin-right: auto">
+                    <tbody>
+                        @for (row of manager.game!.field.tiles; track row[0].rowN) {
+                            <tr>
+                                @for (tile of row; track tile.colN) {
+                                    <td>
+                                        <app-field-tile [rowN]="tile.rowN" [colN]="tile.colN"></app-field-tile>
+                                    </td>
+                                }
+                            </tr>
                         }
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-    <div class="centering">
-        @if (this.selectedTile == null) {
-            <ng-container i18n="@@app-field.no-tile-selected">No tile selected. Click on a tile to begin.</ng-container>
-        } @else {
-            <ng-container i18n="@@app-field.tile-selected"
-                >Selected tile ({{ this.selectedTile.rowN }}, {{ this.selectedTile.colN }})</ng-container
-            >
-            <br />
-            <br />
-            @if (this.selectedTile.crop == null) {
-                <ng-container i18n="@@app-field.no-crop-in-tile"
-                    >No crop planted. Use paint mode to plant or harvest crops.</ng-container
+                    </tbody>
+                </table>
+            </div>
+            @if (manager.game!.selectedTile == null) {
+                <ng-container i18n="@@app-field.no-tile-selected"
+                    >No tile selected. Click on a tile to begin.</ng-container
                 >
-            } @else {
-                @if (this.selectedTile.isUnlocked) {
-                    <ng-container>{{ this.selectedTile.cropInfo!.displayName }}</ng-container>
-                } @else {
-                    <ng-container i18n="@@app-field.unknown-crop">Unknown crop</ng-container>
-                }
                 <br />
-                @if (this.selectedTile.isImmortal && this.selectedTile.isMature) {
-                    <ng-container i18n="@@app-field.is-immortal">This crop is immortal.</ng-container>
-                } @else {
-                    <ng-container i18n="@@app-field.age"
-                        >Age: {{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}</ng-container
-                    >
-                    <br />
-                    @if (this.selectedTile.isMature) {
-                        <ng-container i18n="@@app-field.expires-in"
-                            >Expires in
-                            {{
-                                this.manager.game!.saveData.tickRate *
-                                    (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time
-                            }}</ng-container
-                        >
-                    } @else {
-                        <ng-container i18n="@@app-field.matures-in"
-                            >Matures in
-                            {{
-                                this.manager.game!.saveData.tickRate *
-                                    (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time
-                            }}</ng-container
-                        >
-                    }
-                }
-                @if (manager.game!.saveData.difficulty.lrExploitPatch && selectedTile.manual) {
-                    <br />
-                    <span style="color: darkred" i18n="@@app-field.manually-planted"
-                        >This crop is manually planted and will not yield anything when harvested.</span
-                    >
-                }
+            } @else {
+                <app-tile-info
+                    [rowN]="manager.game!.selectedTile[0]"
+                    [colN]="manager.game!.selectedTile[1]"
+                ></app-tile-info>
             }
-        }
-        <br />
-        <br />
-        <ng-container i18n="@@app-field.next-tick-in">Next tick in {{ timeToNextTick | time }}</ng-container>
-        @if (manager.game!.saveData.freeze) {
-            <br />
-            <span style="color: #007fff" i18n="@@app-field.freeze-message"
-                >Field frozen. Plants will not grow or mutate.</span
-            >
-        }
-    </div>
+            @if (manager.game!.saveData.freeze) {
+                <button mat-button disabled>
+                    <mat-icon fontIcon="ac_unit" />
+                    <span i18n="@@app-field.freeze-message">Field frozen. Plants will not grow or mutate.</span>
+                </button>
+            } @else {
+                <button mat-button>
+                    <mat-icon fontIcon="refresh" />
+                    <ng-container i18n="@@app-field.next-tick-in"
+                        >Next tick in {{ timeToNextTick | time }}</ng-container
+                    >
+                </button>
+            }
+        </mat-card-content>
+    </mat-card>
 </div>

@@ -1,16 +1,14 @@
 <mat-toolbar>
-    <button mat-icon-button [matMenuTriggerFor]="versionMenu">
+    <button mat-icon-button [matMenuTriggerFor]="infoMenu">
         <mat-icon fontIcon="info" />
     </button>
-    <mat-menu #versionMenu="matMenu">
-        <span>v0.3.0-dev</span>
+    <mat-menu #infoMenu="matMenu">
+        <span i18n="@@app-header.description">A recreation of Cookie Clicker's &quot;Garden&quot; minigame.</span>
+        <br />
+        <a mat-button href="https://github.com/MtCelesteMa/simplegarden/">v0.3.0-dev</a>
     </mat-menu>
     <span style="flex: 1 1 auto"></span>
-    <span
-        i18n="@@app-header.title"
-        matTooltip="A recreation of Cookie Clicker's &quot;Garden&quot; minigame."
-        i18n-matTooltip="@@app-header.description"
-        >SimpleGarden</span>
+    <span i18n="@@app-header.title">SimpleGarden</span>
     <span style="flex: 1 1 auto"></span>
     @if (router.page == "welcome") {
         <button mat-icon-button [matMenuTriggerFor]="localeMenu">
@@ -18,7 +16,7 @@
         </button>
         <mat-menu #localeMenu="matMenu">
             @for (locale of locales; track locale.id; let last = $last) {
-                <a mat-button href="{{ baseHref }}../{{ locale.id }}/">{{locale.displayName}}</a>
+                <a mat-button href="{{ baseHref }}../{{ locale.id }}/">{{ locale.displayName }}</a>
                 @if (!last) {
                     <br />
                 }

@@ -1,0 +1,44 @@
+<div class="centering">
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            <button mat-button (click)="hideTimer = !hideTimer">
+                <mat-icon fontIcon="timer" />
+                @if (!hideTimer) {
+                    {{ manager.timeElapsed | time }}
+                }
+            </button>
+            @if (manager.game!.saveData.difficulty.limitResources) {
+                &nbsp;
+                <button mat-button class="red">
+                    <mat-icon fontIcon="warning" />
+                    @if (manager.game!.saveData.difficulty.lrExploitPatch) {
+                        <span i18n="@@app-game-controller.brutal-mode-active">Brutal Mode Active</span>
+                    } @else {
+                        <span i18n="@@app-game-controller.hard-mode-active">Hard Mode Active</span>
+                    }
+                </button>
+            }
+            <br />
+            <br />
+            <button mat-stroked-button (click)="manager.saveGame()">
+                <mat-icon fontIcon="download" />
+                <ng-container i18n="@@app-game-controller.save-game">Save Game</ng-container>
+            </button>
+            &nbsp;
+            <button mat-stroked-button (click)="exportGame()">
+                <mat-icon fontIcon="save" />
+                <ng-container i18n="@@app-game-controller.export-game">Export Game</ng-container>
+            </button>
+            <br />
+            <ng-container i18n="@@app-game-controller.save-game-desc"
+                >Game is automatically saved every minute.</ng-container
+            >
+            <br />
+            <br />
+            <button mat-stroked-button class="red" (click)="returnHome()">
+                <mat-icon fontIcon="arrow_back" />
+                <ng-container i18n="@@app-game-controller.return-home">Return to Homepage</ng-container>
+            </button>
+        </mat-card-content>
+    </mat-card>
+</div>

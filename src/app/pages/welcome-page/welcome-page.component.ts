@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from "@angular/core";
-import { ReactiveFormsModule, FormControl } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
@@ -66,7 +66,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     newGame(): void {
-        this.manager.game = g.Game.newGame(this.datapack, this.difficulty);
+        this.manager.newGame(this.datapack, this.difficulty);
         this.router.page = "game";
     }
 

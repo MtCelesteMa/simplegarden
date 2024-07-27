@@ -56,22 +56,17 @@
         <source>Erase Game</source>
       </segment>
     </unit>
-    <unit id="app-game-page.hide-timer">
-      <segment>
-        <source>Hide Timer</source>
-      </segment>
-    </unit>
-    <unit id="app-game-page.save-game">
+    <unit id="app-game-controller.save-game">
       <segment>
         <source>Save Game</source>
       </segment>
     </unit>
-    <unit id="app-game-page.save-game-desc">
+    <unit id="app-game-controller.save-game-desc">
       <segment>
         <source>Game is automatically saved every minute.</source>
       </segment>
     </unit>
-    <unit id="app-field.unearth-harvest">
+    <unit id="app-field-controller.unearth-harvest">
       <segment>
         <source>(Unearth/Harvest)</source>
       </segment>
@@ -86,54 +81,34 @@
         <source>No tile selected. Click on a tile to begin.</source>
       </segment>
     </unit>
-    <unit id="app-field.paint-mode">
+    <unit id="app-field-controller.paint-mode">
       <segment>
-        <source>Paint Mode:</source>
+        <source>Paint Mode</source>
       </segment>
     </unit>
-    <unit id="app-field.tile-selected">
-      <segment>
-        <source>Selected tile (<ph id="0" equiv="INTERPOLATION" disp="{{ this.selectedTile.rowN }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.selectedTile.colN }}"/>)</source>
-      </segment>
-    </unit>
-    <unit id="app-field.clear-field">
+    <unit id="app-field-controller.clear-field">
       <segment>
         <source>Clear Field</source>
       </segment>
     </unit>
-    <unit id="app-field.clear-field-conf">
+    <unit id="app-field-controller.clear-field-conf">
       <segment>
         <source>Are you sure you want to clear the field? This will not harvest any mature crops!</source>
       </segment>
     </unit>
-    <unit id="app-field.no-crop-in-tile">
+    <unit id="app-tile-info.age">
       <segment>
-        <source>No crop planted. Use paint mode to plant or harvest crops.</source>
+        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * tile.age | time }}"/></source>
       </segment>
     </unit>
-    <unit id="app-field.age">
-      <segment>
-        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></source>
-      </segment>
-    </unit>
-    <unit id="app-field.is-immortal">
+    <unit id="app-tile-info.is-immortal">
       <segment>
         <source>This crop is immortal.</source>
       </segment>
     </unit>
-    <unit id="app-field.expires-in">
+    <unit id="app-tile-info.unknown-crop">
       <segment>
-        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></source>
-      </segment>
-    </unit>
-    <unit id="app-field.matures-in">
-      <segment>
-        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></source>
-      </segment>
-    </unit>
-    <unit id="app-field.unknown-crop">
-      <segment>
-        <source>Unknown crop</source>
+        <source>Unknown Crop</source>
       </segment>
     </unit>
     <unit id="app-seed-log-entry.immortal">
@@ -224,27 +199,27 @@
         <source>1 second</source>
       </segment>
     </unit>
-    <unit id="app-field.select-soil">
+    <unit id="app-field-controller.select-soil">
       <segment>
-        <source>Select Soil:</source>
+        <source>Select Soil</source>
       </segment>
     </unit>
-    <unit id="app-field.soil-clay">
+    <unit id="app-field-controller.soil-clay">
       <segment>
         <source>Clay</source>
       </segment>
     </unit>
-    <unit id="app-field.soil-dirt">
+    <unit id="app-field-controller.soil-dirt">
       <segment>
         <source>Dirt</source>
       </segment>
     </unit>
-    <unit id="app-field.soil-fertilizer">
+    <unit id="app-field-controller.soil-fertilizer">
       <segment>
         <source>Fertilizer</source>
       </segment>
     </unit>
-    <unit id="app-field.soil-tfertilizer">
+    <unit id="app-field-controller.soil-tfertilizer">
       <segment>
         <source>Turbo Fertilizer</source>
       </segment>
@@ -264,7 +239,7 @@
         <source>The standard experience. Harvest mature unknown crops to permanently unlock them.</source>
       </segment>
     </unit>
-    <unit id="app-field.manually-planted">
+    <unit id="app-tile-info.manually-planted">
       <segment>
         <source>This crop is manually planted and will not yield anything when harvested.</source>
       </segment>
@@ -279,12 +254,12 @@
         <source>Hard mode, but manually-planted crops do not yield anything when harvested.</source>
       </segment>
     </unit>
-    <unit id="app-game-page.brutal-mode-active">
+    <unit id="app-game-controller.brutal-mode-active">
       <segment>
         <source>Brutal Mode Active</source>
       </segment>
     </unit>
-    <unit id="app-game-page.hard-mode-active">
+    <unit id="app-game-controller.hard-mode-active">
       <segment>
         <source>Hard Mode Active</source>
       </segment>
@@ -294,15 +269,12 @@
         <source>Persistence Options</source>
       </segment>
     </unit>
-    <unit id="8229753466347165232">
-      <notes>
-        <note category="description">@app-field.freeze-field</note>
-      </notes>
+    <unit id="app-field-controller.freeze-field">
       <segment>
-        <source>Freeze Field:</source>
+        <source>Freeze Field</source>
       </segment>
     </unit>
-    <unit id="app-field.cryo">
+    <unit id="app-field-controller.cryo">
       <segment>
         <source>Cryo Fluid</source>
       </segment>
@@ -337,24 +309,19 @@
         <source>Now try playing on Hard Mode, where you no longer have infinite crops.</source>
       </segment>
     </unit>
-    <unit id="app-game-page.export-game">
+    <unit id="app-game-controller.export-game">
       <segment>
         <source>Export Game</source>
       </segment>
     </unit>
-    <unit id="app-game-page.homepage">
+    <unit id="app-game-controller.return-home">
       <segment>
         <source>Return to Homepage</source>
       </segment>
     </unit>
-    <unit id="app-game-page.homepage-conf">
+    <unit id="app-game-controller.homepage-conf">
       <segment>
         <source>This does not automatically save your progress. Return to homepage?</source>
-      </segment>
-    </unit>
-    <unit id="app-seed-log-entry.discovered-on">
-      <segment>
-        <source>Discovered on <ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></source>
       </segment>
     </unit>
     <unit id="app-seed-log.no-mutations">
@@ -490,6 +457,41 @@
     <unit id="app-persistence-selector.persistence-transient">
       <segment>
         <source>Disable</source>
+      </segment>
+    </unit>
+    <unit id="app-field-controller.select-crop">
+      <segment>
+        <source>Select Crop</source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.expires-in">
+      <segment>
+        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.lifespan! - tile.age) | time }}"/></source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.locked-immature-desc">
+      <segment>
+        <source>This unknown crop is still growing. Harvesting it now will not yield anything.</source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.locked-mature-desc">
+      <segment>
+        <source>This unknown crop is mature. Harvest it to unlock it.</source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.matures-in">
+      <segment>
+        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.no-crop">
+      <segment>
+        <source>(Tile Empty)</source>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.no-crop-desc">
+      <segment>
+        <source>Use paint mode to plant or harvest crops.</source>
       </segment>
     </unit>
   </file>

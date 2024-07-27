@@ -25,3 +25,7 @@ body {
 button.red[mat-stroked-button] {
     @include mat.button-color($theme, $color-variant: error);
 }
+
+button.red[mat-button] {
+    @include mat.button-color($theme, $color-variant: error);
+}

@@ -1,5 +1,9 @@
 import { Component, inject, Input } from "@angular/core";
 import { DatePipe } from "@angular/common";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
 import { ManagerService } from "../../../../services/manager.service";
 import { TimePipe } from "../../../../services/time.pipe";
 import * as g from "../../../../../game";
@@ -7,7 +11,7 @@ import * as g from "../../../../../game";
 @Component({
     selector: "app-seed-log-entry",
     standalone: true,
-    imports: [TimePipe, DatePipe],
+    imports: [TimePipe, DatePipe, MatButtonModule, MatCardModule, MatIconModule, MatListModule],
     templateUrl: "./seed-log-entry.component.html",
     styleUrl: "./seed-log-entry.component.scss",
 })

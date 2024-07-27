@@ -1,46 +1,59 @@
-<div class="box seed-log-entry">
-    @if (manager.game!.saveData.difficulty.limitResources) {
-        @if (quantity == null) {
-            <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x&infin;</h2>
-        } @else {
-            <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x{{ quantity }}</h2>
-        }
-    } @else {
-        <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }})</h2>
-    }
-    {{ cropInfo.description }}
-    @if (timeDiscovered != null) {
-        <br />
-        <br />
-        <span style="font-style: italic" i18n="@@app-seed-log-entry.discovered-on"
-            >Discovered on {{ timeDiscovered | date: "medium" }}</span
-        >
-    }
-    <br />
-    <br />
-    <ng-container i18n="@@app-seed-log-entry.maturity"
-        >Maturity: {{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}</ng-container
-    >
-    <br />
-    @if (cropInfo.lifespan == null) {
-        <ng-container i18n="@@app-seed-log-entry.immortal">Immortal</ng-container>
-    } @else {
-        <ng-container i18n="@@app-seed-log-entry.lifespan"
-            >Lifespan: {{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}</ng-container
-        >
-    }
-    @if (cropInfo.infectionValue != null) {
-        <br />
-        <span style="color: red" i18n="@@app-seed-log-entry.infection">May infect nearby crops!</span>
-    }
-    <h3 i18n="@@app-seed-log-entry.mutations">Mutations</h3>
-    <div class="mutations-infobox">
-        <ul>
-            @for (mutation of listMutations; track mutation[0]) {
-                <li>{{ mutation[1] }}</li>
-            } @empty {
-                <li style="color: grey" i18n="@@app-seed-log.no-mutations">None</li>
+<mat-card appearance="outlined" style="height: 500px; width: 300px; overflow-y: scroll">
+    <mat-card-header class="centering">
+        <mat-card-title>
+            @if (manager.game!.saveData.difficulty.limitResources) {
+                @if (quantity == null) {
+                    <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x&infin;</h2>
+                } @else {
+                    <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x{{ quantity }}</h2>
+                }
+            } @else {
+                <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }})</h2>
             }
-        </ul>
-    </div>
-</div>
+        </mat-card-title>
+        <mat-card-subtitle>{{ cropInfo.description }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        @if (timeDiscovered != null) {
+            <button mat-button disabled>
+                <mat-icon fontIcon="calendar_month" />
+                {{ timeDiscovered | date }}
+            </button>
+        }
+        <br />
+        <ng-container i18n="@@app-seed-log-entry.maturity"
+            >Maturity: {{ cropInfo.maturity * manager.game!.saveData.tickRate | time }}</ng-container
+        >
+        <br />
+        @if (cropInfo.lifespan == null) {
+            <ng-container i18n="@@app-seed-log-entry.immortal">Immortal</ng-container>
+        } @else {
+            <ng-container i18n="@@app-seed-log-entry.lifespan"
+                >Lifespan: {{ cropInfo.lifespan * manager.game!.saveData.tickRate | time }}</ng-container
+            >
+        }
+        @if (cropInfo.infectionValue != null) {
+            <br />
+            <button mat-button class="red">
+                <mat-icon fontIcon="warning"></mat-icon>
+                <span i18n="@@app-seed-log-entry.infection">May infect nearby crops!</span>
+            </button>
+        }
+        <br />
+        <br />
+        <mat-card appearance="outlined">
+            <mat-card-header class="centering">
+                <mat-card-title i18n="@@app-seed-log-entry.mutations">Mutations</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list style="overflow-y: scroll; height: 150px;">
+                    @for (mutation of listMutations; track mutation[0]) {
+                        <mat-list-item>{{ mutation[1] }}</mat-list-item>
+                    } @empty {
+                        <mat-list-item style="color: grey" i18n="@@app-seed-log.no-mutations">None</mat-list-item>
+                    }
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,65 @@
+<mat-card appearance="outlined">
+    <mat-card-header class="centering">
+        <mat-card-title>
+            @if (tile.crop != null) {
+                @if (tile.isUnlocked!) {
+                    <span>{{ tile.cropInfo!.displayName }}</span>
+                } @else {
+                    <ng-container i18n="@@app-tile-info.unknown-crop">Unknown Crop</ng-container>
+                }
+            } @else {
+                <span i18n="@@app-tile-info.no-crop">(Tile Empty)</span>
+            }
+        </mat-card-title>
+        <mat-card-subtitle>
+            @if (tile.crop == null) {
+                <span i18n="@@app-tile-info.no-crop-desc">Use paint mode to plant or harvest crops.</span>
+            } @else {
+                @if (!tile.isUnlocked!) {
+                    @if (tile.isMature!) {
+                        <span i18n="@@app-tile-info.locked-mature-desc"
+                            >This unknown crop is mature. Harvest it to unlock it.</span
+                        >
+                    } @else {
+                        <span i18n="@@app-tile-info.locked-immature-desc"
+                            >This unknown crop is still growing. Harvesting it now will not yield anything.</span
+                        >
+                    }
+                }
+            }
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        @if (tile.crop != null) {
+            @if (tile.isImmortal! && tile.isMature!) {
+                <ng-container i18n="@@app-tile-info.is-immortal">This crop is immortal.</ng-container>
+            } @else {
+                <ng-container i18n="@@app-tile-info.age"
+                    >Age: {{ manager.game!.saveData.tickRate * tile.age | time }}</ng-container
+                >
+                <br />
+                @if (tile.isMature) {
+                    <ng-container i18n="@@app-tile-info.expires-in"
+                        >Expires in
+                        {{
+                            manager.game!.saveData.tickRate * (tile.cropInfo!.lifespan! - tile.age) | time
+                        }}</ng-container
+                    >
+                } @else {
+                    <ng-container i18n="@@app-tile-info.matures-in"
+                        >Matures in
+                        {{
+                            manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time
+                        }}</ng-container
+                    >
+                }
+                @if (manager.game!.saveData.difficulty.lrExploitPatch && tile.manual) {
+                    <br />
+                    <span style="color: darkred" i18n="@@app-tile-info.manually-planted"
+                        >This crop is manually planted and will not yield anything when harvested.</span
+                    >
+                }
+            }
+        }
+    </mat-card-content>
+</mat-card>

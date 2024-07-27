@@ -1,4 +1,6 @@
 import { Component, inject } from "@angular/core";
+import { MatCardModule } from "@angular/material/card";
+import { MatGridList } from "@angular/material/grid-list";
 import { ManagerService } from "../../../services/manager.service";
 import { SeedLogEntryComponent } from "./seed-log-entry/seed-log-entry.component";
 import * as g from "../../../../game";
@@ -6,7 +8,7 @@ import * as g from "../../../../game";
 @Component({
     selector: "app-seed-log",
     standalone: true,
-    imports: [SeedLogEntryComponent],
+    imports: [SeedLogEntryComponent, MatCardModule, MatGridList],
     templateUrl: "./seed-log.component.html",
     styleUrl: "./seed-log.component.scss",
 })

@@ -1,0 +1,54 @@
+<mat-checkbox
+    [formControl]="paintMode"
+    i18n="@@app-field-controller.paint-mode"
+    (change)="manager.game!.paintMode = paintMode.value!"
+    >Paint Mode</mat-checkbox
+>
+&nbsp;
+<mat-checkbox
+    [formControl]="freezeField"
+    i18n="@@app-field-controller.freeze-field"
+    (change)="manager.game!.saveData.freeze = freezeField.value!"
+    >Freeze Field</mat-checkbox
+>
+&nbsp;
+<button mat-button class="red" (click)="clearField()">
+    <mat-icon fontIcon="close" />
+    <ng-container i18n="@@app-field-controller.clear-field">Clear Field</ng-container>
+</button>
+<br />
+<mat-form-field>
+    <mat-label i18n="@@app-field-controller.select-crop">Select Crop</mat-label>
+    <mat-select
+        [formControl]="cropSelect"
+        (selectionChange)="manager.game!.selectedCrop = cropSelect.value! != '' ? cropSelect.value! : null"
+    >
+        <mat-option value="" i18n="@@app-field-controller.unearth-harvest">(Unearth/Harvest)</mat-option>
+        @for (crop of unlockedCrops; track crop[0]) {
+            <mat-option [value]="crop[0]">
+                @if (manager.game!.saveData.difficulty.limitResources) {
+                    @if (crop[1].quantity == null) {
+                        <span>{{ manager.game!.gameData.crops[crop[0]].displayName }} (x&infin;)</span>
+                    } @else {
+                        <span>{{ manager.game!.gameData.crops[crop[0]].displayName }} (x{{ crop[1].quantity }})</span>
+                    }
+                } @else {
+                    <span>{{ manager.game!.gameData.crops[crop[0]].displayName }}</span>
+                }
+            </mat-option>
+        }
+    </mat-select>
+</mat-form-field>
+&nbsp;
+<mat-form-field>
+    <mat-label i18n="@@app-field-controller.select-soil">Select Soil</mat-label>
+    <mat-select
+        [formControl]="soilSelect"
+        (selectionChange)="manager.game!.saveData.tickRate = soils[soilSelect.value!].tickRate"
+    >
+        <mat-option value="" disabled></mat-option>
+        @for (soil of listSoils; track soil[0]) {
+            <mat-option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</mat-option>
+        }
+    </mat-select>
+</mat-form-field>

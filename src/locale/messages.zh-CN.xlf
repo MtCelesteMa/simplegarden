@@ -66,33 +66,27 @@
         <target>你真的确定吗？</target>
       </segment>
     </unit>
-    <unit id="app-game-page.hide-timer">
-      <segment state="initial">
-        <source>Hide Timer</source>
-        <target>隐藏秒表</target>
-      </segment>
-    </unit>
-    <unit id="app-game-page.save-game">
+    <unit id="app-game-controller.save-game">
       <segment state="initial">
         <source>Save Game</source>
         <target>保存游戏</target>
       </segment>
     </unit>
-    <unit id="app-game-page.save-game-desc">
+    <unit id="app-game-controller.save-game-desc">
       <segment state="initial">
         <source>Game is automatically saved every minute.</source>
         <target>游戏会每一分钟自动保存</target>
       </segment>
     </unit>
-    <unit id="app-field.unearth-harvest">
+    <unit id="app-field-controller.unearth-harvest">
       <segment state="initial">
         <source>(Unearth/Harvest)</source>
         <target>(收割)</target>
       </segment>
     </unit>
-    <unit id="app-field.paint-mode">
+    <unit id="app-field-controller.paint-mode">
       <segment state="initial">
-        <source>Paint Mode:</source>
+        <source>Paint Mode</source>
         <target>刷子模式：</target>
       </segment>
     </unit>
@@ -102,63 +96,39 @@
         <target>请选择图块即可开始</target>
       </segment>
     </unit>
-    <unit id="app-field.tile-selected">
-      <segment state="initial">
-        <source>Selected tile (<ph id="0" equiv="INTERPOLATION" disp="{{ this.selectedTile.rowN }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.selectedTile.colN }}"/>)</source>
-        <target>选择了图块 (<ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.selectedTile[0] }}"/>, <ph id="1" equiv="INTERPOLATION_1" disp="{{ this.manager.game!.selectedTile[1] }}"/>)</target>
-      </segment>
-    </unit>
     <unit id="app-field.next-tick-in">
       <segment state="initial">
         <source>Next tick in <ph id="0" equiv="INTERPOLATION" disp="{{ timeToNextTick | time }}"/></source>
         <target>离下次更新剩余 <ph id="0" equiv="INTERPOLATION" disp="{{ timeToNextTick | time }}"/></target>
       </segment>
     </unit>
-    <unit id="app-field.clear-field">
+    <unit id="app-field-controller.clear-field">
       <segment state="initial">
         <source>Clear Field</source>
         <target>清除田地</target>
       </segment>
     </unit>
-    <unit id="app-field.clear-field-conf">
+    <unit id="app-field-controller.clear-field-conf">
       <segment state="initial">
         <source>Are you sure you want to clear the field? This will not harvest any mature crops!</source>
         <target>你确定你要清除田地？此操作不会收割任何庄稼！</target>
       </segment>
     </unit>
-    <unit id="app-field.no-crop-in-tile">
-      <segment state="initial">
-        <source>No crop planted. Use paint mode to plant or harvest crops.</source>
-        <target>图块未种植庄稼。请用刷子模式来种植或收割庄稼。</target>
-      </segment>
-    </unit>
-    <unit id="app-field.is-immortal">
+    <unit id="app-tile-info.is-immortal">
       <segment state="initial">
         <source>This crop is immortal.</source>
         <target>这个庄稼是永生的</target>
       </segment>
     </unit>
-    <unit id="app-field.age">
+    <unit id="app-tile-info.age">
       <segment state="initial">
-        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></source>
+        <source>Age: <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * tile.age | time }}"/></source>
         <target>年龄：<ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * this.selectedTile.age | time }}"/></target>
       </segment>
     </unit>
-    <unit id="app-field.expires-in">
+    <unit id="app-tile-info.unknown-crop">
       <segment state="initial">
-        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></source>
-        <target>寿命还剩余 <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.lifespan! - this.selectedTile.age) | time }}"/></target>
-      </segment>
-    </unit>
-    <unit id="app-field.matures-in">
-      <segment state="initial">
-        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></source>
-        <target>离成熟还剩 <ph id="0" equiv="INTERPOLATION" disp="{{ this.manager.game!.saveData.tickRate * (this.selectedTile.cropInfo!.maturity! - this.selectedTile.age) | time }}"/></target>
-      </segment>
-    </unit>
-    <unit id="app-field.unknown-crop">
-      <segment state="initial">
-        <source>Unknown crop</source>
+        <source>Unknown Crop</source>
         <target>未知庄稼</target>
       </segment>
     </unit>
@@ -267,31 +237,31 @@
         <target><ph id="0" equiv="PH" disp="s"/>秒</target>
       </segment>
     </unit>
-    <unit id="app-field.select-soil">
+    <unit id="app-field-controller.select-soil">
       <segment state="initial">
-        <source>Select Soil:</source>
+        <source>Select Soil</source>
         <target>选择土壤：</target>
       </segment>
     </unit>
-    <unit id="app-field.soil-tfertilizer">
+    <unit id="app-field-controller.soil-tfertilizer">
       <segment state="initial">
         <source>Turbo Fertilizer</source>
         <target>超级肥料</target>
       </segment>
     </unit>
-    <unit id="app-field.soil-fertilizer">
+    <unit id="app-field-controller.soil-fertilizer">
       <segment state="initial">
         <source>Fertilizer</source>
         <target>肥料</target>
       </segment>
     </unit>
-    <unit id="app-field.soil-dirt">
+    <unit id="app-field-controller.soil-dirt">
       <segment state="initial">
         <source>Dirt</source>
         <target>土</target>
       </segment>
     </unit>
-    <unit id="app-field.soil-clay">
+    <unit id="app-field-controller.soil-clay">
       <segment state="initial">
         <source>Clay</source>
         <target>黏土</target>
@@ -315,7 +285,7 @@
         <target>一个具有挑战性的难度，你的庄稼数量是有限的。</target>
       </segment>
     </unit>
-    <unit id="app-field.manually-planted">
+    <unit id="app-tile-info.manually-planted">
       <segment state="initial">
         <source>This crop is manually planted and will not yield anything when harvested.</source>
         <target>这个庄稼是人工种植的，收割后不会产生任何产品。</target>
@@ -333,13 +303,13 @@
         <target>根困难模式一样，但是人工种植的庄稼收割时不会生产任何产品。</target>
       </segment>
     </unit>
-    <unit id="app-game-page.brutal-mode-active">
+    <unit id="app-game-controller.brutal-mode-active">
       <segment state="initial">
         <source>Brutal Mode Active</source>
         <target>残暴模式开启</target>
       </segment>
     </unit>
-    <unit id="app-game-page.hard-mode-active">
+    <unit id="app-game-controller.hard-mode-active">
       <segment state="initial">
         <source>Hard Mode Active</source>
         <target>困难模式开启</target>
@@ -351,16 +321,13 @@
         <target>持久化选项</target>
       </segment>
     </unit>
-    <unit id="8229753466347165232">
-      <notes>
-        <note category="description">@app-field.freeze-field</note>
-      </notes>
+    <unit id="app-field-controller.freeze-field">
       <segment state="initial">
-        <source>Freeze Field:</source>
+        <source>Freeze Field</source>
         <target>冻结田地</target>
       </segment>
     </unit>
-    <unit id="app-field.cryo">
+    <unit id="app-field-controller.cryo">
       <segment state="initial">
         <source>Cryo Fluid</source>
         <target>冷液体</target>
@@ -402,28 +369,22 @@
         <target>现在尝试玩困难模式，你不再有无限的庄稼。</target>
       </segment>
     </unit>
-    <unit id="app-game-page.export-game">
+    <unit id="app-game-controller.export-game">
       <segment state="initial">
         <source>Export Game</source>
         <target>导出游戏</target>
       </segment>
     </unit>
-    <unit id="app-game-page.homepage">
+    <unit id="app-game-controller.return-home">
       <segment state="initial">
         <source>Return to Homepage</source>
         <target> 返回主页 </target>
       </segment>
     </unit>
-    <unit id="app-game-page.homepage-conf">
+    <unit id="app-game-controller.homepage-conf">
       <segment state="initial">
         <source>This does not automatically save your progress. Return to homepage?</source>
         <target>此操作不会自动保存游戏。确认返回主页？</target>
-      </segment>
-    </unit>
-    <unit id="app-seed-log-entry.discovered-on">
-      <segment state="initial">
-        <source>Discovered on <ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></source>
-        <target>发现于<ph id="0" equiv="INTERPOLATION" disp="{{ timeDiscovered | date: &quot;medium&quot; }}"/></target>
       </segment>
     </unit>
     <unit id="app-seed-log.no-mutations">
@@ -586,6 +547,48 @@
       <segment state="initial">
         <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
         <target>仅当正常持久化无法保留游戏状态时才使用长期持久化（这是 iOS 上的一个已知的问题）。</target>
+      </segment>
+    </unit>
+    <unit id="app-field-controller.select-crop">
+      <segment state="initial">
+        <source>Select Crop</source>
+        <target>选择庄稼</target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.no-crop">
+      <segment state="initial">
+        <source>(Tile Empty)</source>
+        <target>（空）</target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.no-crop-desc">
+      <segment state="initial">
+        <source>Use paint mode to plant or harvest crops.</source>
+        <target>使用刷子模式去种植或收割庄稼。</target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.locked-mature-desc">
+      <segment state="initial">
+        <source>This unknown crop is mature. Harvest it to unlock it.</source>
+        <target>这个庄稼已经成熟了，收割即可解锁它。</target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.locked-immature-desc">
+      <segment state="initial">
+        <source>This unknown crop is still growing. Harvesting it now will not yield anything.</source>
+        <target>这个庄稼为成熟，收割不会产生任何产品。</target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.expires-in">
+      <segment state="initial">
+        <source>Expires in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.lifespan! - tile.age) | time }}"/></source>
+        <target>寿命剩余<ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.lifespan! - tile.age) | time }}"/></target>
+      </segment>
+    </unit>
+    <unit id="app-tile-info.matures-in">
+      <segment state="initial">
+        <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></source>
+        <target>成熟剩余<ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></target>
       </segment>
     </unit>
   </file>
