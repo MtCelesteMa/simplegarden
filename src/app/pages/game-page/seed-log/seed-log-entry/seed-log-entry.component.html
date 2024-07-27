@@ -17,7 +17,7 @@
         @if (timeDiscovered != null) {
             <button mat-button disabled>
                 <mat-icon fontIcon="calendar_month" />
-                {{ timeDiscovered | date }}
+                {{ timeDiscovered | date: "medium" }}
             </button>
         }
         <br />

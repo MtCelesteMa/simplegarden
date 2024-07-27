@@ -6,7 +6,6 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { FileService } from "../../../services/file.service";
-import { WorkbenchService } from "../../../services/workbench.service";
 import { RoutingService } from "../../../services/routing.service";
 import * as g from "../../../../game";
 
@@ -19,7 +18,6 @@ import * as g from "../../../../game";
 export class DatapackSelectorComponent {
     locale = inject(LOCALE_ID);
     fileService = inject(FileService);
-    wbService = inject(WorkbenchService);
     router = inject(RoutingService);
 
     @Input() datapack: string | g.d.d.v1.DataPack = "classic";
@@ -75,10 +73,5 @@ export class DatapackSelectorComponent {
 
     exportDatapack(): void {
         this.fileService.download(this.selectedDatapack.name, JSON.stringify(this.selectedDatapack));
-    }
-
-    openInWorkbench(load: boolean = true): void {
-        if (load) this.wbService.workbench = g.Workbench.fromRaw(this.selectedDatapack);
-        this.router.page = "workbench";
     }
 }

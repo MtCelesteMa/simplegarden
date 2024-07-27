@@ -354,16 +354,6 @@
         <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>)</source>
       </segment>
     </unit>
-    <unit id="app-welcome-page.open-workbench">
-      <segment>
-        <source>Open Workbench</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.import-failed">
-      <segment>
-        <source>Import Failed</source>
-      </segment>
-    </unit>
     <unit id="app-datapack-selector.author">
       <segment>
         <source>by <ph id="0" equiv="INTERPOLATION" disp="{{ selectedDatapack.author }}"/></source>
@@ -382,11 +372,6 @@
     <unit id="app-welcome-page.import-failed">
       <segment>
         <source>Import Failed</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-selector.create">
-      <segment>
-        <source>Create</source>
       </segment>
     </unit>
     <unit id="app-persistence-selector.persistence-desc">
@@ -447,31 +432,6 @@
     <unit id="app-tile-info.no-crop-desc">
       <segment>
         <source>Use paint mode to plant or harvest crops.</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.create">
-      <segment>
-        <source>Create</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.import">
-      <segment>
-        <source>Import</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.author">
-      <segment>
-        <source>Author</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.datapack-name">
-      <segment>
-        <source>Datapack Name</source>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.default-locale">
-      <segment>
-        <source>Default Locale</source>
       </segment>
     </unit>
   </file>

@@ -18,14 +18,6 @@
                     <mat-icon fontIcon="delete_forever" />
                     <ng-container i18n="@@app-welcompe-page.erase-game">Erase Game</ng-container>
                 </button>
-                <br />
-                <br />
-                <mat-divider />
-                <br />
-                <button mat-stroked-button (click)="openWorkbench()">
-                    <mat-icon fontIcon="construction" />
-                    <ng-container i18n="@@app-welcome-page.open-workbench">Open Workbench</ng-container>
-                </button>
             } @else {
                 <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
                 @if (this.manager.saveExists()) {

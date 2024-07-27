@@ -22,11 +22,6 @@
         <mat-icon fontIcon="upload" />
         <ng-container i18n="@@app-datapack-selector.import">Import</ng-container>
     </button>
-    &nbsp;
-    <button mat-stroked-button (click)="openInWorkbench(false)">
-        <mat-icon fontIcon="add" />
-        <ng-container i18n="@@app-datapack-selector.create">Create</ng-container>
-    </button>
     @if (importFailed) {
         <br />
         <span style="color: red" i18n="@@app-datapack-selector.import-failed">Import Failed</span>
@@ -44,7 +39,7 @@
         <button mat-icon-button (click)="exportDatapack()">
             <mat-icon fontIcon="download" />
         </button>
-        <button mat-icon-button (click)="openInWorkbench()">
+        <button mat-icon-button disabled>
             <mat-icon fontIcon="construction" />
         </button>
     </mat-card-actions>

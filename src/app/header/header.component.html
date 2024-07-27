@@ -3,9 +3,8 @@
         <mat-icon fontIcon="info" />
     </button>
     <mat-menu #infoMenu="matMenu">
-        <span i18n="@@app-header.description">A recreation of Cookie Clicker's &quot;Garden&quot; minigame.</span>
-        <br />
-        <a mat-button href="https://github.com/MtCelesteMa/simplegarden/" target="_blank">
+        <span mat-menu-item i18n="@@app-header.description">A recreation of Cookie Clicker's &quot;Garden&quot; minigame.</span>
+        <a mat-menu-item href="https://github.com/MtCelesteMa/simplegarden/" target="_blank">
             <mat-icon fontIcon="code" />
             v0.3.0-dev
         </a>
@@ -13,17 +12,12 @@
     <span style="flex: 1 1 auto"></span>
     <span i18n="@@app-header.title">SimpleGarden</span>
     <span style="flex: 1 1 auto"></span>
-    @if (router.page == "welcome") {
-        <button mat-icon-button [matMenuTriggerFor]="localeMenu">
-            <mat-icon fontIcon="translate" />
-        </button>
-        <mat-menu #localeMenu="matMenu">
-            @for (locale of locales; track locale.id; let last = $last) {
-                <a mat-button href="{{ baseHref }}../{{ locale.id }}/">{{ locale.displayName }}</a>
-                @if (!last) {
-                    <br />
-                }
-            }
-        </mat-menu>
-    }
+    <button mat-icon-button [matMenuTriggerFor]="localeMenu" [disabled]="router.page != 'welcome'">
+        <mat-icon fontIcon="translate" />
+    </button>
+    <mat-menu #localeMenu="matMenu">
+        @for (locale of locales; track locale.id) {
+            <a mat-menu-item href="{{ baseHref }}../{{ locale.id }}/">{{ locale.displayName }}</a>
+        }
+    </mat-menu>
 </mat-toolbar>

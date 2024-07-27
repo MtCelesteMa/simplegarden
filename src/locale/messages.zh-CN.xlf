@@ -423,18 +423,6 @@
         <target>导入失败</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.open-workbench">
-      <segment state="initial">
-        <source>Open Workbench</source>
-        <target>打开工作台</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.import-failed">
-      <segment state="initial">
-        <source>Import Failed</source>
-        <target>导入失败</target>
-      </segment>
-    </unit>
     <unit id="app-datapack-selector.author">
       <segment state="initial">
         <source>by <ph id="0" equiv="INTERPOLATION" disp="{{ selectedDatapack.author }}"/></source>
@@ -457,12 +445,6 @@
       <segment state="initial">
         <source>Import Failed</source>
         <target>导入失败</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-selector.create">
-      <segment state="initial">
-        <source>Create</source>
-        <target>创造</target>
       </segment>
     </unit>
     <unit id="app-persistence-selector.persistence-transient">
@@ -535,36 +517,6 @@
       <segment state="initial">
         <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></source>
         <target>成熟剩余<ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.create">
-      <segment state="initial">
-        <source>Create</source>
-        <target>创建</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.import">
-      <segment state="initial">
-        <source>Import</source>
-        <target>导入</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.datapack-name">
-      <segment state="initial">
-        <source>Datapack Name</source>
-        <target>数据包名称</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.author">
-      <segment state="initial">
-        <source>Author</source>
-        <target>作者</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-init.default-locale">
-      <segment state="initial">
-        <source>Default Locale</source>
-        <target>默认语言</target>
       </segment>
     </unit>
   </file>

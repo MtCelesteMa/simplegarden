@@ -80,8 +80,4 @@ export class WelcomePageComponent implements OnInit {
             }
         });
     }
-
-    openWorkbench(): void {
-        this.router.page = "workbench";
-    }
 }
