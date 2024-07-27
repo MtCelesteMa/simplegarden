@@ -78,8 +78,7 @@ export class DatapackSelectorComponent {
     }
 
     openInWorkbench(load: boolean = true): void {
-        if (load) this.wbService.loadDatapack(this.selectedDatapack);
-        else this.wbService.newDatapack();
+        if (load) this.wbService.workbench = g.Workbench.fromRaw(this.selectedDatapack);
         this.router.page = "workbench";
     }
 }

@@ -359,54 +359,9 @@
         <source>Open Workbench</source>
       </segment>
     </unit>
-    <unit id="app-workbench-page.author">
-      <segment>
-        <source>Author Name: </source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.export-datapack">
-      <segment>
-        <source>Export Datapack</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.homepage-conf">
-      <segment>
-        <source>This does not automatically save your work. Return to homepage?</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-conf">
-      <segment>
-        <source>This will overwrite the datapack currently in the editor. Import datapack?</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-datapack">
-      <segment>
-        <source>Import Datapack</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-failed">
+    <unit id="app-datapack-init.import-failed">
       <segment>
         <source>Import Failed</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.name">
-      <segment>
-        <source>Datapack Name: </source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.return-home">
-      <segment>
-        <source> Return to Homepage </source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.save-info">
-      <segment>
-        <source>Unlike save data, datapacks are not saved to any long-term storage. Remember to export your work!</source>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.description">
-      <segment>
-        <source>Description: </source>
       </segment>
     </unit>
     <unit id="app-datapack-selector.author">
@@ -492,6 +447,31 @@
     <unit id="app-tile-info.no-crop-desc">
       <segment>
         <source>Use paint mode to plant or harvest crops.</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.create">
+      <segment>
+        <source>Create</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.import">
+      <segment>
+        <source>Import</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.author">
+      <segment>
+        <source>Author</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.datapack-name">
+      <segment>
+        <source>Datapack Name</source>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.default-locale">
+      <segment>
+        <source>Default Locale</source>
       </segment>
     </unit>
   </file>

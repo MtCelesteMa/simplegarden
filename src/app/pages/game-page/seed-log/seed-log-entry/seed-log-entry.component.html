@@ -3,12 +3,12 @@
         <mat-card-title>
             @if (manager.game!.saveData.difficulty.limitResources) {
                 @if (quantity == null) {
-                    <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x&infin;</h2>
+                    <span>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x&infin;</span>
                 } @else {
-                    <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x{{ quantity }}</h2>
+                    <span>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x{{ quantity }}</span>
                 }
             } @else {
-                <h2>{{ cropInfo.displayName }} ({{ cropInfo.shortName }})</h2>
+                <span>{{ cropInfo.displayName }} ({{ cropInfo.shortName }})</span>
             }
         </mat-card-title>
         <mat-card-subtitle>{{ cropInfo.description }}</mat-card-subtitle>
@@ -46,7 +46,7 @@
                 <mat-card-title i18n="@@app-seed-log-entry.mutations">Mutations</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <mat-list style="overflow-y: scroll; height: 150px;">
+                <mat-list style="overflow-y: scroll; height: 150px">
                     @for (mutation of listMutations; track mutation[0]) {
                         <mat-list-item>{{ mutation[1] }}</mat-list-item>
                     } @empty {

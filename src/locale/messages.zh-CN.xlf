@@ -429,64 +429,10 @@
         <target>打开工作台</target>
       </segment>
     </unit>
-    <unit id="app-workbench-page.return-home">
-      <segment state="initial">
-        <source> Return to Homepage </source>
-        <target>返回主页</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-datapack">
-      <segment state="initial">
-        <source>Import Datapack</source>
-        <target>导入数据包</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.export-datapack">
-      <segment state="initial">
-        <source>Export Datapack</source>
-        <target>导出数据包</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-failed">
+    <unit id="app-datapack-init.import-failed">
       <segment state="initial">
         <source>Import Failed</source>
         <target>导入失败</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.save-info">
-      <segment state="initial">
-        <source>Unlike save data, datapacks are not saved to any long-term storage. Remember to export your work!</source>
-        <target>数据包不会保存到任何长期存储中。记得导出你的作品！</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.name">
-      <segment state="initial">
-        <source>Datapack Name: </source>
-        <target>数据包名称：</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.author">
-      <segment state="initial">
-        <source>Author Name: </source>
-        <target>作者：</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.import-conf">
-      <segment state="initial">
-        <source>This will overwrite the datapack currently in the editor. Import datapack?</source>
-        <target>此操作会覆蓋编辑器里的数据包。确认导入？</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.homepage-conf">
-      <segment state="initial">
-        <source>This does not automatically save your work. Return to homepage?</source>
-        <target>此操作不会自动保存你的作品。确认返回主页？</target>
-      </segment>
-    </unit>
-    <unit id="app-workbench-page.description">
-      <segment state="initial">
-        <source>Description: </source>
-        <target>介绍：</target>
       </segment>
     </unit>
     <unit id="app-datapack-selector.author">
@@ -576,7 +522,7 @@
     <unit id="app-tile-info.locked-immature-desc">
       <segment state="initial">
         <source>This unknown crop is still growing. Harvesting it now will not yield anything.</source>
-        <target>这个庄稼为成熟，收割不会产生任何产品。</target>
+        <target>这个庄稼未成熟，收割不会产生任何产品。</target>
       </segment>
     </unit>
     <unit id="app-tile-info.expires-in">
@@ -589,6 +535,36 @@
       <segment state="initial">
         <source>Matures in <ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></source>
         <target>成熟剩余<ph id="0" equiv="INTERPOLATION" disp="{{ manager.game!.saveData.tickRate * (tile.cropInfo!.maturity! - tile.age) | time }}"/></target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.create">
+      <segment state="initial">
+        <source>Create</source>
+        <target>创建</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.import">
+      <segment state="initial">
+        <source>Import</source>
+        <target>导入</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.datapack-name">
+      <segment state="initial">
+        <source>Datapack Name</source>
+        <target>数据包名称</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.author">
+      <segment state="initial">
+        <source>Author</source>
+        <target>作者</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-init.default-locale">
+      <segment state="initial">
+        <source>Default Locale</source>
+        <target>默认语言</target>
       </segment>
     </unit>
   </file>

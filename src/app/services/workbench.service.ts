@@ -7,42 +7,12 @@ import * as g from "../../game";
 })
 export class WorkbenchService {
     locale = inject(LOCALE_ID);
-    private dataPack_ = new PersistedValue<g.d.d.v1.DataPack>("wb_dataPack");
+    workbench: g.Workbench | null = null;
+    private dataPack = new PersistedValue<g.d.d.v1.DataPack>("wb_dataPack");
 
     constructor() {
-        if (!this.dataPack_.isCached) {
-            this.newDatapack();
+        if (this.dataPack.isCached) {
+            this.workbench = new g.Workbench(this.dataPack.value);
         }
-    }
-
-    get dataPack(): g.d.d.v1.DataPack {
-        return this.dataPack_.value;
-    }
-
-    newDatapack(): void {
-        this.dataPack_.value = {
-            identifier: "sg_datapack",
-            version: 1,
-            name: "",
-            author: "",
-            description: "",
-            gameData: {
-                identifier: "sg_gamedata",
-                version: 2,
-                crops: {},
-                mutations: [],
-                trophies: {},
-                initialCrops: [],
-                fieldSize: [6, 6],
-            },
-            i18n: {
-                defaultLocale: this.locale,
-                locales: {},
-            },
-        };
-    }
-
-    loadDatapack(raw: unknown): void {
-        this.dataPack_.value = g.d.d.loader.load(raw);
     }
 }
