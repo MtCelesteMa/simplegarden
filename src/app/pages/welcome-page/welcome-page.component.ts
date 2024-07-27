@@ -9,7 +9,6 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { FileService } from "../../services/file.service";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
-import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import { DifficultySelectorComponent } from "./difficulty-selector/difficulty-selector.component";
 import { DatapackSelectorComponent } from "./datapack-selector/datapack-selector.component";
 import { PersistenceSelectorComponent } from "./persistence-selector/persistence-selector.component";
@@ -20,7 +19,6 @@ import * as g from "../../../game";
     standalone: true,
     imports: [
         ReactiveFormsModule,
-        LocaleSelectorComponent,
         MatCardModule,
         MatButtonModule,
         MatDividerModule,

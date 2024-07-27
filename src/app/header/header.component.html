@@ -1,0 +1,28 @@
+<mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="versionMenu">
+        <mat-icon fontIcon="info" />
+    </button>
+    <mat-menu #versionMenu="matMenu">
+        <span>v0.3.0-dev</span>
+    </mat-menu>
+    <span style="flex: 1 1 auto"></span>
+    <span
+        i18n="@@app-header.title"
+        matTooltip="A recreation of Cookie Clicker's &quot;Garden&quot; minigame."
+        i18n-matTooltip="@@app-header.description"
+        >SimpleGarden</span>
+    <span style="flex: 1 1 auto"></span>
+    @if (router.page == "welcome") {
+        <button mat-icon-button [matMenuTriggerFor]="localeMenu">
+            <mat-icon fontIcon="translate" />
+        </button>
+        <mat-menu #localeMenu="matMenu">
+            @for (locale of locales; track locale.id; let last = $last) {
+                <a mat-button href="{{ baseHref }}../{{ locale.id }}/">{{locale.displayName}}</a>
+                @if (!last) {
+                    <br />
+                }
+            }
+        </mat-menu>
+    }
+</mat-toolbar>

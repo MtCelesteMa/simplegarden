@@ -1,12 +1,12 @@
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="zh-CN">
   <file id="ngi18n" original="ng.template">
-    <unit id="app-root.title">
+    <unit id="app-header.title">
       <segment state="initial">
         <source>SimpleGarden</source>
         <target>简易花园</target>
       </segment>
     </unit>
-    <unit id="app-root.description">
+    <unit id="app-header.description">
       <segment state="initial">
         <source>A recreation of Cookie Clicker&apos;s &quot;Garden&quot; minigame.</source>
         <target>饼干计数器里的&quot;花园&quot;小游戏重新制作版</target>
