@@ -1,4 +1,17 @@
-div.box {
+@use "@angular/material" as mat;
+
+$theme: mat.define-theme();
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 10px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.box {
     border: 5px solid black;
     margin: 10px;
     padding: 10px;
@@ -6,4 +19,9 @@ div.box {
 
 .centering {
     text-align: center;
+    justify-content: center;
+}
+
+button.red[mat-stroked-button] {
+    @include mat.button-color($theme, $color-variant: error);
 }

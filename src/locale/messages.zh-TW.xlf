@@ -14,8 +14,8 @@
     </unit>
     <unit id="app-welcome-page.corrupted-save-msg">
       <segment state="initial">
-        <source> Your save file was corrupted. Please start a new game. </source>
-        <target> 遊戲保存文件被損壞了。請開始新的遊戲。 </target>
+        <source>Your save file was corrupted. Please start a new game.</source>
+        <target>遊戲保存文件被損壞了。請開始新的遊戲。</target>
       </segment>
     </unit>
     <unit id="app-welcompe-page.export-game">
@@ -40,12 +40,6 @@
       <segment state="initial">
         <source>Import Game</source>
         <target>導入遊戲</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.game-import-failed">
-      <segment state="initial">
-        <source> Import failed. </source>
-        <target> 遊戲導入失敗 </target>
       </segment>
     </unit>
     <unit id="app-welcompe-page.continue-game">
@@ -303,12 +297,6 @@
         <target>黏土</target>
       </segment>
     </unit>
-    <unit id="app-difficulty-selector.title">
-      <segment state="initial">
-        <source>Difficulty</source>
-        <target>難度</target>
-      </segment>
-    </unit>
     <unit id="app-difficulty-selector.normal-mode">
       <segment state="initial">
         <source>Normal Mode</source>
@@ -361,24 +349,6 @@
       <segment state="initial">
         <source>Persistence Options</source>
         <target>持久化選項</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.persistence-transient">
-      <segment state="initial">
-        <source>Disable</source>
-        <target>關閉</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.persistence-session">
-      <segment state="initial">
-        <source>Normal Persistence</source>
-        <target>正常持久化</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.persistence-local">
-      <segment state="initial">
-        <source>True Persistence (NOT RECOMMENDED)</source>
-        <target>長期持久化（不推薦使用）</target>
       </segment>
     </unit>
     <unit id="8229753466347165232">
@@ -462,24 +432,6 @@
         <target>無</target>
       </segment>
     </unit>
-    <unit id="app-welcome-page.persistence-desc">
-      <segment state="initial">
-        <source>Persistence allows the game state to be preserved across page reloads, which is useful if your browser automatically refreshes pages.</source>
-        <target>持久化允許在頁面重新加載時保留遊戲狀態。如果你的瀏覽器自動刷新頁面，這將非常有用。</target>
-      </segment>
-    </unit>
-    <unit id="app-welcome-page.persistence-desc-2">
-      <segment state="initial">
-        <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
-        <target>僅當正常持久化無法保留遊戲狀態時才使用長期持久化（這是 iOS 上的一個已知的問題）。</target>
-      </segment>
-    </unit>
-    <unit id="app-datapack-selector.title">
-      <segment state="initial">
-        <source>Datapack</source>
-        <target>數據包</target>
-      </segment>
-    </unit>
     <unit id="app-datapack-selector.builtin">
       <segment state="initial">
         <source>Built In</source>
@@ -494,8 +446,8 @@
     </unit>
     <unit id="app-datapack-selector.select-builtin">
       <segment state="initial">
-        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>) </source>
-        <target> <ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>） </target>
+        <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>)</source>
+        <target><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(pack[1]) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ pack[1].author }}"/>）</target>
       </segment>
     </unit>
     <unit id="app-datapack-selector.import">
@@ -510,12 +462,6 @@
         <target>導入失敗</target>
       </segment>
     </unit>
-    <unit id="app-datapack-selector.packname">
-      <segment state="initial">
-        <source><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/> (by <ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>)</source>
-        <target><ph id="0" equiv="INTERPOLATION" disp="{{ l10nName(customPack) }}"/>（作者：<ph id="1" equiv="INTERPOLATION_1" disp="{{ customPack.author }}"/>）</target>
-      </segment>
-    </unit>
     <unit id="app-welcome-page.open-workbench">
       <segment state="initial">
         <source>Open Workbench</source>
@@ -524,7 +470,7 @@
     </unit>
     <unit id="app-workbench-page.return-home">
       <segment state="initial">
-        <source>Return to Homepage</source>
+        <source> Return to Homepage </source>
         <target>返回主頁</target>
       </segment>
     </unit>
@@ -580,6 +526,66 @@
       <segment state="initial">
         <source>Description: </source>
         <target>介紹：</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.author">
+      <segment state="initial">
+        <source>by <ph id="0" equiv="INTERPOLATION" disp="{{ selectedDatapack.author }}"/></source>
+        <target>作者：<ph id="0" equiv="INTERPOLATION" disp="{{ selectedDatapack.author }}"/></target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.difficulty">
+      <segment state="initial">
+        <source>Difficulty</source>
+        <target>難度</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.datapack">
+      <segment state="initial">
+        <source>Datapack</source>
+        <target>數據包</target>
+      </segment>
+    </unit>
+    <unit id="app-welcome-page.import-failed">
+      <segment state="initial">
+        <source>Import Failed</source>
+        <target>導入失敗</target>
+      </segment>
+    </unit>
+    <unit id="app-datapack-selector.create">
+      <segment state="initial">
+        <source>Create</source>
+        <target>創造</target>
+      </segment>
+    </unit>
+    <unit id="app-persistence-selector.persistence-transient">
+      <segment state="initial">
+        <source>Disable</source>
+        <target>關閉</target>
+      </segment>
+    </unit>
+    <unit id="app-persistence-selector.persistence-session">
+      <segment state="initial">
+        <source>Normal Persistence</source>
+        <target>正常持久化</target>
+      </segment>
+    </unit>
+    <unit id="app-persistence-selector.persistence-local">
+      <segment state="initial">
+        <source>True Persistence (NOT RECOMMENDED)</source>
+        <target>長期持久化（不推薦使用）</target>
+      </segment>
+    </unit>
+    <unit id="app-persistence-selector.persistence-desc">
+      <segment state="initial">
+        <source>Persistence allows the game state to be preserved across page reloads, which is useful if your browser automatically refreshes pages.</source>
+        <target>持久化允許在頁面重新加載時保留遊戲狀態。如果你的瀏覽器自動刷新頁面，這將非常有用。</target>
+      </segment>
+    </unit>
+    <unit id="app-persistence-selector.persistence-desc-2">
+      <segment state="initial">
+        <source>Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</source>
+        <target>僅當正常持久化無法保留遊戲狀態時才使用長期持久化（這是 iOS 上的一個已知的問題）。</target>
       </segment>
     </unit>
   </file>

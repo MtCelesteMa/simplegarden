@@ -1,84 +1,86 @@
 <app-locale-selector></app-locale-selector>
-@if (this.manager.saveIsValid()) {
-    <div class="box centering">
-        <button (click)="loadGame()" i18n="@@app-welcompe-page.continue-game">Continue Game</button>
-        <br />
-        <br />
-        <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
-        <br />
-        <br />
-        <button style="color: red" (click)="eraseGame()" i18n="@@app-welcompe-page.erase-game">Erase Game</button>
-        <br />
-        <br />
-        <button (click)="openWorkbench()" i18n="@@app-welcome-page.open-workbench">Open Workbench</button>
-    </div>
-} @else {
-    <div class="box centering">
-        @if (this.manager.saveExists()) {
-            <span style="color: red" i18n="@@app-welcome-page.corrupted-save-msg">
-                Your save file was corrupted. Please start a new game.
-            </span>
-            <br />
-            <button (click)="exportGame()" i18n="@@app-welcompe-page.export-game">Export Game</button>
-        }
-        <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
-        <div class="box">
-            <app-difficulty-selector [(difficulty)]="difficulty"></app-difficulty-selector>
-            <br />
-            <br />
-            <app-datapack-selector [(datapack)]="datapack"></app-datapack-selector>
-            <br />
-            <br />
-            <button (click)="newGame()" i18n="@@app-welcome-page.new-game">New Game</button>
-        </div>
-        <button (click)="importGame()" i18n="@@app-welcome-page.import-game">Import Game</button>
-        @if (gameImportFailed) {
-            <br />
-            <span style="color: red" i18n="@@app-welcome-page.game-import-failed"> Import failed. </span>
-        }
-        <br />
-        <br />
-        <button (click)="openWorkbench()" i18n="@@app-welcome-page.open-workbench">Open Workbench</button>
-    </div>
-}
 <div class="centering">
-    <strong i18n="@@app-welcome-page.persistence-options">Persistence Options</strong>
-    <br />
-    <input
-        type="radio"
-        [formControl]="persistenceSelect"
-        (change)="setPersistence()"
-        value="transient"
-        name="persistenceSelect"
-    />
-    <span i18n="@@app-welcome-page.persistence-transient">Disable</span>
-    <br />
-    <input
-        type="radio"
-        [formControl]="persistenceSelect"
-        (change)="setPersistence()"
-        value="session"
-        name="persistenceSelect"
-    />
-    <span i18n="@@app-welcome-page.persistence-session">Normal Persistence</span>
-    <br />
-    <input
-        type="radio"
-        [formControl]="persistenceSelect"
-        (change)="setPersistence()"
-        value="local"
-        name="persistenceSelect"
-    />
-    <span style="color: red" i18n="@@app-welcome-page.persistence-local">True Persistence (NOT RECOMMENDED)</span>
-    <br />
-    <br />
-    <span i18n="@@app-welcome-page.persistence-desc"
-        >Persistence allows the game state to be preserved across page reloads, which is useful if your browser
-        automatically refreshes pages.</span
-    >
-    <br />
-    <span i18n="@@app-welcome-page.persistence-desc-2"
-        >Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on
-        iOS).</span
-    >
+    <mat-card appearance="outlined">
+        <mat-card-content>
+            @if (this.manager.saveIsValid()) {
+                <button mat-stroked-button (click)="loadGame()">
+                    <mat-icon fontIcon="play_arrow" />
+                    <ng-container i18n="@@app-welcompe-page.continue-game">Continue Game</ng-container>
+                </button>
+                <br />
+                <br />
+                <button mat-stroked-button (click)="exportGame()">
+                    <mat-icon fontIcon="download" />
+                    <ng-container i18n="@@app-welcompe-page.export-game">Export Game</ng-container>
+                </button>
+                <br />
+                <br />
+                <button mat-stroked-button class="red" (click)="eraseGame()">
+                    <mat-icon fontIcon="delete_forever" />
+                    <ng-container i18n="@@app-welcompe-page.erase-game">Erase Game</ng-container>
+                </button>
+                <br />
+                <br />
+                <mat-divider />
+                <br />
+                <button mat-stroked-button (click)="openWorkbench()">
+                    <mat-icon fontIcon="construction" />
+                    <ng-container i18n="@@app-welcome-page.open-workbench">Open Workbench</ng-container>
+                </button>
+            } @else {
+                <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
+                @if (this.manager.saveExists()) {
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <span style="color: red" i18n="@@app-welcome-page.corrupted-save-msg"
+                                >Your save file was corrupted. Please start a new game.</span
+                            >
+                            <br />
+                            <br />
+                            <button mat-stroked-button (click)="exportGame()">
+                                <mat-icon fontIcon="download" />
+                                <ng-container i18n="@@app-welcompe-page.export-game">Export Game</ng-container>
+                            </button>
+                        </mat-card-content>
+                    </mat-card>
+                    <br />
+                }
+                <mat-card appearance="outlined">
+                    <mat-card-content>
+                        <mat-tab-group>
+                            <mat-tab i18n-label="@@app-welcome-page.difficulty" label="Difficulty">
+                                <app-difficulty-selector [(difficulty)]="difficulty" />
+                            </mat-tab>
+                            <mat-tab i18n-label="@@app-welcome-page.datapack" label="Datapack">
+                                <app-datapack-selector [(datapack)]="datapack" />
+                            </mat-tab>
+                        </mat-tab-group>
+                        <br />
+                        <br />
+                        <button mat-stroked-button (click)="newGame()">
+                            <mat-icon fontIcon="play_arrow" />
+                            <ng-container i18n="@@app-welcome-page.new-game">New Game</ng-container>
+                        </button>
+                    </mat-card-content>
+                </mat-card>
+                <br />
+                <button mat-stroked-button (click)="importGame()">
+                    <mat-icon fontIcon="upload" />
+                    <ng-container i18n="@@app-welcome-page.import-game">Import Game</ng-container>
+                </button>
+                @if (gameImportFailed) {
+                    <br />
+                    <span style="color: red" i18n="@@app-welcome-page.import-failed">Import Failed</span>
+                }
+            }
+            <br />
+            <br />
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title i18n="@@app-welcome-page.persistence-options">Persistence Options</mat-panel-title>
+                </mat-expansion-panel-header>
+                <app-persistence-selector></app-persistence-selector>
+            </mat-expansion-panel>
+        </mat-card-content>
+    </mat-card>
 </div>

@@ -1,29 +1,45 @@
 import { Component, inject, OnInit } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTabsModule } from "@angular/material/tabs";
 import { FileService } from "../../services/file.service";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
-import { PersistenceService } from "../../services/persistence.service";
 import { LocaleSelectorComponent } from "./locale-selector/locale-selector.component";
 import { DifficultySelectorComponent } from "./difficulty-selector/difficulty-selector.component";
 import { DatapackSelectorComponent } from "./datapack-selector/datapack-selector.component";
+import { PersistenceSelectorComponent } from "./persistence-selector/persistence-selector.component";
 import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
     standalone: true,
-    imports: [ReactiveFormsModule, LocaleSelectorComponent, DatapackSelectorComponent, DifficultySelectorComponent],
+    imports: [
+        ReactiveFormsModule,
+        LocaleSelectorComponent,
+        MatCardModule,
+        MatButtonModule,
+        MatDividerModule,
+        MatExpansionModule,
+        MatIconModule,
+        MatTabsModule,
+        DatapackSelectorComponent,
+        DifficultySelectorComponent,
+        PersistenceSelectorComponent,
+    ],
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent implements OnInit {
     fileService = inject(FileService);
     manager = inject(ManagerService);
     router = inject(RoutingService);
-    persistence = inject(PersistenceService);
 
     difficulty: string = "normal";
     datapack: string | g.d.d.v1.DataPack = "classic";
-    persistenceSelect = new FormControl<string>(this.persistence.location);
 
     gameImportFailed: boolean = false;
 
@@ -65,10 +81,6 @@ export class WelcomePageComponent implements OnInit {
                 this.gameImportFailed = true;
             }
         });
-    }
-
-    setPersistence(): void {
-        this.persistence.location = this.persistenceSelect.value!;
     }
 
     openWorkbench(): void {

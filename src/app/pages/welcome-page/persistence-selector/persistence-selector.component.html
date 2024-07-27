@@ -1,0 +1,25 @@
+<mat-radio-group [formControl]="persistenceLocation" (change)="setPersistence()">
+    <mat-radio-button value="transient" i18n="@@app-persistence-selector.persistence-transient"
+        >Disable</mat-radio-button
+    >
+    <br />
+    <mat-radio-button value="session" i18n="@@app-persistence-selector.persistence-session"
+        >Normal Persistence</mat-radio-button
+    >
+    <br />
+    <mat-radio-button value="local">
+        <span style="color: red" i18n="@@app-persistence-selector.persistence-local"
+            >True Persistence (NOT RECOMMENDED)</span
+        >
+    </mat-radio-button>
+</mat-radio-group>
+<br />
+<br />
+<span i18n="@@app-persistence-selector.persistence-desc"
+    >Persistence allows the game state to be preserved across page reloads, which is useful if your browser
+    automatically refreshes pages.</span
+>
+<br />
+<span i18n="@@app-persistence-selector.persistence-desc-2"
+    >Only use True Persistence if Normal Persistence fails preserve game state (this is a known problem on iOS).</span
+>

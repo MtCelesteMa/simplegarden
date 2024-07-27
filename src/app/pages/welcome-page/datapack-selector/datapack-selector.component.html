@@ -1,35 +1,51 @@
-<strong i18n="@@app-datapack-selector.title">Datapack</strong>
-<br />
-<input type="radio" name="dpModeSelect" value="builtin" [formControl]="modeSelect" (click)="selectBuiltIn()" />
-<span i18n="@@app-datapack-selector.builtin">Built In</span>
-<br />
-<input type="radio" name="dpModeSelect" value="custom" [formControl]="modeSelect" />
-<span i18n="@@app-datapack-selector.custom">Custom</span>
+<mat-radio-group [formControl]="modeSelect">
+    <mat-radio-button value="builtin" (click)="selectBuiltIn()" i18n="@@app-datapack-selector.builtin"
+        >Built In</mat-radio-button
+    >
+    <br />
+    <mat-radio-button value="custom" i18n="@@app-datapack-selector.custom">Custom</mat-radio-button>
+</mat-radio-group>
 @if (modeSelect.value! == "builtin") {
     <br />
-    <select [formControl]="builtInSelect" (change)="selectBuiltIn()">
-        <option value="" selected disabled></option>
-        @for (pack of listBuiltIn(); track pack[0]) {
-            <option [value]="pack[0]" i18n="@@app-datapack-selector.select-builtin">
-                {{ l10nName(pack[1]) }} (by {{ pack[1].author }})
-            </option>
-        }
-    </select>
-    @if (builtInPack != null) {
-        <br />
-        {{ l10nDescription(builtInPack) }}
-    }
+    <mat-form-field>
+        <mat-select [formControl]="builtInSelect" (selectionChange)="selectBuiltIn()">
+            @for (pack of listBuiltIn(); track pack[0]) {
+                <mat-option [value]="pack[0]" i18n="@@app-datapack-selector.select-builtin"
+                    >{{ l10nName(pack[1]) }} (by {{ pack[1].author }})</mat-option
+                >
+            }
+        </mat-select>
+    </mat-form-field>
 } @else if (modeSelect.value! == "custom") {
     <br />
-    <button (click)="importDatapack()" i18n="@@app-datapack-selector.import">Import</button>
+    <button mat-stroked-button (click)="importDatapack()">
+        <mat-icon fontIcon="upload" />
+        <ng-container i18n="@@app-datapack-selector.import">Import</ng-container>
+    </button>
+    &nbsp;
+    <button mat-stroked-button (click)="openInWorkbench(false)">
+        <mat-icon fontIcon="add" />
+        <ng-container i18n="@@app-datapack-selector.create">Create</ng-container>
+    </button>
     @if (importFailed) {
         <br />
         <span style="color: red" i18n="@@app-datapack-selector.import-failed">Import Failed</span>
     }
-    @if (customPack != null) {
-        <br />
-        <span i18n="@@app-datapack-selector.packname">{{ l10nName(customPack) }} (by {{ customPack.author }})</span>
-        <br />
-        {{ l10nDescription(customPack) }}
-    }
 }
+<mat-card appearance="outlined">
+    <mat-card-title>
+        <mat-card-header class="centering">{{ l10nName(selectedDatapack) }}</mat-card-header>
+        <mat-card-subtitle i18n="@@app-datapack-selector.author">by {{ selectedDatapack.author }}</mat-card-subtitle>
+    </mat-card-title>
+    <mat-card-content>
+        {{ l10nDescription(selectedDatapack) }}
+    </mat-card-content>
+    <mat-card-actions class="centering">
+        <button mat-icon-button (click)="exportDatapack()">
+            <mat-icon fontIcon="download" />
+        </button>
+        <button mat-icon-button (click)="openInWorkbench()">
+            <mat-icon fontIcon="construction" />
+        </button>
+    </mat-card-actions>
+</mat-card>
