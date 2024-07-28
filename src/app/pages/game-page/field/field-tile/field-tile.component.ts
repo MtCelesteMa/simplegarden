@@ -57,7 +57,7 @@ export class FieldTileComponent {
                 if (this.tile.isMature! && !this.tile.isUnlocked!) {
                     this.snackBar.open(
                         $localize`:@@app-field-tile.crop-unlocked:You unlocked ${this.tile.cropInfo!.displayName}`,
-                        $localize`:@@app-field-tile.ok:OK`
+                        $localize`:@@app-field-tile.ok:OK`,
                     );
                     this.manager.game!.newCrops.push(this.tile.crop);
                 }

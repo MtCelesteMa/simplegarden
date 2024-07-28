@@ -15,7 +15,7 @@ The mechanics are mostly the same as the Garden minigame in Cookie Clicker, with
 -   Similarly, there are no "garden drops" obtained by harvesting certain crops.
 -   Different soil types only affect tick rate, and can be changed at will.
 -   All crops are free to plant (in Normal Mode).
--   Play with custom crops and mutations by uploading custom data files.
+-   Play with custom crops and mutations using datapacks.
 
 ### Hard Mode
 
@@ -24,6 +24,12 @@ Hard Mode introduces a new challenge by limiting the number of crops you have. W
 **Trophies (Beta):** In Hard Mode, accumulating a certain quantity of certain crops will award you with a trophy. There are currently four trophies, with more to come (hopefully).
 
 **Brutal Mode:** Hard Mode as it is originally intended, it "fixes" an "exploit" present in Hard Mode that makes it significantly easier than the intention. It is split into its own difficulty as Hard Mode without the "exploit" may be too difficult/annoying for many players.
+
+### Datapacks
+
+Datapacks are the official way of customizing the game. SimpleGarden comes with two built-in datapacks, but you may import custom datapacks in order to play with them.
+
+**Datapack Editor:** SimpleGarden currently does not have a built-in datapack editor. However, datapacks are written in JavaScript Object Notation (JSON), meaning that a text editor is all you need to create your own datapack. Moreover, the two built-in datapacks can be downloaded, allowing you to view their format.
 
 ## Installation
 

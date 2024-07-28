@@ -17,7 +17,7 @@ import * as g from "../../../../../game";
     styleUrl: "./seed-log-entry.component.scss",
 })
 export class SeedLogEntryComponent {
-    newBadge = $localize`:@@app-seed-log-entry.new:New`
+    newBadge = $localize`:@@app-seed-log-entry.new:New`;
     manager = inject(ManagerService);
     @Input({ required: true }) crop: string = "";
 

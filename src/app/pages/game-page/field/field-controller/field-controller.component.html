@@ -42,10 +42,7 @@
 &nbsp;
 <mat-form-field>
     <mat-label i18n="@@app-field-controller.select-soil">Select Soil</mat-label>
-    <mat-select
-        [formControl]="soilSelect"
-        (selectionChange)="selectSoil()"
-    >
+    <mat-select [formControl]="soilSelect" (selectionChange)="selectSoil()">
         <mat-option value="" disabled></mat-option>
         @for (soil of listSoils; track soil[0]) {
             <mat-option [value]="soil[0]">{{ soil[1].displayName }} ({{ soil[1].tickRate | time }})</mat-option>

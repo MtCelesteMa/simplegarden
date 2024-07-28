@@ -29,9 +29,10 @@ export class SeedLogComponent {
     }
 
     get listUnlockedCrops(): [string, g.d.g.v2.CropInfo][] {
-        return Object.entries(this.manager.game!.gameData.crops)
-            .filter((value: [string, g.d.g.v2.CropInfo]): boolean => {
+        return Object.entries(this.manager.game!.gameData.crops).filter(
+            (value: [string, g.d.g.v2.CropInfo]): boolean => {
                 return Object.hasOwn(this.manager.game!.saveData.cropsUnlocked, value[0]);
-            })
+            },
+        );
     }
 }

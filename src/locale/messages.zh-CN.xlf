@@ -87,7 +87,7 @@
     <unit id="app-field-controller.paint-mode">
       <segment state="initial">
         <source>Paint Mode</source>
-        <target>刷子模式：</target>
+        <target>刷子模式</target>
       </segment>
     </unit>
     <unit id="app-field.no-tile-selected">
