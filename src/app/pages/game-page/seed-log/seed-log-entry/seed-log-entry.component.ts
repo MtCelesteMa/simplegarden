@@ -1,5 +1,6 @@
 import { Component, inject, Input } from "@angular/core";
 import { DatePipe } from "@angular/common";
+import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
@@ -11,11 +12,12 @@ import * as g from "../../../../../game";
 @Component({
     selector: "app-seed-log-entry",
     standalone: true,
-    imports: [TimePipe, DatePipe, MatButtonModule, MatCardModule, MatIconModule, MatListModule],
+    imports: [TimePipe, DatePipe, MatBadgeModule, MatButtonModule, MatCardModule, MatIconModule, MatListModule],
     templateUrl: "./seed-log-entry.component.html",
     styleUrl: "./seed-log-entry.component.scss",
 })
 export class SeedLogEntryComponent {
+    newBadge = $localize`:@@app-seed-log-entry.new:New`
     manager = inject(ManagerService);
     @Input({ required: true }) crop: string = "";
 
@@ -48,5 +50,9 @@ export class SeedLogEntryComponent {
                 if (Object.hasOwn(this.manager.game!.saveData.cropsUnlocked, name)) return [dname, dname];
                 return [dname, "???"];
             });
+    }
+
+    markAsRead(): void {
+        this.manager.game!.newCrops = this.manager.game!.newCrops.filter((value: string) => value != this.crop);
     }
 }

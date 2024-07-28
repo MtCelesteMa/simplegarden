@@ -111,7 +111,6 @@ export class FieldTile {
                             quantity: 1,
                             timeDiscovered: new Date().getTime(),
                         };
-                        alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                     }
                 }
                 for (let trophy of Object.entries(this.gameData.trophies)) {
@@ -128,7 +127,6 @@ export class FieldTile {
                         quantity: 1,
                         timeDiscovered: new Date().getTime(),
                     };
-                    alert($localize`:@@game.crop-unlocked:You unlocked ${this.cropInfo!.displayName}`);
                 }
             }
         }

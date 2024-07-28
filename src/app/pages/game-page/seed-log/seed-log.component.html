@@ -1,7 +1,11 @@
 <div class="centering">
     <mat-card appearance="outlined">
         <mat-card-header class="centering">
-            <mat-card-title i18n="@@app-seed-log.title">Seed Log ({{ nCropsUnlocked }}/{{ nCrops }})</mat-card-title>
+            <mat-card-title
+                [matBadge]="manager.game!.newCrops.length > 0 ? manager.game!.newCrops.length : null"
+                i18n="@@app-seed-log.title"
+            >Seed Log ({{ nCropsUnlocked }}/{{ nCrops }})</mat-card-title
+            >
             <mat-card-subtitle>
                 @if (nCropsUnlocked == nCrops) {
                     <span style="color: green" i18n="@@app-seed-log.completion-msg"

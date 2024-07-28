@@ -44,7 +44,7 @@
     <mat-label i18n="@@app-field-controller.select-soil">Select Soil</mat-label>
     <mat-select
         [formControl]="soilSelect"
-        (selectionChange)="manager.game!.saveData.tickRate = soils[soilSelect.value!].tickRate"
+        (selectionChange)="selectSoil()"
     >
         <mat-option value="" disabled></mat-option>
         @for (soil of listSoils; track soil[0]) {

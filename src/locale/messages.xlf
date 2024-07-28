@@ -284,9 +284,9 @@
         <source>Field frozen. Plants will not grow or mutate.</source>
       </segment>
     </unit>
-    <unit id="game.crop-unlocked">
+    <unit id="app-field-tile.crop-unlocked">
       <segment>
-        <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
+        <source>You unlocked <ph id="0" equiv="PH" disp="this.tile.cropInfo!.displayName"/></source>
       </segment>
     </unit>
     <unit id="app-seed-log.completion-msg">
@@ -437,6 +437,16 @@
     <unit id="app-seed-log.search">
       <segment>
         <source>Search</source>
+      </segment>
+    </unit>
+    <unit id="app-field-tile.ok">
+      <segment>
+        <source>OK</source>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.new">
+      <segment>
+        <source>New</source>
       </segment>
     </unit>
   </file>

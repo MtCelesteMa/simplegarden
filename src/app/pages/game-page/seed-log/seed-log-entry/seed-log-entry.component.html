@@ -1,6 +1,8 @@
-<mat-card appearance="outlined" style="height: 500px; width: 300px; overflow-y: scroll">
+<mat-card appearance="outlined" style="height: 500px; width: 300px; overflow-y: scroll" (click)="markAsRead()">
     <mat-card-header class="centering">
-        <mat-card-title>
+        <mat-card-title
+            [matBadge]="manager.game!.newCrops.includes(crop) ? newBadge : null"
+        >
             @if (manager.game!.saveData.difficulty.limitResources) {
                 @if (quantity == null) {
                     <span>{{ cropInfo.displayName }} ({{ cropInfo.shortName }}) x&infin;</span>

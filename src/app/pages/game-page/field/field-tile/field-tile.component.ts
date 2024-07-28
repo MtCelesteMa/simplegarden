@@ -1,4 +1,5 @@
 import { Component, inject, Input } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { ManagerService } from "../../../../services/manager.service";
 import * as g from "../../../../../game";
 
@@ -14,6 +15,7 @@ import * as g from "../../../../../game";
 })
 export class FieldTileComponent {
     manager = inject(ManagerService);
+    private snackBar = inject(MatSnackBar);
     @Input({ required: true }) rowN: number = 0;
     @Input({ required: true }) colN: number = 0;
 
@@ -52,6 +54,13 @@ export class FieldTileComponent {
                 this.tile.sowCrop(this.manager.game!.selectedCrop);
             }
             if (this.tile.crop != null && this.manager.game!.selectedCrop == null) {
+                if (this.tile.isMature! && !this.tile.isUnlocked!) {
+                    this.snackBar.open(
+                        $localize`:@@app-field-tile.crop-unlocked:You unlocked ${this.tile.cropInfo!.displayName}`,
+                        $localize`:@@app-field-tile.ok:OK`
+                    );
+                    this.manager.game!.newCrops.push(this.tile.crop);
+                }
                 this.tile.harvestCrop();
             }
         }

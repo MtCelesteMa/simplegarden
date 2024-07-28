@@ -339,9 +339,9 @@
         <target>田地已被冻结。庄稼不会成长或变异。</target>
       </segment>
     </unit>
-    <unit id="game.crop-unlocked">
+    <unit id="app-field-tile.crop-unlocked">
       <segment state="initial">
-        <source>You unlocked <ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></source>
+        <source>You unlocked <ph id="0" equiv="PH" disp="this.tile.cropInfo!.displayName"/></source>
         <target>你解锁了<ph id="0" equiv="PH" disp="this.cropInfo!.displayName"/></target>
       </segment>
     </unit>
@@ -523,6 +523,18 @@
       <segment state="initial">
         <source>Search</source>
         <target>搜索</target>
+      </segment>
+    </unit>
+    <unit id="app-field-tile.ok">
+      <segment state="initial">
+        <source>OK</source>
+        <target>OK</target>
+      </segment>
+    </unit>
+    <unit id="app-seed-log-entry.new">
+      <segment state="initial">
+        <source>New</source>
+        <target>新</target>
       </segment>
     </unit>
   </file>

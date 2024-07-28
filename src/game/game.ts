@@ -10,6 +10,7 @@ export class Game {
     selectedTile: [number, number] | null = null;
     paintMode: boolean = false;
     selectedCrop: string | null = null;
+    newCrops: string[] = [];
 
     constructor(saveData: d.s.v3.SaveData, locale: string | null = null, startTime: number | null = null) {
         this.gameData = d.d.gameDataL10n(

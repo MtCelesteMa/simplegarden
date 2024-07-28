@@ -5,6 +5,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSelectModule } from "@angular/material/select";
 import { ManagerService } from "../../../../services/manager.service";
+import { MainloopService } from "../../../../services/mainloop.service";
 import { TimePipe } from "../../../../services/time.pipe";
 import * as g from "../../../../../game";
 
@@ -18,6 +19,7 @@ type SoilType = { displayName: string; tickRate: number };
 })
 export class FieldControllerComponent implements OnInit {
     manager = inject(ManagerService);
+    mainloop = inject(MainloopService);
     soils: { [k: string]: SoilType } = {
         tfertilizer: {
             displayName: $localize`:@@app-field-controller.soil-tfertilizer:Turbo Fertilizer`,
@@ -62,7 +64,7 @@ export class FieldControllerComponent implements OnInit {
         return Object.entries(this.manager.game!.saveData.cropsUnlocked);
     }
 
-    clearField() {
+    clearField(): void {
         if (
             !confirm(
                 $localize`:@@app-field-controller.clear-field-conf:Are you sure you want to clear the field? This will not harvest any mature crops!`,
@@ -70,5 +72,10 @@ export class FieldControllerComponent implements OnInit {
         )
             return;
         this.manager.game!.field.clearField();
+    }
+
+    selectSoil(): void {
+        this.manager.game!.saveData.tickRate = this.soils[this.soilSelect.value!].tickRate;
+        this.mainloop.multipleUpdates.value = false;
     }
 }
