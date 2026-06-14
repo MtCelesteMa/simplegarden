@@ -1,4 +1,4 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, inject, Input, ChangeDetectionStrategy } from "@angular/core";
 import { DatePipe } from "@angular/common";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatButtonModule } from "@angular/material/button";
@@ -11,9 +11,9 @@ import * as g from "../../../../../game";
 
 @Component({
     selector: "app-seed-log-entry",
-    standalone: true,
     imports: [TimePipe, DatePipe, MatBadgeModule, MatButtonModule, MatCardModule, MatIconModule, MatListModule],
     templateUrl: "./seed-log-entry.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./seed-log-entry.component.scss",
 })
 export class SeedLogEntryComponent {

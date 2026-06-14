@@ -1,4 +1,4 @@
-import { Component, inject, LOCALE_ID } from "@angular/core";
+import { Component, inject, LOCALE_ID, ChangeDetectionStrategy } from "@angular/core";
 import { PathLocationStrategy } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -11,8 +11,8 @@ type Locale = { id: string; displayName: string };
 
 @Component({
     selector: "app-header",
-    standalone: true,
     imports: [MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatTooltipModule],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./header.component.html",
 })
 export class HeaderComponent {

@@ -1,7 +1,7 @@
 <div class="centering">
     <mat-card appearance="outlined">
         <mat-card-content>
-            @if (this.manager.saveIsValid()) {
+            @if (manager.saveIsValid()) {
                 <button mat-stroked-button (click)="loadGame()">
                     <mat-icon fontIcon="play_arrow" />
                     <ng-container i18n="@@app-welcompe-page.continue-game">Continue Game</ng-container>
@@ -20,7 +20,7 @@
                 </button>
             } @else {
                 <h2 i18n="@@app-welcome-page.welcome">Welcome!</h2>
-                @if (this.manager.saveExists()) {
+                @if (manager.saveExists()) {
                     <mat-card appearance="outlined">
                         <mat-card-content>
                             <span style="color: red" i18n="@@app-welcome-page.corrupted-save-msg"

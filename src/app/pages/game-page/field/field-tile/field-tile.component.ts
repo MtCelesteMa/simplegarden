@@ -1,16 +1,16 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, inject, Input, ChangeDetectionStrategy } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { ManagerService } from "../../../../services/manager.service";
 import * as g from "../../../../../game";
 
 @Component({
     selector: "app-field-tile",
-    standalone: true,
     imports: [],
     host: {
         "(click)": "selectTile()",
     },
     templateUrl: "./field-tile.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./field-tile.component.scss",
 })
 export class FieldTileComponent {

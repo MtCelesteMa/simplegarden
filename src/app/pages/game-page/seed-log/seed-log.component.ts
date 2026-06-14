@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatCardModule } from "@angular/material/card";
@@ -10,9 +10,9 @@ import * as g from "../../../../game";
 
 @Component({
     selector: "app-seed-log",
-    standalone: true,
     imports: [ReactiveFormsModule, SeedLogEntryComponent, MatBadgeModule, MatCardModule, MatInputModule, MatIconModule],
     templateUrl: "./seed-log.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./seed-log.component.scss",
 })
 export class SeedLogComponent {

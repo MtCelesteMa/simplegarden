@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
@@ -16,7 +16,6 @@ import * as g from "../../../game";
 
 @Component({
     selector: "app-welcome-page",
-    standalone: true,
     imports: [
         ReactiveFormsModule,
         MatCardModule,
@@ -29,6 +28,7 @@ import * as g from "../../../game";
         DifficultySelectorComponent,
         PersistenceSelectorComponent,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./welcome-page.component.html",
 })
 export class WelcomePageComponent implements OnInit {

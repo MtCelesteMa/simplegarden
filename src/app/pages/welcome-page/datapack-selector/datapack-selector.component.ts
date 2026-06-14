@@ -1,4 +1,4 @@
-import { Component, inject, LOCALE_ID, EventEmitter, Input, Output } from "@angular/core";
+import { Component, inject, LOCALE_ID, EventEmitter, Input, Output, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
@@ -11,8 +11,8 @@ import * as g from "../../../../game";
 
 @Component({
     selector: "app-datapack-selector",
-    standalone: true,
     imports: [ReactiveFormsModule, MatButtonModule, MatCardModule, MatIconModule, MatRadioModule, MatSelectModule],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./datapack-selector.component.html",
 })
 export class DatapackSelectorComponent {

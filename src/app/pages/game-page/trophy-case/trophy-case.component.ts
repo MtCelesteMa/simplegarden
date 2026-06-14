@@ -1,13 +1,13 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { TrophyCaseEntryComponent } from "./trophy-case-entry/trophy-case-entry.component";
 import { ManagerService } from "../../../services/manager.service";
 import * as g from "../../../../game";
 
 @Component({
     selector: "app-trophy-case",
-    standalone: true,
     imports: [TrophyCaseEntryComponent],
     templateUrl: "./trophy-case.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./trophy-case.component.scss",
 })
 export class TrophyCaseComponent {

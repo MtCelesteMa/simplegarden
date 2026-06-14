@@ -1,12 +1,12 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, inject, Input, ChangeDetectionStrategy } from "@angular/core";
 import { DatePipe } from "@angular/common";
 import { ManagerService } from "../../../../services/manager.service";
 
 @Component({
     selector: "app-trophy-case-entry",
-    standalone: true,
     imports: [DatePipe],
     templateUrl: "./trophy-case-entry.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./trophy-case-entry.component.scss",
 })
 export class TrophyCaseEntryComponent {

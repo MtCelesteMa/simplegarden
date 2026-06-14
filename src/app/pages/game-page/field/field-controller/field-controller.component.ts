@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule, FormControl } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCheckboxModule } from "@angular/material/checkbox";
@@ -13,8 +13,8 @@ type SoilType = { displayName: string; tickRate: number };
 
 @Component({
     selector: "app-field-controller",
-    standalone: true,
     imports: [ReactiveFormsModule, MatButtonModule, MatCheckboxModule, MatIconModule, MatSelectModule, TimePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./field-controller.component.html",
 })
 export class FieldControllerComponent implements OnInit {

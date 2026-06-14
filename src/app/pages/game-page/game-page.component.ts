@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FileService } from "../../services/file.service";
 import { ManagerService } from "../../services/manager.service";
 import { RoutingService } from "../../services/routing.service";
@@ -11,8 +11,8 @@ import { TrophyCaseComponent } from "./trophy-case/trophy-case.component";
 
 @Component({
     selector: "app-game-page",
-    standalone: true,
     imports: [TimePipe, GameControllerComponent, FieldComponent, SeedLogComponent, TrophyCaseComponent],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./game-page.component.html",
 })
 export class GamePageComponent implements OnInit {

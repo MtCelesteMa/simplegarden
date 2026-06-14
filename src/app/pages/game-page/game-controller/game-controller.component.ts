@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
@@ -9,8 +9,8 @@ import { TimePipe } from "../../../services/time.pipe";
 
 @Component({
     selector: "app-game-controller",
-    standalone: true,
     imports: [MatButtonModule, MatCardModule, MatIconModule, TimePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./game-controller.component.html",
 })
 export class GameControllerComponent {

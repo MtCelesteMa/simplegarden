@@ -1,4 +1,4 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, inject, Input, ChangeDetectionStrategy } from "@angular/core";
 import { MatCardModule } from "@angular/material/card";
 import { ManagerService } from "../../../../services/manager.service";
 import { TimePipe } from "../../../../services/time.pipe";
@@ -6,8 +6,8 @@ import * as g from "../../../../../game";
 
 @Component({
     selector: "app-tile-info",
-    standalone: true,
     imports: [MatCardModule, TimePipe],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./tile-info.component.html",
 })
 export class TileInfoComponent {

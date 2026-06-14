@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -11,7 +11,6 @@ import { TimePipe } from "../../../services/time.pipe";
 
 @Component({
     selector: "app-field",
-    standalone: true,
     imports: [
         ReactiveFormsModule,
         MatButtonModule,
@@ -22,6 +21,7 @@ import { TimePipe } from "../../../services/time.pipe";
         TileInfoComponent,
         TimePipe,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: "./field.component.html",
 })
 export class FieldComponent {
