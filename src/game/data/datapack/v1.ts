@@ -47,6 +47,6 @@ export const dataPack = z
         gameData: z.preprocess((raw: unknown): g.v2.GameData => g.loader.loadVersion(raw, 2), g.v2.gameData),
         i18n: i18nInfo,
     })
-    .merge(versionedData);
+    .extend(versionedData.shape);
 
 export type DataPack = z.infer<typeof dataPack>;

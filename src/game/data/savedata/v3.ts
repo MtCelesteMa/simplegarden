@@ -6,15 +6,15 @@ import * as d from "../datapack";
 
 export const fieldTile = z.object({
     crop: z.string().nullable(),
-    age: z.number().int().gte(0),
+    age: z.int().gte(0),
     manual: z.boolean(),
 });
 
 export type FieldTile = z.infer<typeof fieldTile>;
 
 export const cropUnlockData = z.object({
-    quantity: z.number().int().gte(0).nullable(),
-    timeDiscovered: z.number().int().gte(0).nullable(),
+    quantity: z.int().gte(0).nullable(),
+    timeDiscovered: z.int().gte(0).nullable(),
 });
 
 export type CropUnlockData = z.infer<typeof cropUnlockData>;
@@ -29,15 +29,15 @@ export const saveData = z
             limitResources: z.boolean(),
             lrExploitPatch: z.boolean(),
         }),
-        playTime: z.number().int().gte(0),
+        playTime: z.int().gte(0),
         freeze: z.boolean(),
-        tickRate: z.number().int().gte(0),
-        lastTick: z.number().int().gte(0),
+        tickRate: z.int().gte(0),
+        lastTick: z.int().gte(0),
         field: fieldTile.array().array(),
         cropsUnlocked: z.object({}).catchall(cropUnlockData),
-        trophies: z.object({}).catchall(z.number().int().gte(0)),
+        trophies: z.object({}).catchall(z.int().gte(0)),
     })
-    .merge(versionedData);
+    .extend(versionedData.shape);
 
 export type SaveData = z.infer<typeof saveData>;
 

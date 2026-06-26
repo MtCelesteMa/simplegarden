@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const versionedData = z.object({
     identifier: z.string(),
-    version: z.number().int().gte(1),
+    version: z.int().gte(1),
 });
 
 export type VersionedData = z.infer<typeof versionedData>;

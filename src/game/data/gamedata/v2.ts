@@ -6,8 +6,8 @@ export const cropInfo = z.object({
     displayName: z.string(),
     shortName: z.string(),
     description: z.string(),
-    maturity: z.number().int().gte(0),
-    lifespan: z.number().int().gte(0).nullable(),
+    maturity: z.int().gte(0),
+    lifespan: z.int().gte(0).nullable(),
     infectionValue: z.number().gte(0).lte(1).nullable(),
     infectable: z.boolean(),
     spreadOnHarvest: z.string().array(),
@@ -16,8 +16,8 @@ export const cropInfo = z.object({
 export type CropInfo = z.infer<typeof cropInfo>;
 
 export const mutationRequirement = z.object({
-    min: z.number().int().gte(0).lte(8),
-    max: z.number().int().gte(0).lte(8),
+    min: z.int().gte(0).lte(8),
+    max: z.int().gte(0).lte(8),
     mature: z.boolean(),
 });
 
@@ -47,9 +47,9 @@ export const gameData = z
         mutations: mutationInfo.array(),
         trophies: z.object({}).catchall(trophyInfo),
         initialCrops: z.string().array(),
-        fieldSize: z.tuple([z.number().int().gte(0), z.number().int().gte(0)]),
+        fieldSize: z.tuple([z.int().gte(0), z.int().gte(0)]),
     })
-    .merge(versionedData)
+    .extend(versionedData.shape)
     .refine(validateGameData);
 
 export type GameData = z.infer<typeof gameData>;

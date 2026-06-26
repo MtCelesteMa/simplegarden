@@ -70,8 +70,8 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "500kB",
-                                    "maximumError": "2MB"
+                                    "maximumWarning": "2MB",
+                                    "maximumError": "5MB"
                                 },
                                 {
                                     "type": "anyComponentStyle",
@@ -117,15 +117,12 @@
                 "extract-i18n": {
                     "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
                     "options": {
-                      "buildTarget": "simplegarden:build",
-                      "format": "xlf2",
-                      "outputPath": "src/locale",
-                      "targetFiles": [
-                        "messages.zh-TW.xlf",
-                        "messages.zh-CN.xlf"
-                      ],
-                      "prettyNestedTags": true,
-                      "sort": "stableAppendNew"
+                        "buildTarget": "simplegarden:build",
+                        "format": "xlf2",
+                        "outputPath": "src/locale",
+                        "targetFiles": ["messages.zh-TW.xlf", "messages.zh-CN.xlf"],
+                        "prettyNestedTags": true,
+                        "sort": "stableAppendNew"
                     }
                 },
                 "test": {
@@ -155,32 +152,32 @@
         }
     },
     "cli": {
-      "analytics": false
+        "analytics": false
     },
     "schematics": {
-      "@schematics/angular:component": {
-        "type": "component"
-      },
-      "@schematics/angular:directive": {
-        "type": "directive"
-      },
-      "@schematics/angular:service": {
-        "type": "service"
-      },
-      "@schematics/angular:guard": {
-        "typeSeparator": "."
-      },
-      "@schematics/angular:interceptor": {
-        "typeSeparator": "."
-      },
-      "@schematics/angular:module": {
-        "typeSeparator": "."
-      },
-      "@schematics/angular:pipe": {
-        "typeSeparator": "."
-      },
-      "@schematics/angular:resolver": {
-        "typeSeparator": "."
-      }
+        "@schematics/angular:component": {
+            "type": "component"
+        },
+        "@schematics/angular:directive": {
+            "type": "directive"
+        },
+        "@schematics/angular:service": {
+            "type": "service"
+        },
+        "@schematics/angular:guard": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:interceptor": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:module": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:pipe": {
+            "typeSeparator": "."
+        },
+        "@schematics/angular:resolver": {
+            "typeSeparator": "."
+        }
     }
 }
